@@ -1,26 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
-import Projects from './routes/projects/Projects';
-import {default as AdminProjects} from './routes/backoffice/projects/Projects';
-import {default as AdminPosts} from './routes/backoffice/posts/posts';
-import AdminAuth from "./routes/backoffice/adminAuth/AdminAuth";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
+import Projects from "./routes/projects/Projects";
+import AdminAuth from "./routes/adminAuth/AdminAuth";
+import Posts from "./routes/posts/Posts";
+import HomePage from "./routes/homepage/HomePage";
+import Page404 from "./routes/Page404";
+import Contacts from "./routes/contacts/Contacts";
+
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Route exact path={"/"} component={App}/>
-      <Route exact path={"/projects"} component={Projects}/>
-      <Route exact path={"/posts"} component={Projects}/>
-      <Route exact path={"/backoffice/authentification"} component={AdminAuth}/>
-      <Route exact path={"/backoffice/projects"} component={AdminProjects}/>
-      <Route exact path={"/backoffice/posts"} component={AdminPosts}/>
+      <Route exact path={"/"} component={HomePage} />
+      <Route exact path={"/auth"} component={AdminAuth} />
+      <Route exact path={"/projects"} component={Projects} />
+      <Route exact path={"/posts"} component={Posts} />
+      <Route exact path={"/contacts"} component={Contacts}/>
+      {/* <Route component={Page404} /> */}
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

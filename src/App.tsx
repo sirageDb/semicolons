@@ -4,7 +4,7 @@ import './App.css';
 function App() : JSX.Element {
   return (
     <div className="App">
-      learn react
+      
     </div>
   );
 }

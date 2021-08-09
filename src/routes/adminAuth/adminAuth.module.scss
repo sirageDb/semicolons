@@ -1,0 +1,9 @@
+@import "../../globalStyles.scss";
+.container {
+    width: 400px;
+    border: 1px solid $colorSecondary;
+}
+
+.textInput {
+    border: 1px solid $colorDarkest;
+}

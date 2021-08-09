@@ -1,10 +1,11 @@
 import React from "react";
 import MainLayout from "../../components/mainLayout/MainLayout";
-
-export default function Projects(): JSX.Element {
+export default function HomePage(): JSX.Element {
   return (
     <MainLayout>
-      <div>proavpoakzvpoapzovpaozvkpaozkvejcts page</div>
+      <div>
+        This is homepage
+      </div>
     </MainLayout>
   );
 }

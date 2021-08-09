@@ -1,0 +1,21 @@
+@import "../../globalStyles.scss";
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $colorWhiteExtra;
+    border-right: 1px solid $colorSecondary;
+    padding: 20px 30px;
+    margin-right: 200px;
+    width: 200px;
+    height: 100vh;
+}
+
+.logoutButton {
+    border: 1px solid $colorDanger;
+}
+
+.mainContentContainer {
+    margin-left: 200px;
+    padding: 20px;
+}
