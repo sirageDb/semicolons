@@ -3,22 +3,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import Projects from "./routes/projects/Projects";
+import Projects from "./routes/backoffice/projects/Projects";
 import AdminAuth from "./routes/adminAuth/AdminAuth";
-import Posts from "./routes/posts/Posts";
+import Posts from "./routes/backoffice/posts/Posts";
 import HomePage from "./routes/homepage/HomePage";
 import Page404 from "./routes/Page404";
-import Contacts from "./routes/contacts/Contacts";
-
+import Contacts from "./routes/backoffice/contacts/Contacts";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Route exact path={"/"} component={HomePage} />
       <Route exact path={"/auth"} component={AdminAuth} />
-      <Route exact path={"/projects"} component={Projects} />
-      <Route exact path={"/posts"} component={Posts} />
-      <Route exact path={"/contacts"} component={Contacts}/>
+      <Route exact path={"/backoffice/projects"} component={Projects} />
+      <Route exact path={"/backoffice/posts"} component={Posts} />
+      <Route exact path={"/backoffice/contacts"} component={Contacts}/>
       {/* <Route component={Page404} /> */}
     </Router>
   </React.StrictMode>,

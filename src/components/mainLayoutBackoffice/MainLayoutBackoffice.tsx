@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import styles from "./mainLayout.module.scss";
+import styles from "./mainLayoutBackoffice.module.scss";
 export default function MainLayout({ children, pageTitle }: any): JSX.Element {
   const history = useHistory();
 
@@ -17,17 +17,18 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
     <div>
       <section className={styles.container}>
         <div>
-          <NavLink to={"/"}>Homepage</NavLink>
+          <NavLink to={"/backoffice/projects"}>Projects</NavLink>
         </div>
         <div>
-          <NavLink to={"/projects"}>Projects</NavLink>
+          <NavLink to={"/backoffice/posts"}>Posts</NavLink>
         </div>
         <div>
-          <NavLink to={"/posts"}>Posts</NavLink>
+          <NavLink to={"/backoffice/contacts"}>Contacts</NavLink>
         </div>
         <div>
-          <NavLink to={"/Contacts"}>Contacts</NavLink>
+          <NavLink to={"/backoffice/"}></NavLink>
         </div>
+
         <div>
           <button className={styles.logoutButton} onClick={logout}>
             Logout

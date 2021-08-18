@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-import MainLayout from "../../components/mainLayout/MainLayout";
-import ProjectCell from "../../components/projectCell/ProjectCell";
-import apiEndPoint from "../../lib/apiEndPoint";
+import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
+import ProjectCellBackoffice from "../../../components/projectCellBackoffice/ProjectCellBackoffice";
+import apiEndPoint from "../../../lib/apiEndPoint";
 
 export default function Projects(): JSX.Element {
   useEffect(()=> {
@@ -15,9 +15,9 @@ export default function Projects(): JSX.Element {
 
 
   return (
-    <MainLayout pageTitle={"projects"}>
+    <MainLayoutBackoffice pageTitle={"projects"}>
       <div>HELLO</div>
       
-    </MainLayout>
+    </MainLayoutBackoffice>
   );
 }
