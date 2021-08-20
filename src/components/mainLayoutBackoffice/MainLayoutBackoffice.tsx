@@ -26,10 +26,6 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
           <NavLink to={"/backoffice/contacts"}>Contacts</NavLink>
         </div>
         <div>
-          <NavLink to={"/backoffice/"}></NavLink>
-        </div>
-
-        <div>
           <button className={styles.logoutButton} onClick={logout}>
             Logout
           </button>
@@ -37,7 +33,8 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
       </section>
       <div className={styles.mainContentContainer}>
         <h2>{pageTitle}</h2>
-        {children}</div>
+        {children}
+      </div>
     </div>
   );
 }
