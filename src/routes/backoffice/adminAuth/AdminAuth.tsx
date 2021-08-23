@@ -17,24 +17,22 @@ export default function AdminAuth(): JSX.Element {
 
   return (
     <main>
-      <AlertBox
+{/*       <AlertBox
         alertText={"Error Email or password"}
         isVisible={isVisibleAlertBox}
-      />
+      /> */}
       <form onSubmit={handleSubmit} className={styles.container}>
         <div>
-          <label htmlFor={"emailInput"}>Email</label>
           <input
             className={styles.textInput}
-            id={"emailInput"}
+            id={"emailInput"} 
             type={"text"}
-            placeholder={"Email"}
+            placeholder={"Email"} 
             onChange={(event) => setEmail(event.target.value)}
             value={email}
           />
         </div>
         <div>
-          <label htmlFor={"password"}>Password</label>
           <input
             className={styles.textInput}
             id={"password"}
