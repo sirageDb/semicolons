@@ -16,6 +16,7 @@ ReactDOM.render(
       <Route exact path={"/"} component={HomePage} />
       <Route exact path={"/auth"} component={AdminAuth} />
       <Route exact path={"/backoffice/projects"} component={ProjectsBO} />
+      {/* <Route exact path={"/backoffice/projects"} component={ProjectEditor} /> */}
       <Route exact path={"/backoffice/posts"} component={PostsBO} />
       <Route exact path={"/backoffice/contacts"} component={ContactsBO}/>
       {/* <Route component={Page404} /> */}

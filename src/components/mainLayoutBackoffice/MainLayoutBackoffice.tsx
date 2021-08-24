@@ -14,8 +14,8 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
   };
 
   return (
-    <div>
-      <section className={styles.container}>
+    <div className={styles.mainLayoutContainer}>
+      <section className={styles.sidenav}>
         <div>
           <NavLink to={"/backoffice/projects"}>Projects</NavLink>
         </div>
@@ -32,8 +32,10 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
         </div>
       </section>
       <div className={styles.mainContentContainer}>
-        <h2>{pageTitle}</h2>
-        {children}
+        <div className={styles.mainContent}>
+          <h2 className={styles.pageTitle}>{pageTitle}</h2>
+          {children}
+        </div>
       </div>
     </div>
   );

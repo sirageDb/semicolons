@@ -1,10 +1,31 @@
 import React from "react";
-import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-export default function Posts(): JSX.Element {
+import styles from "./posts.module.scss";
+import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
+import apiEndPoint from "../../../lib/apiEndPoint";
+
+export default function Projects(): JSX.Element {
+  const history = useHistory();
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = async () => {
+    const apiResponse = await fetch(apiEndPoint + "posts/getposts");
+  };
+
+  const newProject = () => {
+    history.push("/")
+  };
+
   return (
-    <MainLayout>
-      <div>posts page</div>
-    </MainLayout>
+    <MainLayoutBackoffice pageTitle={"Posts"}>
+      <button onClick={newProject} className={styles.newPostButton}>
+        New Post
+      </button>
+    </MainLayoutBackoffice>
   );
 }

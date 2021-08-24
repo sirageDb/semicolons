@@ -1,9 +1,13 @@
 @import "../../globalStyles.scss";
-.container {
+.mainLayoutContainer {
+    width: 100%;
+}
+
+.sidenav {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: $colorWhiteExtra;
+    background-color: $colorWhite;
     border-right: 1px solid $colorGray;
     padding: 20px 30px;
     margin-right: 200px;
@@ -17,5 +21,13 @@
 
 .mainContentContainer {
     margin-left: 200px;
-    padding: 20px;
+}
+
+.pageTitle {
+    color: $colorDarker
+}
+
+.mainContent {
+    width: 90%;
+    margin: auto;
 }
