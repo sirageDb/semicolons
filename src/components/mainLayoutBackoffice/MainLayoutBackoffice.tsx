@@ -1,7 +1,15 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { JsxElement } from "typescript";
 import styles from "./mainLayoutBackoffice.module.scss";
-export default function MainLayout({ children, pageTitle }: any): JSX.Element {
+
+
+interface IProps {
+  children : any ,
+  pageTitle : string
+}
+
+export default function MainLayout({ children, pageTitle }: IProps): JSX.Element {
   const history = useHistory();
 
   const logout = () => {
@@ -16,13 +24,13 @@ export default function MainLayout({ children, pageTitle }: any): JSX.Element {
   return (
     <div className={styles.mainLayoutContainer}>
       <section className={styles.sidenav}>
-        <div>
+        <div className={styles.link}>
           <NavLink to={"/backoffice/projects"}>Projects</NavLink>
         </div>
-        <div>
+        <div className={styles.link}>
           <NavLink to={"/backoffice/posts"}>Posts</NavLink>
         </div>
-        <div>
+        <div className={styles.link}>
           <NavLink to={"/backoffice/contacts"}>Contacts</NavLink>
         </div>
         <div>
