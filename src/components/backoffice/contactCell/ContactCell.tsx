@@ -1,5 +1,5 @@
 import React from "react";
-import "./contactCell.module.scss";
+import styles from "./contactCell.module.scss";
 
 interface IProps {
   fullname: string;
@@ -18,24 +18,31 @@ export default function ContactCell({
   dateContacted,
   isNew,
 }: IProps): JSX.Element {
+
+
+  
+  const changeContactStatus = () => {
+    window.alert("a");
+  }
+
   const ViewStatusButton = () => {
-      return(
-          <div>
-              <div></div>
-          </div>
-      )
+    return (
+      <button onClick={changeContactStatus} className={styles.statusButton + " " + (isNew  === true && styles.statusButtonIsNew)}>
+        <div>{isNew ? "New" : "viewed"}</div>
+      </button>
+    );
   };
 
   return (
-    <div>
+    <div className={styles.container + " " + (isNew === true && styles.isNew)}>
+      <div>{dateContacted}</div>
       <div>
-        <div>{dateContacted}</div>
-        <div><ViewStatusButton /></div>
+        <ViewStatusButton />
       </div>
       <div>{fullname}</div>
       <div>{email}</div>
       <div>{subject}</div>
-      <div>{message}</div>
+      <div className={styles.message}>{message}</div>
     </div>
   );
 }
