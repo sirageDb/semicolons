@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import styles from "./projects.module.scss";
 import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import ProjectCellBackoffice from "../../../components/projectCellBackoffice/ProjectCellBackoffice";
-import apiEndPoint from "../../../lib/apiEndPoint";
 
 export default function Projects(): JSX.Element {
   const history = useHistory();
@@ -15,7 +14,7 @@ export default function Projects(): JSX.Element {
   }, []);
 
   const fetchProjects = async () => {
-    const apiResponse = await fetch(apiEndPoint + "project/getprojects");
+    // const apiResponse = await fetch(apiEndPoint + "project/getprojects");
   };
 
   const newProject = () => {

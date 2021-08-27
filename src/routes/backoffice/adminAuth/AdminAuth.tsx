@@ -1,7 +1,6 @@
 import React, { SyntheticEvent } from "react";
 import { useState } from "react";
 import styles from "./adminAuth.module.scss";
-import apiEndPoint from "../../../lib/apiEndPoint";
 import { useHistory } from "react-router";
 
 export default function AdminAuth(): JSX.Element {

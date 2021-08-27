@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 import styles from "./posts.module.scss";
 import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
-import apiEndPoint from "../../../lib/apiEndPoint";
 
 export default function Projects(): JSX.Element {
   const history = useHistory();
@@ -14,7 +13,7 @@ export default function Projects(): JSX.Element {
   }, []);
 
   const fetchPosts = async () => {
-    const apiResponse = await fetch(apiEndPoint + "posts/getposts");
+    // const apiResponse = await fetch(apiEndPoint + "posts/getposts");
   };
 
   const newProject = () => {
