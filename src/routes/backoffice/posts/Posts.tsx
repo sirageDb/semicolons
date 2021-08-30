@@ -17,7 +17,7 @@ export default function Projects(): JSX.Element {
   };
 
   const newProject = () => {
-    history.push("/")
+    history.push("/backoffice/newpost")
   };
 
   return (
