@@ -1,4 +1,4 @@
 import React from "react";
-export default function Page404(): JSX.Element {
+export default function Unfound(): JSX.Element {
   return <div>Page does not exist</div>;
 }

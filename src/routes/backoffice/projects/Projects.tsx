@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import styles from "./projects.module.scss";
 import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
-import ProjectCellBackoffice from "../../../components/projectCellBackoffice/ProjectCellBackoffice";
+import ProjectCell from "../../../components/backoffice/projectCell/ProjectCell";
 
 export default function Projects(): JSX.Element {
   const history = useHistory();
@@ -18,7 +18,7 @@ export default function Projects(): JSX.Element {
   };
 
   const newProject = () => {
-    history.push("/backoffice/newproject")
+    history.push("/backoffice/newproject");
   };
 
   return (
@@ -26,6 +26,16 @@ export default function Projects(): JSX.Element {
       <button onClick={newProject} className={styles.newProjectButton}>
         New Project
       </button>
+      <div>
+        <ProjectCell
+          project_id={"id project"}
+          image={"image"}
+          title={"this si the title"}
+          description={"this is the descriptnion"}
+          usedLanguages={["javascript", "java"]}
+          publish={false}
+        />
+      </div>
     </MainLayoutBackoffice>
   );
 }
