@@ -1,0 +1,39 @@
+@import "../../globalStyles.scss";
+$unifiedMaxWidth: 1200px;
+.mainLayoutContainer {
+    position: relative;
+    min-height: 100vh;
+}
+
+.headerContainer {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 4px solid $colorGreenBright;
+    border-bottom: 4px solid $colorBlue;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    max-width: $unifiedMaxWidth;
+    margin: auto;
+}
+
+.logo {
+    max-width: 180px;
+}
+
+.pageLink {
+    margin-left: 20px;
+    color: $colorGrayDark;
+    font-weight: 700;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}

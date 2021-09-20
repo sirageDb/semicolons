@@ -1,9 +1,12 @@
 import React from "react";
 import MainLayout from "../../components/mainLayoutBackoffice/MainLayoutBackoffice";
+import PageLayout from "../../components/pageLayout/PageLayout";
 export default function HomePage(): JSX.Element {
   return (
-      <div>
-        This is homepage
-      </div>
+      <PageLayout>
+        <div>
+          sqcqscqc
+        </div>
+      </PageLayout>
   );
 }
