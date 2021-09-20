@@ -1,0 +1,18 @@
+@import "../../../globalStyles.scss";
+.singleTagContainer {
+    display: inline-block;
+    padding: 0px 5px 0px 10px;
+    background-color: $colorGray;
+    color: $colorWhite;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.singleTag {
+    display: flex;
+    align-items: center;
+}
+
+.removeIcon {
+    cursor: pointer;
+}
