@@ -1,0 +1,19 @@
+@import "../../../globalStyles.scss";
+.input {
+    border: 2px solid $colorGray;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.textArea {
+    border: 2px solid $colorGray;
+    border-radius: 5px;
+}
+
+.actionButton {
+    background-color: $colorWhiteExtra;
+    border: 2px solid $colorViolet;
+    padding: 2px 20px 2px 20px;
+    border-radius: 20px;
+}
