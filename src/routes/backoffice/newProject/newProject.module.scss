@@ -1,14 +1,29 @@
 @import "../../../globalStyles.scss";
+.inputContainer {
+    margin-bottom: 20px;
+}
+
 .input {
     border: 2px solid $colorGray;
-    border-radius: 5px;
+    border-radius: 3px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
 
+.languagesInput {
+    margin-top: 10px;
+    display: flex;
+     :first-child {
+        margin-right: 10px;
+    }
+     :last-child {
+        cursor: pointer;
+    }
+}
+
 .textArea {
     border: 2px solid $colorGray;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .actionButton {
@@ -16,4 +31,5 @@
     border: 2px solid $colorViolet;
     padding: 2px 20px 2px 20px;
     border-radius: 20px;
+    margin-right: 20px;
 }
