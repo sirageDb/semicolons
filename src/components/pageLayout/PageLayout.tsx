@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./pagelayout.module.scss";
 import logo from "../../assets/logo.png";
-import { NavLink, Link} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 interface IPageLayoutProps {
   children: ReactElement;
@@ -39,8 +39,14 @@ export default function PageLayout({
         </div>
       </header>
       {children}
-      <footer className={styles.footer}>
-        <img alt={"Semicolons website"} src={logo} className={styles.logo} />
+      <footer className={styles.footerContainer}>
+        <div className={styles.footer}>
+          <img alt={"Semicolons website"} src={logo} className={styles.logo} />
+          <div className={styles.footerUtils}>
+            <div>Semicolons 2021</div>
+            <NavLink to={"www.google.com"}>Terms and conditions</NavLink>
+          </div>
+        </div>
       </footer>
     </div>
   );

@@ -24,7 +24,7 @@ $unifiedMaxWidth: 1200px;
 }
 
 .logo {
-    max-width: 180px;
+    max-width: 160px;
 }
 
 .pageLink {
@@ -33,7 +33,25 @@ $unifiedMaxWidth: 1200px;
     font-weight: 700;
 }
 
-.footer {
+.footerContainer {
+    border-top: 4px solid $colorGreenBright;
     position: absolute;
     bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    max-width: $unifiedMaxWidth;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerUtils {
+    display: flex;
+     :first-child {
+        margin-right: 10px;
+    }
 }
