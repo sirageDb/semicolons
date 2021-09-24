@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import styles from "./pagelayout.module.scss";
 import logo from "../../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
 
 interface IPageLayoutProps {
-  children: ReactElement;
+  children: ReactNode;
 }
 
 export default function PageLayout({

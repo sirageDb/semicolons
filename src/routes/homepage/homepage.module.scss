@@ -1,0 +1,34 @@
+@import "../../globalStyles.scss";
+.contactWidgetsContainer {
+    // position: absolute;
+    left: 0;
+    div:nth-child(1) {
+        background-color: $colorDarker;
+    }
+    div:nth-child(2) {
+        background-color: #55ACEE;
+    }
+    div:nth-child(3) {
+        background-color: #007AB9;
+    }
+    div:nth-child(4) {
+        background-color: $colorDarker;
+    }
+}
+
+.contactWidget {
+    position: relative;
+    // height: 50px;
+    width: 40px;
+    // background-color: $colorDarker;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 0 50% 50% 0;
+}
+
+.contatWidgetIcon {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+}

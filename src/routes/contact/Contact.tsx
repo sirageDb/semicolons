@@ -1,4 +1,9 @@
 import React from "react";
-export default function Contact() : JSX.Element {
-    return (<div>contact</div>);
+import PageLayout from "../../components/pageLayout/PageLayout";
+export default function Contact(): JSX.Element {
+  return (
+    <PageLayout>
+      <div>contact</div>
+    </PageLayout>
+  );
 }

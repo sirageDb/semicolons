@@ -14,6 +14,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+    font-size: 27px;
+    color: #2c2f33
+}
+
 button {
     border-radius: 0;
     cursor: pointer;
