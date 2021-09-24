@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import styles from "./newProject.module.scss";
+import styles from "./projectEditor.module.scss";
 import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrganizer";
 import addIcon from "../../../assets/addIcon.svg";
 
 
 
-export default function newProject(): JSX.Element {
+export default function ProjectEditor(): JSX.Element {
   const [name, setName] = useState<string>("");
   const [projectLink, setProjectLink] = useState<string>("");
   const [sourceCodeLink, setSourceCodeLink] = useState<string>("");
