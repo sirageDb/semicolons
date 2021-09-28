@@ -15,7 +15,6 @@ export default function Projects(): JSX.Element {
 
   useEffect(() => {
     fetchProjects();
-
   }, []);
 
   const fetchProjects = async () => {
@@ -26,7 +25,7 @@ export default function Projects(): JSX.Element {
   };
 
   const newProject = () => {
-    history.push("/backoffice/newproject");
+    history.push("/backoffice/projecteditor");
   };
 
   return (
@@ -40,7 +39,7 @@ export default function Projects(): JSX.Element {
             return <ProjectCell
             key = {project._id}
             project_id={project._id}
-            image={"image"}
+            image={project.image}
             name={project.name}
             description={project.description}
             usedLanguages={project.useLanguages}

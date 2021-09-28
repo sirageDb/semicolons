@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./projectCell.module.scss";
 import testProject from "../../../assets/testproject.png";
 import apiEndPoint from "../../../config/apiEndPoint";
@@ -25,6 +25,7 @@ export default function ProjectCell({
   const editProject = () => {
     history.push("/backoffice/projecteditor/"+project_id);
   };
+  
 
   const publishProject = async () => {
     await fetch(apiEndPoint + "project/publishproject", {
@@ -64,7 +65,7 @@ export default function ProjectCell({
 
   return (
     <div className={styles.container}>
-      <img className={styles.image} src={testProject} />
+      <img className={styles.image} src={image} />
       <div className={styles.projectInfoContainer}>
         <div className={styles.nameDescriptionBlock}>
           <div className={styles.name}>{name}</div>

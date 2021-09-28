@@ -4,16 +4,13 @@ import removeIcon from "../../../assets/removeIcon.svg";
 
 
 
-interface ITagsOrganizer {
+interface ITagsOrganizerProps {
   tags: string[];
+  removeTagCallback : CallableFunction
 }
 
 
-export default function TagsOrganizer({ tags }: ITagsOrganizer): JSX.Element {
-  const removeTag = (text : any)=> {
-    console.log(text);
-    
-  }
+export default function TagsOrganizer({ tags, removeTagCallback }: ITagsOrganizerProps): JSX.Element {
 
 
   const Tag = ({text} : any) => {
@@ -21,7 +18,7 @@ export default function TagsOrganizer({ tags }: ITagsOrganizer): JSX.Element {
       <div className={styles.singleTagContainer}>
         <div className={styles.singleTag}>
           <div>{text}</div>
-          <img className={styles.removeIcon} onClick={e => removeTag(e)} src={removeIcon} alt={"azeze"} />
+          <img className={styles.removeIcon} onClick={() => removeTagCallback(text)} src={removeIcon} alt={"azeze"} />
         </div>
       </div>
     );
