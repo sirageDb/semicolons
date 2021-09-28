@@ -68,17 +68,7 @@ export default function ProjectEditor(): JSX.Element {
       console.log(pair[1]);
     }
 
-    const apiResponse = await fetch(apiEndPoint + "project/createproject", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: ,
-    });
-    apiResponse;
-
-
-/*     const imageData = new FormData();
+    const imageData = new FormData();
     imageData.append(image.name, image);
     for (const pair of imageData.entries()) {
       console.log(pair[0]);
@@ -99,7 +89,7 @@ export default function ProjectEditor(): JSX.Element {
         usedLanguages: languages,
       }),
     });
-    apiResponse; */
+    apiResponse;
   };
 
   // save projecct
@@ -140,7 +130,7 @@ export default function ProjectEditor(): JSX.Element {
   const deleteProject = async () => {
     const isConfirmed = window.confirm("Delete project ?");
     if (isConfirmed) {
-      const apiResponse  = await fetch(apiEndPoint + "project/deleteproject", {
+      const apiResponse = await fetch(apiEndPoint + "project/deleteproject", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -149,8 +139,8 @@ export default function ProjectEditor(): JSX.Element {
           project_id: project_id,
         }),
       });
-      if(apiResponse.status === 200){
-        history.push("/backoffice/projects")
+      if (apiResponse.status === 200) {
+        history.push("/backoffice/projects");
       }
     }
   };
