@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import styles from "./pagelayout.module.scss";
 import logo from "../../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
