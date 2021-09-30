@@ -1,0 +1,98 @@
+@import "../../globalStyles.scss";
+.container {
+    text-align: left;
+    display: inline-block;
+    border: 1px solid $colorGray;
+    border-radius: 5px;
+    max-width: 323px;
+    color: $colorGrayDark;
+    * {
+        color: $colorDarker;
+    }
+}
+
+.postCellDataContainer {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.titleContainer {
+    margin-bottom: 10px;
+}
+
+.title {
+    display: inline-block;
+    font-size: $fontsizeCow;
+    color: $colorWhite;
+    background-color: $colorDarker;
+    text-decoration: solid underline 1px $colorWhite;
+    padding: 1px 8px;
+    margin-top: 10px;
+    &:hover {
+        color: $colorYellow;
+    }
+}
+
+.tagsContainer {
+    // margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: $colorViolet;
+    color: $colorWhite;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.dateContainer {
+    margin-bottom: 10px;
+}
+
+//==========================================================
+.postReaderInfo {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.postReaderInfoIcon {
+    margin-right: 5px;
+}
+
+//==========================================================
+.socialInteractionContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.interactionButton {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    >img {
+        margin-left: 5px;
+    }
+}
+
+.shareButtonContainer {
+    flex: 1;
+}
+
+.shareButton {
+    display: flex;
+    border: 2px solid $colorBlue;
+    border-radius: 3px;
+    color: $colorBlue;
+    padding: 2px 10px;
+    >img {
+        margin-right: 5px;
+    }
+    >span {
+        color: $colorBlue
+    }
+}
+
+//==========================================================

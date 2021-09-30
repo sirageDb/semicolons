@@ -8,7 +8,8 @@ import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { NavLink } from "react-router-dom";
 import universe from "../../assets/universe.svg";
 import wavyHomepageBackground from "../../assets/wavyHomePageBackground.svg";
-
+import PostCell from "../../components/postCell/PostCell";
+import testpostcellimage from "../../assets/testpostcellimage.svg";
 export default function HomePage(): JSX.Element {
   return (
     <PageLayout>
@@ -20,23 +21,7 @@ export default function HomePage(): JSX.Element {
           <img src={universe} />
         </div>
       </div>
-      My dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of a
-      programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of
-      a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe
-      of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the
-      universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in
-      the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel
-      in the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A
-      travel in the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />
-      A travel in the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog{" "}
-      <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev
-      blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy
-      dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of a
-      programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe of
-      a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the universe
-      of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in the
-      universe of a programmerMy dev blog <br />A travel in the universe of a programmerMy dev blog <br />A travel in
-      the universe of a programmerMy dev blog <br />A travel in the universe of a programmer
+      {/* ============================================================================= */}
       <div className={styles.contactWidgetsContainer}>
         <div className={styles.contactWidget}>
           <a href={"http://github.com"}>
@@ -63,6 +48,23 @@ export default function HomePage(): JSX.Element {
           </a>
         </div>
       </div>
+      {/* ============================================================================= */}
+      <section className={styles.sectionTitleContainer}>
+        <h2 className={styles.sectionTitle}>Lastest post</h2>
+        <span className={styles.sectionExplanation}>Evolve your technical knowledge</span>
+        <PostCell
+          image={testpostcellimage}
+          title={"this is post cell title"}
+          tags={["javascript", "devos", "frontend","devos", "frontend"]}
+          publishDate={"08/10/2021"}
+          updatedDate={"08/10/2021"}
+          views={22}
+          readingTime={20}
+          likeInteractions={15}
+          ideaIneractions={15}
+          postSlug={"this-is-post-cell"}
+        />
+      </section>
     </PageLayout>
   );
 }

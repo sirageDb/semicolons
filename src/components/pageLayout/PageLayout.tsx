@@ -7,20 +7,14 @@ interface IPageLayoutProps {
   children: ReactNode;
 }
 
-export default function PageLayout({
-  children,
-}: IPageLayoutProps): JSX.Element {
+export default function PageLayout({ children }: IPageLayoutProps): JSX.Element {
   return (
     <div className={styles.mainLayoutContainer}>
       <header className={styles.headerContainer}>
         <div className={styles.header}>
           {/* TODO SEO for image here */}
           <Link to={"/"}>
-            <img
-              alt={"Semicolons website"}
-              src={logo}
-              className={styles.logo}
-            />
+            <img alt={"Semicolons website"} src={logo} className={styles.logo} />
           </Link>
           <div>
             <NavLink className={styles.pageLink} to={"/posts"}>
@@ -38,7 +32,7 @@ export default function PageLayout({
           </div>
         </div>
       </header>
-      {children}
+      <main className={styles.mainContent}>{children}</main>
       <footer className={styles.footerContainer}>
         <div className={styles.footer}>
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />

@@ -62,3 +62,16 @@
     right: 6px;
     transform: translateY(-50%);
 }
+
+.sectionTitleContainer {
+    text-align: center;
+    margin: auto
+}
+
+.sectionTitle {
+    text-decoration: solid underline 5px $colorGreenBright;
+}
+
+.sectionExplanation {
+    font-size: 18px;
+}

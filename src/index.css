@@ -4,6 +4,12 @@
 
 * {
     box-sizing: border-box;
+    color: #2C2F33
+}
+
+*::selection {
+    color: #0067ff;
+    background-color: #ffc356;
 }
 
 body {
@@ -20,10 +26,16 @@ h1 {
     color: #2c2f33
 }
 
+h2 {
+    font-size: 22.5px;
+    color: #2c2f33
+}
+
 button {
     border-radius: 0;
     cursor: pointer;
     border: none;
+    background-color: transparent;
 }
 
 input:focus,
