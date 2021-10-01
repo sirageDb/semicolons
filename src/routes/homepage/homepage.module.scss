@@ -63,15 +63,85 @@
     transform: translateY(-50%);
 }
 
-.sectionTitleContainer {
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.sectionPost {
     text-align: center;
-    margin: auto
+    margin: auto;
+    margin-top: 80px
 }
 
-.sectionTitle {
+.sectionPostTitle {
     text-decoration: solid underline 5px $colorGreenBright;
 }
 
-.sectionExplanation {
-    font-size: 18px;
+.sectionPostData {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px
+}
+
+.sectionPostExplanation {
+    font-size: $fontsizeSheep;
+}
+
+.sectionPostLeftContainer {
+    text-align: center;
+}
+
+.postsButton {
+    background-color: $colorBlue;
+    color: $colorWhite;
+    padding: 2px 40px;
+    border-radius: 3px;
+    font-size: $fontsizeSheep;
+    box-shadow: rgba($colorBlue, 0.50)0px 5px 15px;
+    border: 2px solid $colorBlue;
+    transition: 200ms;
+    &:hover {
+        color: $colorBlue;
+        background-color: $colorWhite;
+        transition: 200ms;
+    }
+}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.projectSection {
+    margin-top: 100px;
+    height: 70vh;
+    background: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    font-size: $fontsizeSheep;
+}
+
+.projectSectionDataContainer {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.projectSectionExplanation {
+    max-width: 450px;
+    color: $colorWhite;
+    font-size: $fontsizeSheep;
+}
+
+.projectsButton {
+    background-color: transparent;
+    color: $colorWhite;
+    padding: 2px 40px;
+    border-radius: 4px;
+    font-size: $fontsizeSheep;
+    box-shadow: rgba($colorGreenBright, 0.40)0px 5px 10px;
+    border: 2px solid $colorGreenBright;
+    transition: 200ms;
+    &:hover {
+        color: $colorDarkest;
+        background-color: $colorGreenBright;
+        transition: 200ms;
+    }
 }

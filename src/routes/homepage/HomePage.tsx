@@ -5,11 +5,16 @@ import emailIcon from "../../assets/emailIcon.svg";
 import githubIcon from "../../assets/githubIcon.svg";
 import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import universe from "../../assets/universe.svg";
 import wavyHomepageBackground from "../../assets/wavyHomePageBackground.svg";
 import PostCell from "../../components/postCell/PostCell";
+//images
+//====================
 import testpostcellimage from "../../assets/testpostcellimage.svg";
+import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
+import spaceHomepageBackground from "../../assets/spaceHomepageBackground.svg";
+
 export default function HomePage(): JSX.Element {
   return (
     <PageLayout>
@@ -49,21 +54,45 @@ export default function HomePage(): JSX.Element {
         </div>
       </div>
       {/* ============================================================================= */}
-      <section className={styles.sectionTitleContainer}>
-        <h2 className={styles.sectionTitle}>Lastest post</h2>
-        <span className={styles.sectionExplanation}>Evolve your technical knowledge</span>
-        <PostCell
-          image={testpostcellimage}
-          title={"this is post cell title"}
-          tags={["javascript", "devos", "frontend","devos", "frontend"]}
-          publishDate={"08/10/2021"}
-          updatedDate={"08/10/2021"}
-          views={22}
-          readingTime={20}
-          likeInteractions={15}
-          ideaIneractions={15}
-          postSlug={"this-is-post-cell"}
-        />
+      <section className={styles.sectionPost}>
+        <h2 className={styles.sectionPostTitle}>Lastest post</h2>
+        <div className={styles.sectionPostExplanation}>Evolve your technical knowledge</div>
+
+        <div className={styles.sectionPostData}>
+          <div className={styles.sectionPostLeftContainer}>
+            <div>
+              <img src={spaceshipIllustration} alt={"Get new dev knowledge"} />
+            </div>
+            <Link to={"/posts"}>
+              <button className={styles.postsButton}>All my posts</button>
+            </Link>
+          </div>
+
+          <PostCell
+            image={testpostcellimage}
+            title={"this is post cell title"}
+            tags={["javascript", "devos", "frontend", "devos", "frontend"]}
+            publishDate={"08/10/2021"}
+            updatedDate={"08/10/2021"}
+            views={22}
+            readingTime={20}
+            likeInteractions={15}
+            ideaIneractions={15}
+            postSlug={"this-is-post-cell"}
+          />
+        </div>
+      </section>
+      {/* ============================================================================= */}
+      <section className={styles.projectSection} style={{ backgroundImage: `url(${spaceHomepageBackground})` }}>
+        <div className={styles.projectSectionDataContainer}>
+          <p className={styles.projectSectionExplanation}>
+            Navigate to my orbit, check my projects, some of them are also open source !, <br />I mostly work on
+            javascript technologies, web development, mobile development, devops and cloud technologies
+          </p>
+          <Link to={"/posts"}>
+              <button className={styles.projectsButton}>All my projects</button>
+            </Link>
+        </div>
       </section>
     </PageLayout>
   );
