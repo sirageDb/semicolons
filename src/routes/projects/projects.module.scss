@@ -1,0 +1,26 @@
+@import "../../globalStyles.scss";
+.headingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.pageTitle {
+    text-decoration: $mainTextDecoration;
+}
+
+.pageExplanation {
+    font-size: $fontsizeSheep;
+    max-width: 300px;
+}
+
+//======================================================
+.projectsContainer {
+    margin-top: 40px;
+    >div {
+        margin-top: 40px;
+    }
+}
