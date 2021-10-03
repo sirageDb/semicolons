@@ -5,9 +5,10 @@ import { NavLink, Link } from "react-router-dom";
 
 interface IPageLayoutProps {
   children: ReactNode;
+  contentMaxWidth? : number
 }
 
-export default function PageLayout({ children }: IPageLayoutProps): JSX.Element {
+export default function PageLayout({ children, contentMaxWidth }: IPageLayoutProps): JSX.Element {
   return (
     <div className={styles.mainLayoutContainer}>
       <header className={styles.headerContainer}>
@@ -32,7 +33,7 @@ export default function PageLayout({ children }: IPageLayoutProps): JSX.Element 
           </div>
         </div>
       </header>
-      <main className={styles.mainContent}>{children}</main>
+      <main style={{maxWidth : contentMaxWidth && contentMaxWidth}} className={styles.mainContent}>{children}</main>
       <footer className={styles.footerContainer}>
         <div className={styles.footer}>
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />
