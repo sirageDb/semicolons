@@ -10,6 +10,7 @@ import testPostCellImage from "../../assets/testpostcellimage.svg";
 
 interface IPostCellProps {
   image: string;
+  imgaeAlt : string
   title: string;
   tags: string[];
   publishDate: string;
@@ -27,6 +28,7 @@ interface ITagProps {
 
 export default function PostCell({
   image,
+  imgaeAlt,
   title,
   tags,
   publishDate,
@@ -56,10 +58,10 @@ export default function PostCell({
   //TODO post slug in amdin mode
   return (
     <div className={styles.container}>
-      <img src={image} alt={"Post image"} />
+      <img src={image} alt={imgaeAlt} />
       <div className={styles.postCellDataContainer}>
         <div className={styles.titleContainer}>
-          <Link to={"./" + postSlug}>
+          <Link to={"./posts/" + postSlug}>
             <div className={styles.title}>{title}</div>
           </Link>
         </div>
