@@ -1,0 +1,29 @@
+@import "../../globalStyles.scss";
+.headingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.pageTitle {
+    text-decoration: $mainTextDecoration;
+}
+
+.pageExplanation {
+    font-size: $fontsizeSheep;
+    max-width: 300px;
+}
+
+//======================================================
+.postsContainer {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >div {
+        margin-top: 40px;
+    }
+}
