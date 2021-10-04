@@ -18,7 +18,7 @@
 }
 
 .pageSlogan {
-    text-decoration: solid underline 5px $colorYellow;
+    text-decoration: $mainTextDecoration;
 }
 
 .wavyPageHeadingBackground {
@@ -71,7 +71,7 @@
 }
 
 .sectionPostTitle {
-    text-decoration: solid underline 5px $colorGreenBright;
+    text-decoration: $secondaryTextDecoration;
 }
 
 .sectionPostData {

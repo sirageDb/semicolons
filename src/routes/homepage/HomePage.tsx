@@ -70,6 +70,7 @@ export default function HomePage(): JSX.Element {
 
           <PostCell
             image={testpostcellimage}
+            imgaeAlt = {"this is image alt"}
             title={"this is post cell title"}
             tags={["javascript", "devos", "frontend", "devos", "frontend"]}
             publishDate={"08/10/2021"}
@@ -89,7 +90,7 @@ export default function HomePage(): JSX.Element {
             Navigate to my orbit, check my projects, some of them are also open source !, <br />I mostly work on
             javascript technologies, web development, mobile development, devops and cloud technologies
           </p>
-          <Link to={"/posts"}>
+          <Link to={"/projects"}>
               <button className={styles.projectsButton}>All my projects</button>
             </Link>
         </div>
