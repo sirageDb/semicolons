@@ -1,0 +1,37 @@
+@import "../../globalStyles.scss";
+.pageExplanation {
+    font-size: $fontsizeSheep;
+    font-weight: bold;
+    >div {
+        margin-top: 10px;
+    }
+}
+
+.pageTitle {
+    text-decoration: $mainTextDecoration;
+    color: $colorGrayDark;
+}
+
+.pageSubContainer {
+    margin: auto;
+    margin-top: 40px;
+    max-width: 600px;
+}
+
+.formtextInput {
+    display: block;
+    border: 1px solid $colorGray;
+    border-radius: 3px;
+    padding: 5px 5px;
+    margin-top: 15px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.submitButton {
+    margin-top: 15px;
+    color: $colorWhite;
+    background-color: $colorBlue;
+    padding: 2px 20px;
+    border-radius: 15px;
+}
