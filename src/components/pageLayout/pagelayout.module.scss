@@ -6,21 +6,24 @@ $unifiedMaxWidth: 1200px;
 }
 
 .headerContainer {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    left: 0;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 4px solid $colorGreenBright;
     border-bottom: 4px solid $colorBlue;
+    background-color: $colorWhite;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    left: 0;
     max-width: $unifiedMaxWidth;
     margin: auto;
+    max-width: 1100px;
 }
 
 .logo {
