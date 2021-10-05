@@ -1,0 +1,40 @@
+@import "../../globalStyles.scss";
+.pageTitle {
+    text-decoration: $mainTextDecoration;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contentText {
+    flex: 2;
+}
+
+.imageContainer {
+    flex: 1;
+    display: inline-block;
+    max-width: 250px;
+}
+
+.image {}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionHeading {
+    font-weight: bold;
+}
+
+.sectionTitle {
+    font-size: $fontsizeSheep;
+    text-decoration: $secondaryTextDecoration;
+    font-weight: bold;
+}
+
+.sectionExplanation {
+    margin-top: 10px;
+}
