@@ -38,7 +38,7 @@ export default function PageLayout({ children, contentMaxWidth }: IPageLayoutPro
         <div className={styles.footer}>
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />
           <div className={styles.footerUtils}>
-            <div>Semicolons 2021</div>
+            <div>&copy; Semicolons.dev 2021</div>
             <NavLink to={"www.google.com"}>Terms and conditions</NavLink>
           </div>
         </div>
