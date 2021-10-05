@@ -13,8 +13,8 @@ import Projects from "./routes/projects/Projects";
 import Contact from "./routes/contact/Contact";
 import About from "./routes/about/About";
 import Post from "./routes/post/Post";
-import Unfound from "./routes/unfound/Unfound";
 import ScrollToTop from "./lib/ScrollToTop";
+import PageNotFound from "./routes/unfound/PageNotFound";
 
 
 export default function App(): JSX.Element {
@@ -35,7 +35,7 @@ export default function App(): JSX.Element {
         <Route exact path={"/backoffice/posts"} component={PostsBO} />
         <Route exact path={"/backoffice/newpost"} component={NewPostBO} />
         <Route exact path={"/backoffice/contacts"} component={ContactsBO} />
-        <Route component={Unfound} />
+        <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );

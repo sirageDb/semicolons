@@ -1,20 +1,20 @@
 import React from "react";
 import styles from "./homepage.module.scss";
 import PageLayout from "../../components/pageLayout/PageLayout";
-import emailIcon from "../../assets/emailIcon.svg";
 import githubIcon from "../../assets/githubIcon.svg";
 import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { Link } from "react-router-dom";
-import universe from "../../assets/universe.svg";
-import wavyHomepageBackground from "../../assets/wavyHomePageBackground.svg";
 import PostCell from "../../components/postCell/PostCell";
 //images
 //====================
 import testpostcellimage from "../../assets/testpostcellimage.svg";
 import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
 import spaceHomepageBackground from "../../assets/spaceHomepageBackground.svg";
+import universe from "../../assets/universe.svg";
+import wavyHomepageBackground from "../../assets/wavyHomePageBackground.svg";
 
+//TODO an astroid from the sky when scrolling ... 
 export default function HomePage(): JSX.Element {
   return (
     <PageLayout>
@@ -29,27 +29,18 @@ export default function HomePage(): JSX.Element {
       {/* ============================================================================= */}
       <div className={styles.contactWidgetsContainer}>
         <div className={styles.contactWidget}>
-          <a href={"http://github.com"}>
-            <img className={styles.contatWidgetIcon} src={githubIcon} alt={"sirage al dbiyat twitter account"} />
+          <a href={"https://github.com/sirageDb"} target={"_blank"} rel="noreferrer">
+            <img className={styles.contatWidgetIcon} src={githubIcon} alt={"sirage al dbiyat semicolons github opensource account"} />
           </a>
         </div>
         <div className={styles.contactWidget}>
-          <a href={"http://twitter.com"}>
-            <img className={styles.contatWidgetIcon} src={twitterIcon} alt={"sirage al dbiyat twitter account"} />
+          <a href={"https://twitter.com/ilovesemicolon/"} target={"_blank"} rel="noreferrer">
+            <img className={styles.contatWidgetIcon} src={twitterIcon} alt={"sirage al dbiyat semicolons twitter account"} />
           </a>
         </div>
         <div className={styles.contactWidget}>
-          <a href={"http://linkedin.com"}>
-            <img className={styles.contatWidgetIcon} src={linkedinIcon} alt={"sirage al dbiyat linkedin account"} />
-          </a>
-        </div>
-        <div className={styles.contactWidget}>
-          <a href={"http://google.com"}>
-            <img
-              className={styles.contatWidgetIcon}
-              src={emailIcon}
-              alt={"sirage al dbiyat email address and contact"}
-            />
+          <a href={"https://www.linkedin.com/in/sirage-al-dbiyat/"} target={"_blank"} rel="noreferrer">
+            <img className={styles.contatWidgetIcon} src={linkedinIcon} alt={"sirage al dbiyat semicolons linkedin account"} />
           </a>
         </div>
       </div>
