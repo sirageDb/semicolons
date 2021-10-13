@@ -24,10 +24,10 @@ export default function App(): JSX.Element {
       <Switch>
         <Route exact path={"/"} component={HomePage} />
         <Route exact path={"/posts"} component={Posts} />
+        <Route exact path={"/posts/:postSlug"} component={Post} />
         <Route exact path={"/projects"} component={Projects} />
         <Route exact path={"/contact"} component={Contact} />
         <Route exact path={"/about"} component={About} />
-        <Route exact path={"/post/:slug"} component={Post} />
         <Route exact path={"/auth"} component={AdminAuth} />
         <Route exact path={"/backoffice/projects"} component={ProjectsBO} />
         <Route exact path={"/backoffice/ProjectEditor/"} component={ProjectEditor} />

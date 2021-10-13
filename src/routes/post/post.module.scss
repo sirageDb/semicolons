@@ -1,0 +1,67 @@
+@import "../../globalStyles.scss";
+$pageWidth: 1100px;
+$tableOfContentContainerWidth :250px;
+$postContentMarginLeft: 30px;
+$mainComponentsMarginTop: 15px;
+.postContainer {
+    position: relative;
+}
+
+.tableOfContentContainer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-($pageWidth/2));
+    top: 70px;
+    width: $tableOfContentContainerWidth;
+    z-index: 10;
+    height: calc(100vh - 200px);
+    background-color: $colorWhiteExtra;
+    border: 1px solid $colorGray;
+    padding: 15px;
+    border-radius: 5px;
+    >div {
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+.postContent {
+    white-space: pre-line;
+    position: absolute;
+    left: $tableOfContentContainerWidth + $postContentMarginLeft;
+    top: 20px; // headerwidth - tableofcontent top position
+    border: 1px solid red;
+    width: $pageWidth - $tableOfContentContainerWidth - $postContentMarginLeft;
+}
+
+.postImage {
+    width: 100%;
+}
+
+.title {
+    display: inline-block;
+    background-color: $colorDarker;
+    color: $colorWhite;
+    margin-top: -20px;
+    margin-bottom: 0;
+    padding: 5px 10px 5px 10px;
+}
+
+.tagsContainer {
+    margin-top: $mainComponentsMarginTop;
+}
+
+.singleTag {
+    display: inline-block;
+    padding: 2px 5px;
+    background-color: $colorViolet;
+    margin-right: 15px;
+    border-radius: 3px;
+    color: $colorWhiteExtra
+}
+
+.datesContainer {}
+
+.postStats {}
+
+.socialContainer {}
