@@ -115,9 +115,9 @@ export default function HomePage(): JSX.Element {
       </section>
       {/* ============================================================================= */}
       <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
-        <h2 className={styles.projectSectionTitle}>
-          Techs i use the most
-        </h2>
+        <div>
+          <h2 className={styles.projectSectionTitle}>Technologies and languages i use the most <span className={styles.exeptionalText}>(beside english, french, arabic)</span></h2>
+        </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>
             <Tag text={"Javascript"} />

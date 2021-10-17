@@ -128,7 +128,12 @@
 
 .projectSectionTitle {
     color: $colorWhiteExtra;
-    text-decoration: $secondaryTextDecoration;
+    display: inline-block;
+    border-bottom: 4px solid $colorGreenBright;
+}
+
+.exeptionalText {
+    color: $colorWhiteExtra;
 }
 
 .tagsContainer {
