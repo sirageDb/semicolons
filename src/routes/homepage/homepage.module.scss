@@ -1,94 +1,96 @@
 @import "../../globalStyles.scss";
 .pageHeading {
-    position: relative;
-    height: 100vh;
-    background: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .pageSloganContainer {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    border: 4px solid $colorOrange;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
 }
 
 .pageSlogan {
-    text-decoration: $mainTextDecoration;
+    width: 500px;
+    background-color: $colorWhiteExtra;
 }
 
-.wavyPageHeadingBackground {
-    background: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+.pageExpanation {
+    font-size: $fontsizeSheep;
 }
 
-.contactWidgetsContainer {
-    position: absolute;
-    left: 0;
-    top: 10%;
-    z-index: 20;
-    div:nth-child(1) {
-        background-color: $colorDarker;
-    }
-    div:nth-child(2) {
-        background-color: #55ACEE;
-    }
-    div:nth-child(3) {
-        background-color: #007AB9;
-    }
-    div:nth-child(4) {
-        background-color: $colorDarker;
-    }
+.contactWidgetContainer {
+    display: inline-block;
+    padding: 5px 10px 5px 5px;
+    border-radius: 20px;
+    margin-top: 10px;
 }
 
 .contactWidget {
-    position: relative;
-    // height: 50px;
-    width: 40px;
-    // background-color: $colorDarker;
-    height: 40px;
-    margin-top: 20px;
-    border-radius: 0 50% 50% 0;
+    display: flex;
+    align-items: center;
+}
+
+.githubButton {
+    background-color: $colorDarker
+}
+
+.twitterButton {
+    background-color: #55ACEE;
+}
+
+.linkedinButton {
+    background-color: #007AB9;
+}
+
+.widgetText {
+    color: $colorWhiteExtra;
+    font-size: $fontsizeSheep;
 }
 
 .contatWidgetIcon {
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    transform: translateY(-50%);
+    margin-right: 10px;
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .sectionPost {
-    text-align: center;
     margin: auto;
     margin-top: 80px
 }
 
+.sectionPostSloganContainer {
+    border: 4px solid $colorYellow;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+}
+
+.sectionPostSlogan {
+    width: 500px;
+    background-color: $colorWhiteExtra;
+}
+
+.postsButtonContainer {
+    width: 100%;
+    text-align: center;
+}
+
 .sectionPostTitle {
     text-decoration: $secondaryTextDecoration;
+    text-align: center;
 }
 
 .sectionPostData {
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 900px;
     justify-content: space-between;
     align-items: center;
     margin: auto;
     margin-top: 20px
-}
-
-.sectionPostExplanation {
-    font-size: $fontsizeSheep;
-}
-
-.sectionPostLeftContainer {
-    text-align: center;
 }
 
 .postsButton {
@@ -109,23 +111,45 @@
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .projectSection {
+    padding: 20px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin-top: 100px;
-    height: 70vh;
+    min-height: 400px;
     background: no-repeat;
     background-size: cover;
     background-position: bottom;
+    text-align: center;
+    >div {
+        color: $colorWhiteExtra;
+    }
+}
+
+.projectSectionTitle {
+    color: $colorWhiteExtra;
+    text-decoration: $secondaryTextDecoration;
+}
+
+.tagsContainer {
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.singleTag {
+    display: inline-block;
+    background-color: rgba($colorWhiteExtra, 0.2);
+    padding: 4px;
+    color: $colorWhiteExtra;
+    border-radius: 5px;
+    margin: 5px 5px;
     font-size: $fontsizeSheep;
 }
 
 .projectSectionDataContainer {
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
-    padding-top: 20px;
-}
-
-.projectSectionExplanation {
-    max-width: 450px;
-    color: $colorWhite;
+    text-align: center;
     font-size: $fontsizeSheep;
 }
 

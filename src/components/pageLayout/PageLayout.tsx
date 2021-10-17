@@ -14,7 +14,7 @@ export default function PageLayout({ children, contentMaxWidth }: IPageLayoutPro
       <header className={styles.headerContainer}>
         <div className={styles.header}>
           {/* TODO SEO for image here */}
-          <Link to={"/"}>
+          <Link to={"/"}> 
             <img alt={"Semicolons website"} src={logo} className={styles.logo} />
           </Link>
           <div>
