@@ -1,20 +1,27 @@
 @import "../../globalStyles.scss";
-.headingContainer {
+.pageHeadingContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 700px;
     margin: auto;
     margin-top: 60px;
 }
 
+.pageTitleContainer {
+    border: 5px solid $colorYellow;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+}
+
 .pageTitle {
-    text-decoration: $mainTextDecoration;
+    display: inline-block;
+    border-bottom: 4px solid $colorYellow;
 }
 
 .pageExplanation {
     font-size: $fontsizeSheep;
-    max-width: 300px;
+    width: 500px;
+    background-color: $colorWhiteExtra;
 }
 
 //======================================================
