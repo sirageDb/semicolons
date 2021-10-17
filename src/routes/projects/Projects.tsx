@@ -7,19 +7,22 @@ import testProject from "../../assets/testproject.png";
 
 export default function Projects(): JSX.Element {
   return (
-    <PageLayout contentMaxWidth={1100}>
+    <PageLayout contentMaxWidth={900}>
       <div className={styles.headingContainer}>
-        <div>
-          <h1 className={styles.pageTitle}>Projects</h1>
-          <div className={styles.pageExplanation}>
-            I <code>#define</code> my self as a fullstack developer, i mostly work on javascript technologies, Devops,
-            mobile and desktop apps and many related techs.
+        <div className={styles.pageHeadingContainer}>
+          <div className={styles.pageTitleContainer}>
+            <h1 className={styles.pageTitle}>Posts and articles zone</h1>
+            <div className={styles.pageExplanation}>
+              Here is the portfolio of my personal finished or in progress projects , some of them are also opensource.<br /> i work on various stages of projects lifecycle, starting from defining projects roadmap, UI/UX development, coding and testing till the deployment and maintenance
+            </div>
+          </div>
+          <div>
+            <img src={spacemanProjects} alt={"posts and articles page"} />
           </div>
         </div>
-        <div>
-          <img src={spacemanProjects} alt={"projects page"} />
-        </div>
       </div>
+
+
       <div className={styles.projectsContainer}>
           <ProjectCell
             image={testProject}
