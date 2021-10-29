@@ -11,11 +11,10 @@ $unifiedMaxWidth: 900px;
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 14px;
     padding-bottom: 10px;
-    border-top: 4px solid $colorGreenBright;
     border-bottom: 4px solid $colorBlue;
-    background-color: $colorWhite;
+    background-color: $colorWhiteExtra;
 }
 
 .header {
@@ -30,6 +29,7 @@ $unifiedMaxWidth: 900px;
 }
 
 .pageLink {
+    font-size: $fontsizeSheep;
     margin-left: 20px;
     color: $colorGrayDark;
     font-weight: 700;

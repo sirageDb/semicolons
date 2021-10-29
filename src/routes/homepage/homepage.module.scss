@@ -9,7 +9,7 @@
 }
 
 .pageSloganContainer {
-    border: 4px solid $colorOrange;
+    // border: 4px solid $colorOrange;
     max-width: 450px;
     padding: 0 20px 20px 20px;
 }
@@ -85,6 +85,7 @@
 
 .sectionPostData {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     max-width: 900px;
     justify-content: space-between;
@@ -121,19 +122,12 @@
     background-size: cover;
     background-position: bottom;
     text-align: center;
-    >div {
-        color: $colorWhiteExtra;
-    }
 }
 
 .projectSectionTitle {
-    color: $colorWhiteExtra;
+    color: $colorDarker;
     display: inline-block;
     border-bottom: 4px solid $colorGreenBright;
-}
-
-.exeptionalText {
-    color: $colorWhiteExtra;
 }
 
 .tagsContainer {
@@ -143,9 +137,9 @@
 
 .singleTag {
     display: inline-block;
-    background-color: rgba($colorWhiteExtra, 0.2);
+    background-color: rgba($colorGray, 0.2);
     padding: 4px;
-    color: $colorWhiteExtra;
+    color: $colorBlue;
     border-radius: 5px;
     margin: 5px 5px;
     font-size: $fontsizeSheep;
@@ -160,11 +154,11 @@
 
 .projectsButton {
     background-color: transparent;
-    color: $colorWhite;
+    color: $colorDarker;
     padding: 2px 40px;
     border-radius: 4px;
     font-size: $fontsizeSheep;
-    box-shadow: rgba($colorGreenBright, 0.40)0px 5px 10px;
+    box-shadow: rgba($colorGreenBright, 0.60)0px 0px 20px;
     border: 2px solid $colorGreenBright;
     transition: 200ms;
     &:hover {

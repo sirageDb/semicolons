@@ -6,62 +6,38 @@ import timeIcon from "../../assets/timeIcon.svg";
 import loveInteractionIcon from "../../assets/loveInteractionIcon.svg";
 import ideaInteractionIcon from "../../assets/ideaInteractionIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
-import testPostCellImage from "../../assets/testpostcellimage.svg";
+import { sharePost, loveInteract, ideaInteract } from "../../SDK/postSDK";
+import { IPostCellProps, ITagProps } from "../../lib/types";
+import apiEndPoint from "../../config/apiEndPoint";
 
-interface IPostCellProps {
-  image: string;
-  imgaeAlt : string
-  title: string;
-  tags: string[];
-  publishDate: string;
-  updatedDate?: string;
-  views: number;
-  readingTime: number;
-  likeInteractions: number;
-  ideaIneractions: number;
-  postSlug: string;
-}
 
-interface ITagProps {
-  text: string;
-}
 
 export default function PostCell({
-  image,
-  imgaeAlt,
+  imagePath,
+  imageAlt,
   title,
   tags,
-  publishDate,
-  updatedDate,
+  creationDate,
+  lastModificationDate,
   views,
-  readingTime,
-  likeInteractions,
-  ideaIneractions,
-  postSlug,
+  readometer,
+  loveInteractions,
+  ideaInteractions,
+  slug,
 }: IPostCellProps): JSX.Element {
   const Tag = ({ text }: ITagProps) => {
     return <div className={styles.tag}>#{text}</div>;
   };
 
-  const loveInteract = () => {
-    window.alert("like post");
-  };
 
-  const ideaInteract = () => {
-    window.alert("idea interact");
-  };
-
-  const sharePost = () => {
-    window.alert("share");
-  };
 
   //TODO post slug in amdin mode
   return (
     <div className={styles.container}>
-      <img src={image} alt={imgaeAlt} />
+      <img className ={styles.postImage} src={apiEndPoint + "/" + imagePath} alt={imageAlt} />
       <div className={styles.postCellDataContainer}>
         <div className={styles.titleContainer}>
-          <Link to={"./posts/" + postSlug}>
+          <Link to={"./posts/" + slug}>
             <div className={styles.title}>{title}</div>
           </Link>
         </div>
@@ -70,15 +46,15 @@ export default function PostCell({
             return <Tag key={i} text={tag} />;
           })}
         </div>
-        <div className={styles.dateContainer}>Publish date : {publishDate}</div>
-        {updatedDate && <div className={styles.dateContainer}>Updated : {updatedDate}</div>}
+        <div className={styles.dateContainer}>Publish date : {creationDate}</div>
+        {lastModificationDate && <div className={styles.dateContainer}>Updated : {lastModificationDate}</div>}
         <div className={styles.postReaderInfo}>
           <img src={eyeIcon} alt={"number of post views"} className={styles.postReaderInfoIcon} />
           <span>{views}</span>
         </div>
         <div className={styles.postReaderInfo}>
           <img src={timeIcon} alt={"post reading time"} className={styles.postReaderInfoIcon} />
-          <span>{readingTime} minutes read</span>
+          <span>{readometer} minutes read</span>
         </div>
 
         <div className={styles.socialInteractionContainer}>
@@ -90,13 +66,13 @@ export default function PostCell({
           </div>
           <div>
             <button className={styles.interactionButton} onClick={loveInteract}>
-              <div>{likeInteractions}</div>
+              <div>{loveInteractions}</div>
               <img src={loveInteractionIcon} alt={"interact with love"} />
             </button>
           </div>
           <div>
             <button className={styles.interactionButton} onClick={ideaInteract}>
-              <div>{ideaIneractions}</div>
+              <div>{ideaInteractions}</div>
               <img src={ideaInteractionIcon} alt={"interact with idea"} />
             </button>
           </div>

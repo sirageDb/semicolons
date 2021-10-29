@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import styles from "./homepage.module.scss";
 import PageLayout from "../../components/pageLayout/PageLayout";
 import githubIcon from "../../assets/githubIcon.svg";
@@ -6,16 +6,35 @@ import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { Link } from "react-router-dom";
 import PostCell from "../../components/postCell/PostCell";
+import apiEndPoint from "../../config/apiEndPoint";
 //images
 //====================
-import testpostcellimage from "../../assets/testpostcellimage.svg";
 import blob from "../../assets/blob.svg";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
+  
+  const [postData, setPostData] = useState<any>()
+  
+  useEffect(() => {
+    getLastPost();
+  }, [])
+
+
+
+  const getLastPost = async () => {
+    const apiResponse = await fetch(apiEndPoint + "/post/getposts?latest=true")
+    const extractedData = await apiResponse.json();
+    setPostData(extractedData);
+  }
+
+  
   const Tag = ({ text }: any) => {
     return <div className={styles.singleTag}># {text}</div>;
   };
+
+
+
 
   return (
     <PageLayout>
@@ -98,25 +117,25 @@ export default function HomePage(): JSX.Element {
           <div>
             <h2 className={styles.sectionPostTitle}>Lastest post</h2>
             <PostCell
-              image={testpostcellimage}
-              imgaeAlt={"this is image alt"}
+              imagePath={postData?.image?.path}
+              imageAlt={"this is image alt"}
               title={"this is post cell title"}
               tags={["javascript", "devos", "frontend", "devos", "frontend"]}
-              publishDate={"08/10/2021"}
-              updatedDate={"08/10/2021"}
+              creationDate={"08/10/2021"}
+              lastModificationDate={"08/10/2021"}
               views={22}
-              readingTime={20}
-              likeInteractions={15}
-              ideaIneractions={15}
-              postSlug={"this-is-post-cell"}
+              readometer={20}
+              loveInteractions={15}
+              ideaInteractions={15}
+              slug={"this-is-post-cell"}
             />
           </div>
         </div>
       </section>
       {/* ============================================================================= */}
-      <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
+      <section className={styles.projectSection}>
         <div>
-          <h2 className={styles.projectSectionTitle}>Technologies and languages i use the most <span className={styles.exeptionalText}>(beside english, french, arabic)</span></h2>
+          <h2 className={styles.projectSectionTitle}>Technologies and languages i use the most</h2>
         </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>
@@ -146,7 +165,7 @@ export default function HomePage(): JSX.Element {
             <Tag text={"GitLab"} />
           </div>
           <Link to={"/projects"}>
-            <button className={styles.projectsButton}>My projects zone</button>
+            <button className={styles.projectsButton}>Projects zone</button>
           </Link>
         </div>
       </section>

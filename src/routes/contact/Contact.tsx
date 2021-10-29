@@ -22,14 +22,12 @@ export default function Contact(): JSX.Element {
     }
   };
 
-
-  const resetForm = ( ) => {
+  const resetForm = () => {
     setFullName("");
     setEmail("");
     setSubject("");
     setMessage("");
-  }
-
+  };
 
   const sendForm = async () => {
     const apiRequest = await fetch(apiEndPoint + "contact/newcontact", {
@@ -50,8 +48,7 @@ export default function Contact(): JSX.Element {
       setIsErroredSubmit(false);
       setIsSuccessfullSubmit(true);
       resetForm();
-    }
-    else {
+    } else {
       setIsErroredSubmit(true);
       setIsSuccessfullSubmit(false);
     }
@@ -66,26 +63,26 @@ export default function Contact(): JSX.Element {
   };
 
   const SubmitError = (): JSX.Element => {
-    return <div className={styles.submitNotification + " " + styles.error}>
-      Sorry an error has occured, your message was not sent, please try again.
-    </div>;
+    return (
+      <div className={styles.submitNotification + " " + styles.error}>
+        Sorry an error has occured, your message was not sent, please try again.
+      </div>
+    );
   };
 
   return (
-    <PageLayout contentMaxWidth={1100}>
+    <PageLayout contentMaxWidth={900}>
       <div className={styles.pageSubContainer}>
-        <div className={styles.pageExplanation}>
-          <div>Interested in collaborating with Semicolons ?</div>
-          <div>OR you simply appreciate my work and want to support me ?</div>
+        <div className={styles.pageTitleContainer}>
+          <h1 className={styles.pageTitle}>Contact Semicolons</h1>
+          <div className={styles.pageExplanation}>
+            <div>Interested in collaborating with Semicolons ?</div>
+            <div>OR you simply appreciate my work and want to support me ?</div>
+          </div>
         </div>
-        <h1 className={styles.pageTitle}>Contact Semicolons</h1>
         <form onSubmit={onContactFormSubmit}>
-          {
-            isErroredSubmit ===true && <SubmitError />
-          }
-          {
-            isSuccessfullSubmit ===true && <SubmitConfirmation />
-          }
+          {isErroredSubmit === true && <SubmitError />}
+          {isSuccessfullSubmit === true && <SubmitConfirmation />}
           <input
             className={styles.formtextInput}
             placeholder={"Your full name (required)"}

@@ -1,17 +1,4 @@
 @import "../../globalStyles.scss";
-.pageExplanation {
-    font-size: $fontsizeSheep;
-    font-weight: bold;
-    >div {
-        margin-top: 10px;
-    }
-}
-
-.pageTitle {
-    text-decoration: $mainTextDecoration;
-    color: $colorGrayDark;
-}
-
 .pageSubContainer {
     position: relative;
     margin: auto;
@@ -19,6 +6,24 @@
     max-width: 600px;
 }
 
+.pageTitleContainer {
+    border: 5px solid $colorVioletDark;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+}
+
+.pageTitle {
+    display: inline-block;
+    border-bottom: 4px solid $colorVioletDark;
+}
+
+.pageExplanation {
+    font-size: $fontsizeSheep;
+    width: 500px;
+    background-color: $colorWhiteExtra;
+}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .formtextInput {
     display: block;
     border: 1px solid $colorGray;
@@ -32,14 +37,14 @@
 .submitButton {
     margin-top: 15px;
     color: $colorWhite;
-    background-color: $colorBlue;
+    background-color: $colorVioletDark;
     padding: 2px 25px;
     border-radius: 15px;
-    border: 2px solid $colorBlue;
+    border: 2px solid $colorVioletDark;
     transition: 200ms;
     &:hover {
         background-color: $colorWhite;
-        color: $colorBlue;
+        color: $colorVioletDark;
         transition: 200ms;
     }
 }
@@ -52,10 +57,10 @@
 
 .confirmation {
     border-color: $colorGreenBright;
-    background-color: $colorViolet;
+    background-color: $colorVioletDark;
 }
 
 .error {
-    border-color: $colorDanger;
+    border-color: $colorOrange;
     background-color: $colorDanger;
 }

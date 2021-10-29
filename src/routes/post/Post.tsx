@@ -4,21 +4,32 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import postData from "../../lib/postTest.json";
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
+import { sharePost, loveInteract, ideaInteract } from "../../SDK/postSDK";
+
 // ICONS =====================================
 import eyeIcon from "../../assets/eyeIcon.svg";
 import loveInteractionIcon from "../../assets/loveInteractionIcon.svg";
 import ideaInteractionIcon from "../../assets/ideaInteractionIcon.svg";
-import timIcon from "../../assets/timeIcon.svg";
+import timeIcon from "../../assets/timeIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
+import dateIcon from "../../assets/dateIcond.svg";
 import testPostImage from "../../assets/testpostcellimage.svg";
+import dateFormatter from "../../lib/dateFormatter";
 
 interface IPostData {
   title: string;
 }
 
+
+interface IPostParams {
+  slug : string
+}
+
 export default function Post(): JSX.Element {
   // const [postData, setPostData] = useState<IPostData>();
-  const params = useParams();
+  const params = useParams<IPostParams>();
+
+
   useEffect(() => {
     getPost();
   }, []);
@@ -30,72 +41,63 @@ export default function Post(): JSX.Element {
     // setPostData(postTest);
   };
 
-  //https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents/33433098#paragraph1
-  //https://github.com/remarkjs/react-markdown
-
-  const goToContent = (name: string) => {
-    console.log(name);
-    const wantedElement = document.querySelector(`[data-name='${name}']`);
-    console.log(wantedElement);
-
-    if (wantedElement instanceof HTMLElement) {
-      const elOffsetTop = wantedElement.offsetTop;
-      window.scrollTo(0, elOffsetTop);
-    }
+  const TagsOrganizer = (tags: string[]) => {
+    return tags.map((tag: string, i: number) => {
+      return (
+        <div className={styles.singleTag} key={i}>
+          # {tag}
+        </div>
+      );
+    });
   };
 
-
-
-
-  const TagsOrganizer = (tags : string[]) => {
-    return (
-      tags.map((tag : string, i : number) => {
-        return <div className={styles.singleTag} key={i}>#{tag}</div>
-      })
-    )
-  }
-
-
-
   return (
-    <PageLayout contentMaxWidth={1100}>
+    <PageLayout contentMaxWidth={900}>
       <div className={styles.postContainer}>
-        <div className={styles.tableOfContentContainer}>
-          {postData.tableOfContents.map((sinlgeTOC: any, i: number) => {
-            return (
-              <div key={i} onClick={() => goToContent(sinlgeTOC.url)}>
-                {sinlgeTOC.name}
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles.datesContainer}>
-          
-        </div>
+        <div className={styles.datesContainer}></div>
         <div className={styles.postContent}>
           <img className={styles.postImage} src={testPostImage} />
           <h1 className={styles.title}>{postData.title}</h1>
-          <div className={styles.tagsContainer}>
-            {
-              TagsOrganizer(postData.tags)
-            }
+          <div className={styles.tagsContainer}>{TagsOrganizer(postData.tags)}</div>
+          <div className={styles.postStatsContainer}>
+            <div className={styles.datesContainer}>
+              <img className={styles.postStatIcon} src={dateIcon} alt={"post publish date"} />
+              <div>{dateFormatter(postData.creationDate)}</div>
+              <div>{postData.lastModificationDate && <span>Last mofidication : {dateFormatter(postData.lastModificationDate)}</span>}</div>
+            </div>
+            <div className={styles.readometerContainer}>
+              <img className={styles.postStatIcon} src={timeIcon} alt={"minutes to read the post"} />
+              <div>{postData.readometer}</div>
+            </div>
+            <div className={styles.viewsContainer}>
+              <img className={styles.postStatIcon} src={eyeIcon} alt={"post views counter"} />
+              <div>{postData.views}</div>
+            </div>
           </div>
-
-          <div className={styles.postStats}></div>
-          <div className={styles.socialContainer}></div>
-
+          <div className={styles.socialInteractionContainer}>
+            <div className={styles.shareButtonContainer}>
+              <button onClick={sharePost} className={styles.shareButton}>
+                <img src={shareIcon} alt={"share post"} />
+                <span className={styles.shareText}>Share</span>
+              </button>
+            </div>
+            <div>
+              <button className={styles.interactionButton} onClick={loveInteract}>
+                <img src={loveInteractionIcon} alt={"interact with love"} />
+                <div>{postData.interactions.love}</div>
+              </button>
+            </div>
+            <div>
+              <button className={styles.interactionButton} onClick={ideaInteract}>
+                <img src={ideaInteractionIcon} alt={"interact with idea"} />
+                <div>{postData.interactions.idea}</div>
+              </button>
+            </div>
+          </div>
           <div className={styles.postText}>
             <ReactMarkdown>{postData.textContent}</ReactMarkdown>
           </div>
         </div>
-
-        {/*         {postData.content.map((singleContentSection, i) => {
-          return (
-            <div key={i} data-name={singleContentSection.name}>
-              <ReactMarkdown>{singleContentSection.text}</ReactMarkdown>
-            </div>
-          );
-        })} */}
       </div>
     </PageLayout>
   );
