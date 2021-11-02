@@ -11,7 +11,7 @@ import apiEndPoint from "../../config/apiEndPoint";
 //====================
 import blob from "../../assets/blob.svg";
 import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
-import readerIllustration from "../../assets/reader.svg";
+import lighthouseIllustration from "../../assets/lighthouse.svg";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
@@ -96,19 +96,7 @@ export default function HomePage(): JSX.Element {
       {/* ============================================================================= */}
       <section className={styles.sectionPost}>
         <div className={styles.sectionPostData}>
-          <div className={styles.sectionPostSloganContainer}>
-            lighthouse undraw
-            <img className={styles.readerIllustration} src={readerIllustration} alt={"read my posts and tutorials"} />
-            <h2 className={styles.sectionPostSlogan}>
-              In Semicolons blog you can find posts about various subjects in the tech industry
-            </h2>
-            <div className={styles.postsButtonContainer}>
-              <Link to={"/posts"}>
-                <button className={styles.postsButton}>All my posts</button>
-              </Link>
-            </div>
-          </div>
-          <div>
+        <div>
             <h2 className={styles.sectionPostTitle}>Lastest post</h2>
             <PostCell
               imagePath={postData?.image?.path}
@@ -124,6 +112,18 @@ export default function HomePage(): JSX.Element {
               slug={"this-is-post-cell"}
             />
           </div>
+          <div className={styles.sectionPostSloganContainer}>
+            <img className={styles.lighthouseIllustration} src={lighthouseIllustration} alt={"read my posts and tutorials"} />
+            <h2>
+              In Semicolons blog you can find posts about various subjects in the tech industry
+            </h2>
+            <div className={styles.postsButtonContainer}>
+              <Link to={"/posts"}>
+                <button className={styles.postsButton}>All my posts</button>
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
