@@ -107,8 +107,8 @@
 }
 
 .sectionPostTitle {
-    text-decoration: $secondaryTextDecoration;
-    text-align: center;
+    display: inline-block;
+    border-bottom: 4px solid $colorGreenBright;
     margin-top: 0;
 }
 
@@ -146,6 +146,7 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 60px;
+    margin-bottom: -110px;
     min-height: 400px;
     background: no-repeat;
     background-size: cover;

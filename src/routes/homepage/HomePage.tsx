@@ -12,10 +12,12 @@ import apiEndPoint from "../../config/apiEndPoint";
 import blob from "../../assets/blob.svg";
 import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 import lighthouseIllustration from "../../assets/lighthouse.svg";
+import { IPost } from "../../lib/types";
+import dateFormatter from "../../lib/dateFormatter";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
-  const [postData, setPostData] = useState<any>();
+  const [postData, setPostData] = useState<IPost>();
 
   useEffect(() => {
     getLastPost();
@@ -28,7 +30,7 @@ export default function HomePage(): JSX.Element {
   };
 
   const Tag = ({ text }: any) => {
-    return <div className={styles.singleTag}># {text}</div>;
+    return <div className={styles.singleTag}>#&nbsp; {text}</div>;
   };
 
   return (
@@ -96,43 +98,48 @@ export default function HomePage(): JSX.Element {
       {/* ============================================================================= */}
       <section className={styles.sectionPost}>
         <div className={styles.sectionPostData}>
-        <div>
-            <h2 className={styles.sectionPostTitle}>Lastest post</h2>
-            <PostCell
-              imagePath={postData?.image?.path}
-              imageAlt={"this is image alt"}
-              title={"this is post cell title"}
-              tags={["javascript", "devos", "frontend", "devos", "frontend"]}
-              creationDate={"08/10/2021"}
-              lastModificationDate={"08/10/2021"}
-              views={22}
-              readometer={20}
-              loveInteractions={15}
-              ideaInteractions={15}
-              slug={"this-is-post-cell"}
-            />
+          <div>
+            <div>
+              <h2 className={styles.sectionPostTitle}>Latest post</h2>
+            </div>
+            {postData && (
+              <PostCell
+                imagePath={postData.image.path}
+                imageAlt={postData.image.alt}
+                title={postData.title}
+                tags={postData.tags}
+                creationDate={dateFormatter(postData.creationDate)}
+                lastModificationDate={dateFormatter(postData.lastModificationDate)}
+                views={postData.views}
+                readometer={postData.readometer}
+                loveInteractions={postData.interactions.love}
+                ideaInteractions={postData.interactions.idea}
+                slug={postData.slug}
+              />
+            )}
           </div>
           <div className={styles.sectionPostSloganContainer}>
-            <img className={styles.lighthouseIllustration} src={lighthouseIllustration} alt={"read my posts and tutorials"} />
-            <h2>
-              In Semicolons blog you can find posts about various subjects in the tech industry
-            </h2>
+            <img
+              className={styles.lighthouseIllustration}
+              src={lighthouseIllustration}
+              alt={"read my posts and tutorials"}
+            />
+            <h2>In Semicolons blog you can find posts about various subjects in the tech industry</h2>
             <div className={styles.postsButtonContainer}>
               <Link to={"/posts"}>
                 <button className={styles.postsButton}>All my posts</button>
               </Link>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* style={{ backgroundImage: `url(${blob})` }} */}
       {/* ============================================================================= */}
-        
+
       <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
         <div>
-          <h2 className={styles.projectSectionTitle}>Technologies and languages i use the most</h2>
+          <h2 className={styles.projectSectionTitle}>Technologies and languages</h2>
         </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>
