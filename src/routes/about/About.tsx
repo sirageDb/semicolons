@@ -5,7 +5,7 @@ import meCircle from "../../assets/meCircle.png";
 
 export default function About(): JSX.Element {
   return (
-    <PageLayout contentMaxWidth={1100}>
+    <PageLayout contentMaxWidth={900}>
       <h1 className={styles.pageTitle}>About me</h1>
       <div className={styles.contentContainer}>
         <div className={styles.contentText}>
@@ -34,7 +34,9 @@ export default function About(): JSX.Element {
             </div>
           </div>
         </div>
-          <img  className={styles.imageContainer} src={meCircle} alt={"sirage al dbiyat image personal website blog"} />
+        <div className={styles.imageContainer}>
+          <img className={styles.image} src={meCircle} alt={"sirage al dbiyat image personal website blog"} />
+        </div>
       </div>
     </PageLayout>
   );
