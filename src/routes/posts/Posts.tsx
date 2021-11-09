@@ -45,18 +45,18 @@ export default function Posts(): JSX.Element {
           return (
             <PostCell
               key={i}
-              _id = {post?._id}
+              _id={post?._id}
               imagePath={post?.image?.path}
-              imageAlt={"this is image alt"}
-              title={"this is post cell title"}
-              tags={["javascript", "devos", "frontend", "devos", "frontend"]}
-              creationDate={"08/10/2021"}
-              lastModificationDate={"08/10/2021"}
-              views={22}
-              readometer={20}
-              loveInteractions={15}
-              ideaInteractions={15}
-              slug={"this-is-post-cell"}
+              imageAlt={post?.image?.alt}
+              title={post.title}
+              tags={post.tags}
+              creationDate={dateFormatter(post.creationDate)}
+              lastModificationDate={dateFormatter(post.lastModificationDate)}
+              views={post.views}
+              readometer={post.readometer}
+              loveInteractions={post.interactions.love}
+              ideaInteractions={post.interactions.idea}
+              slug={post.slug}
             />
           );
         })}
