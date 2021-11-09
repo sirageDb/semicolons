@@ -104,6 +104,7 @@ export default function HomePage(): JSX.Element {
             </div>
             {postData && (
               <PostCell
+                _id={postData._id}
                 imagePath={postData.image.path}
                 imageAlt={postData.image.alt}
                 title={postData.title}

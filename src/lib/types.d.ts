@@ -20,6 +20,7 @@ export interface IInteraction {
 } 
 
 export interface IPost {
+    private _id: string;
     title: string,
     content: string,
     tags: string[],
@@ -41,6 +42,7 @@ export interface ITagProps {
   
   
 export interface IPostCellProps {
+    _id : string
     title : string,
     tags : string[],
     creationDate : string

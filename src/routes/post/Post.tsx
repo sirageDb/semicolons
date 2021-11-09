@@ -4,7 +4,7 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import postData from "../../lib/postTest.json";
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
-import { sharePost, loveInteract, ideaInteract } from "../../SDK/postSDK";
+import { sharePost, loveInteractionController, ideaInteractionController } from "../../SDK/postSDK";
 
 // ICONS =====================================
 import eyeIcon from "../../assets/eyeIcon.svg";
@@ -13,8 +13,8 @@ import ideaInteractionIcon from "../../assets/ideaInteractionIcon.svg";
 import timeIcon from "../../assets/timeIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
 import dateIcon from "../../assets/dateIcond.svg";
-import testPostImage from "../../assets/testpostcellimage.svg";
 import dateFormatter from "../../lib/dateFormatter";
+import testProjectIllustration from "../../assets/testproject.png";
 
 interface IPostData {
   title: string;
@@ -56,7 +56,7 @@ export default function Post(): JSX.Element {
       <div className={styles.postContainer}>
         <div className={styles.datesContainer}></div>
         <div className={styles.postContent}>
-          <img className={styles.postImage} src={testPostImage} />
+          <img className={styles.postImage} src={testProjectIllustration} />
           <h1 className={styles.title}>{postData.title}</h1>
           <div className={styles.tagsContainer}>{TagsOrganizer(postData.tags)}</div>
           <div className={styles.postStatsContainer}>
@@ -82,13 +82,13 @@ export default function Post(): JSX.Element {
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={loveInteract}>
+              <button className={styles.interactionButton} onClick={() => loveInteractionController("a")}>
                 <img src={loveInteractionIcon} alt={"interact with love"} />
                 <div>{postData.interactions.love}</div>
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={ideaInteract}>
+              <button className={styles.interactionButton} onClick={() => ideaInteractionController("a")}>
                 <img src={ideaInteractionIcon} alt={"interact with idea"} />
                 <div>{postData.interactions.idea}</div>
               </button>

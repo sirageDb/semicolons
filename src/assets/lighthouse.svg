@@ -1,193 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   data-name="Layer 1"
-   width="970.875"
-   height="776"
-   viewBox="0 0 970.875 776"
-   version="1.1"
-   id="svg191"
-   sodipodi:docname="lighthouse.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+<svg data-name="Layer 1" width="970.875" height="776" viewBox="0 0 970.875 776" version="1.1" id="svg191" sodipodi:docname="lighthouse.svg" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs195" />
-  <sodipodi:namedview
-     id="namedview193"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     showguides="true"
-     inkscape:guide-bbox="true"
-     inkscape:zoom="0.64"
-     inkscape:cx="469.53125"
-     inkscape:cy="432.03125"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg191" />
-  <title
-     id="title103">light_the_fire</title>
-  <ellipse
-     cx="485.4375"
-     cy="739"
-     rx="485.4375"
-     ry="37"
-     fill="#3f3d56"
-     id="ellipse105"
-     style="stroke-width:0.929391" />
-  <ellipse
-     cx="484"
-     cy="216"
-     rx="58"
-     ry="53"
-     fill="#6c63ff"
-     id="ellipse107" />
-  <path
-     d="m 586.5,701.5 c 0,0 -123.5,49.5 -211,1 l 0.81,-14 7.54,-130 7.13,-123 8.52,-147 h 164 l 7.88,147 6.6,123 6.97,130 z"
-     fill="#3f3d56"
-     id="path109" />
-  <path
-     d="M 375.5,288.5"
-     fill="none"
-     stroke="#2f2e41"
-     stroke-miterlimit="10"
-     id="path111" />
-  <path
-     d="m 586.5,701.5 c 0,0 -113.5,50.5 -211,1 l 0.81,-14 h 208.64 z"
-     fill="#6c63ff"
-     id="path113"
-     style="fill:#0067ff;fill-opacity:1" />
-  <polygon
-     points="621.38,435.5 627.98,558.5 433.85,558.5 440.98,435.5 "
-     fill="#6c63ff"
-     id="polygon115"
-     style="fill:#0067ff;fill-opacity:1"
-     transform="translate(-50)" />
-  <rect
-     x="389.5"
-     y="272.5"
-     width="184"
-     height="20"
-     fill="#3f3d56"
-     id="rect117" />
-  <rect
-     x="389.5"
-     y="205.5"
-     width="184"
-     height="20"
-     fill="#3f3d56"
-     id="rect119" />
-  <rect
-     x="405.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect121" />
-  <rect
-     x="434.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect123" />
-  <rect
-     x="463.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect125" />
-  <rect
-     x="492.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect127" />
-  <rect
-     x="521.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect129" />
-  <rect
-     x="434.5"
-     y="146"
-     width="11"
-     height="68.5"
-     fill="#3f3d56"
-     id="rect131" />
-  <rect
-     x="463.5"
-     y="146"
-     width="11"
-     height="68.5"
-     fill="#3f3d56"
-     id="rect133" />
-  <rect
-     x="492.5"
-     y="146"
-     width="11"
-     height="68.5"
-     fill="#3f3d56"
-     id="rect135" />
-  <rect
-     x="521.5"
-     y="146"
-     width="11"
-     height="68.5"
-     fill="#3f3d56"
-     id="rect137" />
-  <rect
-     x="550.5"
-     y="225.5"
-     width="11"
-     height="52"
-     fill="#3f3d56"
-     id="rect139" />
-  <rect
-     x="406"
-     y="154"
-     width="11"
-     height="61"
-     fill="#3f3d56"
-     id="rect141" />
-  <rect
-     x="551"
-     y="154"
-     width="11"
-     height="61"
-     fill="#3f3d56"
-     id="rect143" />
-  <polygon
-     points="440,105.5 532,31 624,105.5 624,165.5 440,165.5 "
-     fill="#3f3d56"
-     id="polygon145"
-     transform="translate(-50)" />
-  <circle
-     cx="484"
-     cy="215"
-     r="154.69511"
-     fill="#6c63ff"
-     opacity="0.3"
-     id="circle147" />
-  <circle
-     cx="484"
-     cy="215"
-     r="215"
-     fill="#6c63ff"
-     opacity="0.3"
-     id="circle149"
-     style="fill:#0067ff;fill-opacity:1" />
+   <defs id="defs195" />
+   <sodipodi:namedview id="namedview193" pagecolor="#505050" bordercolor="#eeeeee" borderopacity="1" inkscape:pageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="0" showgrid="false" showguides="true" inkscape:guide-bbox="true" inkscape:zoom="0.64" inkscape:cx="469.53125" inkscape:cy="432.03125" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg191" />
+   <title id="title103">light_the_fire</title>
+   <ellipse cx="485.4375" cy="739" rx="485.4375" ry="37" fill="#3f3d56" id="ellipse105" style="stroke-width:0.929391" />
+   <ellipse cx="484" cy="216" rx="58" ry="53" fill="#6c63ff" id="ellipse107" />
+   <path d="m 586.5,701.5 c 0,0 -123.5,49.5 -211,1 l 0.81,-14 7.54,-130 7.13,-123 8.52,-147 h 164 l 7.88,147 6.6,123 6.97,130 z" fill="#3f3d56" id="path109" />
+   <path d="M 375.5,288.5" fill="none" stroke="#2f2e41" stroke-miterlimit="10" id="path111" />
+   <path d="m 586.5,701.5 c 0,0 -113.5,50.5 -211,1 l 0.81,-14 h 208.64 z" fill="#6c63ff" id="path113" style="fill:#0067ff;fill-opacity:1" />
+   <polygon points="621.38,435.5 627.98,558.5 433.85,558.5 440.98,435.5 " fill="#6c63ff" id="polygon115" style="fill:#0067ff;fill-opacity:1" transform="translate(-50)" />
+   <rect x="389.5" y="272.5" width="184" height="20" fill="#3f3d56" id="rect117" />
+   <rect x="389.5" y="205.5" width="184" height="20" fill="#3f3d56" id="rect119" />
+   <rect x="405.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect121" />
+   <rect x="434.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect123" />
+   <rect x="463.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect125" />
+   <rect x="492.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect127" />
+   <rect x="521.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect129" />
+   <rect x="434.5" y="146" width="11" height="68.5" fill="#3f3d56" id="rect131" />
+   <rect x="463.5" y="146" width="11" height="68.5" fill="#3f3d56" id="rect133" />
+   <rect x="492.5" y="146" width="11" height="68.5" fill="#3f3d56" id="rect135" />
+   <rect x="521.5" y="146" width="11" height="68.5" fill="#3f3d56" id="rect137" />
+   <rect x="550.5" y="225.5" width="11" height="52" fill="#3f3d56" id="rect139" />
+   <rect x="406" y="154" width="11" height="61" fill="#3f3d56" id="rect141" />
+   <rect x="551" y="154" width="11" height="61" fill="#3f3d56" id="rect143" />
+   <polygon points="440,105.5 532,31 624,105.5 624,165.5 440,165.5 " fill="#3f3d56" id="polygon145" transform="translate(-50)" />
+   <circle cx="484" cy="215" r="154.69511" fill="#6c63ff" opacity="0.3" id="circle147" />
+   <circle cx="484" cy="215" r="215" fill="#6c63ff" opacity="0.3" id="circle149" style="fill:#0067ff;fill-opacity:1" />
 </svg>

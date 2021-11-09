@@ -3,7 +3,6 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import PostCell from "../../components/postCell/PostCell";
 import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
 import styles from "./posts.module.scss";
-import testpostcellimage from "../../assets/testpostcellimage.svg";
 import apiEndPoint from "../../config/apiEndPoint";
 import { IPost } from "../../lib/types";
 import dateFormatter from "../../lib/dateFormatter";
@@ -42,24 +41,25 @@ export default function Posts(): JSX.Element {
         </div>
       </div>
       <div className={styles.postsContainer}>
-{/*         {posts?.map((post: IPost, i: number) => {
+        {posts?.map((post: IPost, i: number) => {
           return (
             <PostCell
               key={i}
-              image={post.image.path}
-              imgaeAlt={post.image.alt}
-              title={post.title}
-              tags={post.hashtags}
-              publishDate={dateFormatter(post.creationDate)}
-              updatedDate={dateFormatter(post.lastModificationDate)}
-              views={post.views}
-              readingTime={post.readometer}
-              likeInteractions={post.interactions.love}
-              ideaIneractions={post.interactions.idea}
-              slug={post.slug}
+              _id = {post?._id}
+              imagePath={post?.image?.path}
+              imageAlt={"this is image alt"}
+              title={"this is post cell title"}
+              tags={["javascript", "devos", "frontend", "devos", "frontend"]}
+              creationDate={"08/10/2021"}
+              lastModificationDate={"08/10/2021"}
+              views={22}
+              readometer={20}
+              loveInteractions={15}
+              ideaInteractions={15}
+              slug={"this-is-post-cell"}
             />
           );
-        })} */}
+        })}
       </div>
     </PageLayout>
   );

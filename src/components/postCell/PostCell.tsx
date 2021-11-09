@@ -6,13 +6,14 @@ import timeIcon from "../../assets/timeIcon.svg";
 import loveInteractionIcon from "../../assets/loveInteractionIcon.svg";
 import ideaInteractionIcon from "../../assets/ideaInteractionIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
-import { sharePost, loveInteract, ideaInteract } from "../../SDK/postSDK";
+import { sharePost, loveInteractionController, ideaInteractionController } from "../../SDK/postSDK";
 import { IPostCellProps, ITagProps } from "../../lib/types";
 import apiEndPoint from "../../config/apiEndPoint";
 
 
 
 export default function PostCell({
+  _id,
   imagePath,
   imageAlt,
   title,
@@ -26,10 +27,8 @@ export default function PostCell({
   slug,
 }: IPostCellProps): JSX.Element {
   const Tag = ({ text }: ITagProps) => {
-    return <div className={styles.tag}>#{text}</div>;
+    return <div className={styles.tag}># {text}</div>;
   };
-
-
 
   //TODO post slug in amdin mode
   return (
@@ -65,13 +64,13 @@ export default function PostCell({
             </button>
           </div>
           <div>
-            <button className={styles.interactionButton} onClick={loveInteract}>
+            <button className={styles.interactionButton} onClick={() => loveInteractionController(_id)}>
               <div>{loveInteractions}</div>
               <img src={loveInteractionIcon} alt={"interact with love"} />
             </button>
           </div>
           <div>
-            <button className={styles.interactionButton} onClick={ideaInteract}>
+            <button className={styles.interactionButton} onClick={() => ideaInteractionController(_id)}>
               <div>{ideaInteractions}</div>
               <img src={ideaInteractionIcon} alt={"interact with idea"} />
             </button>
