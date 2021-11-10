@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./postCell.module.scss";
-import eyeIcon from "../../assets/eyeIcon.svg";
-import timeIcon from "../../assets/timeIcon.svg";
+
+import { sharePost, readPost, loveInteractionController, ideaInteractionController } from "../../SDK/postSDK";
+import { IPostCellProps, ITagProps } from "../../lib/types";
+import apiEndPoint from "../../config/apiEndPoint";
+import wavyPostCellbackground from "../../assets/wavesNegativePostCell.svg";
+//ICONS ======
 import loveInteractionIcon from "../../assets/loveInteractionIcon.svg";
 import ideaInteractionIcon from "../../assets/ideaInteractionIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
-import { sharePost, loveInteractionController, ideaInteractionController } from "../../SDK/postSDK";
-import { IPostCellProps, ITagProps } from "../../lib/types";
-import apiEndPoint from "../../config/apiEndPoint";
-
-
+import arrowForward from "../../assets/arrowForward.svg";
 
 export default function PostCell({
   _id,
@@ -18,13 +18,10 @@ export default function PostCell({
   imageAlt,
   title,
   tags,
-  creationDate,
-  lastModificationDate,
-  views,
-  readometer,
   loveInteractions,
   ideaInteractions,
   slug,
+  thrillDescription,
 }: IPostCellProps): JSX.Element {
   const Tag = ({ text }: ITagProps) => {
     return <div className={styles.tag}># {text}</div>;
@@ -33,49 +30,52 @@ export default function PostCell({
   //TODO post slug in amdin mode
   return (
     <div className={styles.container}>
-      <img className ={styles.postImage} src={apiEndPoint + "/" + imagePath} alt={imageAlt} />
       <div className={styles.postCellDataContainer}>
         <div className={styles.titleContainer}>
           <Link to={"./posts/" + slug}>
             <div className={styles.title}>{title}</div>
           </Link>
         </div>
-        <div className={styles.tagsContainer}>
-          {tags.map((tag, i) => {
-            return <Tag key={i} text={tag} />;
-          })}
-        </div>
-        <div className={styles.dateContainer}>Publish date : {creationDate}</div>
-        {lastModificationDate && <div className={styles.dateContainer}>Updated : {lastModificationDate}</div>}
-        <div className={styles.postReaderInfo}>
-          <img src={eyeIcon} alt={"number of post views"} className={styles.postReaderInfoIcon} />
-          <span>{views}</span>
-        </div>
-        <div className={styles.postReaderInfo}>
-          <img src={timeIcon} alt={"post reading time"} className={styles.postReaderInfoIcon} />
-          <span>{readometer} minutes read</span>
-        </div>
-
-        <div className={styles.socialInteractionContainer}>
-          <div className={styles.shareButtonContainer}>
-            <button onClick={sharePost} className={styles.shareButton}>
-              <img src={shareIcon} alt={"share post"} />
-              <span className={styles.shareText}>Share</span>
-            </button>
-          </div>
+        <div className={styles.thrillDescriptionContainer}>
           <div>
-            <button className={styles.interactionButton} onClick={() => loveInteractionController(_id)}>
-              <div>{loveInteractions}</div>
-              <img src={loveInteractionIcon} alt={"interact with love"} />
-            </button>
+          {thrillDescription}
           </div>
-          <div>
-            <button className={styles.interactionButton} onClick={() => ideaInteractionController(_id)}>
-              <div>{ideaInteractions}</div>
-              <img src={ideaInteractionIcon} alt={"interact with idea"} />
-            </button>
+          <div className={styles.tagsContainer}>
+            {tags.map((tag, i) => {
+              return <Tag key={i} text={tag} />;
+            })}
           </div>
         </div>
+        <div className={styles.interactionContainer}>
+          <div className={styles.socialInteractionContainer}>
+            <div>
+              <button onClick={sharePost} className={styles.button + " " + styles.shareButton}>
+                <img src={shareIcon} alt={"share post"} />
+                <span>Share</span>
+              </button>
+            </div>
+            <div>
+              <button className={styles.interactionButton} onClick={() => loveInteractionController(_id)}>
+                <div>{loveInteractions}</div>
+                <img src={loveInteractionIcon} alt={"interact with love"} />
+              </button>
+            </div>
+            <div>
+              <button className={styles.interactionButton} onClick={() => ideaInteractionController(_id)}>
+                <div>{ideaInteractions}</div>
+                <img src={ideaInteractionIcon} alt={"interact with idea"} />
+              </button>
+            </div>
+          </div>
+            <button onClick={readPost} className={styles.button + " " + styles.readButton}>
+              <span>Read</span>
+              <img src={arrowForward} alt={"share post"} />
+            </button>
+        </div>
+      </div>
+      <div className={styles.postImageContainer}>
+        <img className={styles.postImageWavy} src={wavyPostCellbackground} alt={"ok"} />
+        <img className={styles.postImage} src={apiEndPoint + "/" + imagePath} alt={imageAlt} />
       </div>
     </div>
   );

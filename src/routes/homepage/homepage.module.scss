@@ -88,11 +88,11 @@
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .sectionPost {
     margin: auto;
-    margin-top: 60px
+    margin-top: 60px;
 }
 
-.lighthouseIllustration {
-    max-width: 300px;
+.headIllustration {
+    max-width: 280px;
     margin: auto;
 }
 
@@ -118,7 +118,7 @@
     flex-wrap: wrap;
     max-width: 900px;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: auto;
     margin-top: 20px
 }

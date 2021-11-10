@@ -59,3 +59,8 @@ export const ideaInteractionController = (postId: string): void => {
 export const sharePost = () => {
     window.alert("share");
 };
+
+
+export const readPost = () => {
+    window.alert("read");
+}

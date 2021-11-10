@@ -109,19 +109,16 @@ export default function HomePage(): JSX.Element {
                 imageAlt={postData.image.alt}
                 title={postData.title}
                 tags={postData.tags}
-                creationDate={dateFormatter(postData.creationDate)}
-                lastModificationDate={dateFormatter(postData.lastModificationDate)}
-                views={postData.views}
-                readometer={postData.readometer}
                 loveInteractions={postData.interactions.love}
                 ideaInteractions={postData.interactions.idea}
                 slug={postData.slug}
+                thrillDescription= {postData.thrillDescription}
               />
             )}
           </div>
           <div className={styles.sectionPostSloganContainer}>
             <img
-              className={styles.lighthouseIllustration}
+              className={styles.headIllustration}
               src={lighthouseIllustration}
               alt={"read my posts and tutorials"}
             />

@@ -50,13 +50,10 @@ export default function Posts(): JSX.Element {
               imageAlt={post?.image?.alt}
               title={post.title}
               tags={post.tags}
-              creationDate={dateFormatter(post.creationDate)}
-              lastModificationDate={dateFormatter(post.lastModificationDate)}
-              views={post.views}
-              readometer={post.readometer}
               loveInteractions={post.interactions.love}
               ideaInteractions={post.interactions.idea}
               slug={post.slug}
+              thrillDescription= {post.thrillDescription}
             />
           );
         })}

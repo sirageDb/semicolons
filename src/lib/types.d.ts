@@ -31,7 +31,9 @@ export interface IPost {
     interactions : Interaction,
     readometer : number,
     views : number,
-    slug : string
+    slug : string,
+    thrillDescription : string
+
 }
 
 
@@ -45,15 +47,12 @@ export interface IPostCellProps {
     _id : string
     title : string,
     tags : string[],
-    creationDate : string
-    lastModificationDate : string
     slug: string,
     imagePath : string,
     imageAlt : string,
     loveInteractions : number,
     ideaInteractions : number,
-    readometer : number,
-    views : number
+    thrillDescription : string
   }
   
 
