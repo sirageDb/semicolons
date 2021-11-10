@@ -1,17 +1,17 @@
 import React from "react";
 import PageLayout from "../../components/pageLayout/PageLayout";
 import styles from "./about.module.scss";
-import me from "../../assets/me.svg";
+import meCircle from "../../assets/meCircle.png";
 
 export default function About(): JSX.Element {
   return (
-    <PageLayout contentMaxWidth={1100}>
+    <PageLayout contentMaxWidth={900}>
       <h1 className={styles.pageTitle}>About me</h1>
       <div className={styles.contentContainer}>
         <div className={styles.contentText}>
           <div className={styles.section}>
             <div className={styles.sectionHeading}>
-              <span className={styles.sectionTitle}>Who am i</span> .... Simple question …. complicated answer(s)
+              <span className={styles.sectionTitle}>Who am i .... Simple question …. complicated answer(s)</span>
             </div>
             <div className={styles.sectionExplanation}>
               My name isSirage Al dbiyat, I am a full stack web developer at KOLABS-STUDIO in Lyon, France. Also
@@ -34,7 +34,9 @@ export default function About(): JSX.Element {
             </div>
           </div>
         </div>
-          <img  className={styles.imageContainer} src={me} alt={"sirage al dbiyat image personal website blog"} />
+        <div className={styles.imageContainer}>
+          <img className={styles.image} src={meCircle} alt={"sirage al dbiyat image personal website blog"} />
+        </div>
       </div>
     </PageLayout>
   );

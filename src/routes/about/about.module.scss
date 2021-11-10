@@ -19,7 +19,9 @@
     max-width: 250px;
 }
 
-.image {}
+.image {
+    max-width: 250px;
+}
 
 .section {
     margin-bottom: 20px;
@@ -30,8 +32,9 @@
 }
 
 .sectionTitle {
+    display: inline-block;
+    border-bottom: 4px solid $colorGreenBright;
     font-size: $fontsizeSheep;
-    text-decoration: $secondaryTextDecoration;
     font-weight: bold;
 }
 

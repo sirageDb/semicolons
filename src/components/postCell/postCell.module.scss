@@ -1,20 +1,61 @@
 @import "../../globalStyles.scss";
+$cellMaxWidth: 360px;
+$borderWidth: 2px;
 .container {
     text-align: left;
     display: inline-block;
-    border: 1px solid $colorGray;
+    border: $borderWidth solid $colorDarkest;
     border-radius: 5px;
-    max-width: 323px;
+    max-width: $cellMaxWidth;
+    background-color: $colorWhiteExtra;
     color: $colorGrayDark;
+    transition: border-color 300ms;
     * {
         color: $colorDarker;
+    }
+    &:hover {
+        border-color: $colorOrange;
+        transition: border-color 300ms;
     }
 }
 
 .postCellDataContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
+    height: 300px;
+}
+
+.thrillDescriptionContainer {
+    height: 300px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        width: none;
+    }
+}
+
+.tagsContainer {
+    margin-top: 10px;
+}
+
+//=====================================
+.postImageContainer {
+    position: relative;
+}
+
+.postImageWavy {
+    position: absolute;
+}
+
+.postImage {
+    border-radius: 0 0 5px 5px;
+    max-width: $cellMaxWidth - $borderWidth - 1;
+    margin-bottom: -4px;
 }
 
 .titleContainer {
@@ -51,7 +92,6 @@
 //==========================================================
 .postReaderInfo {
     display: flex;
-    margin-bottom: 10px;
 }
 
 .postReaderInfoIcon {
@@ -59,9 +99,15 @@
 }
 
 //==========================================================
-.socialInteractionContainer {
+.interactionContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.socialInteractionContainer {
+    display: flex;
+    align-items: center;
 }
 
 .interactionButton {
@@ -73,21 +119,31 @@
     }
 }
 
-.shareButtonContainer {
-    flex: 1;
+.button {
+    display: flex;
+    border: 2px solid;
+    border-radius: 3px;
+    padding: 2px 10px;
 }
 
 .shareButton {
-    display: flex;
-    border: 2px solid $colorBlue;
-    border-radius: 3px;
-    color: $colorBlue;
-    padding: 2px 10px;
+    border-color: $colorBlue;
+    >span {
+        color: $colorBlue
+    }
     >img {
         margin-right: 5px;
     }
+}
+
+.readButton {
+    border-color: $colorDarker;
+    background-color: $colorDarker;
     >span {
-        color: $colorBlue
+        color: $colorWhiteExtra
+    }
+    >img {
+        margin-left: 10px;
     }
 }
 

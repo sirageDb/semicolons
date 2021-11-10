@@ -8,6 +8,7 @@
 }
 
 .pageTitleContainer {
+    background-color: $colorWhiteExtra;
     border: 5px solid $colorYellow;
     max-width: 450px;
     padding: 0 20px 20px 20px;
@@ -19,7 +20,9 @@
 }
 
 .pageExplanation {
+    margin: 0;
     font-size: $fontsizeSheep;
+    font-weight: inherit;
     width: 500px;
     background-color: $colorWhiteExtra;
 }

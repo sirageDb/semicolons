@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./homepage.module.scss";
 import PageLayout from "../../components/pageLayout/PageLayout";
 import githubIcon from "../../assets/githubIcon.svg";
@@ -6,31 +6,47 @@ import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { Link } from "react-router-dom";
 import PostCell from "../../components/postCell/PostCell";
+import apiEndPoint from "../../config/apiEndPoint";
 //images
 //====================
-import testpostcellimage from "../../assets/testpostcellimage.svg";
 import blob from "../../assets/blob.svg";
+import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
+import lighthouseIllustration from "../../assets/lighthouse.svg";
+import { IPost } from "../../lib/types";
+import dateFormatter from "../../lib/dateFormatter";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
+  const [postData, setPostData] = useState<IPost>();
+
+  useEffect(() => {
+    getLastPost();
+  }, []);
+
+  const getLastPost = async () => {
+    const apiResponse = await fetch(apiEndPoint + "/post/getposts?latest=true");
+    const extractedData = await apiResponse.json();
+    setPostData(extractedData);
+  };
+
   const Tag = ({ text }: any) => {
-    return <div className={styles.singleTag}># {text}</div>;
+    return <div className={styles.singleTag}>#&nbsp; {text}</div>;
   };
 
   return (
     <PageLayout>
-      <div className={styles.pageHeading}>
-        <div className={styles.pageSloganContainer}>
-          <h1 className={styles.pageSlogan}>
-            Hey !, I am Sirage, welcome to my Semicolons zone where i share my tech knowledge
-          </h1>
-          <div className={styles.pageExpanation}>
-            As a full stack web developer i can work on various stages of a web or a mobile app development as well as
-            their full development lifecycle,
+      <div className={styles.pageHeadingContainer} style={{ backgroundImage: `url(${wavyHomePageBackground})` }}>
+        <div className={styles.pageHeading}>
+          <div className={styles.pageSloganContainer + " " + styles.rainbow}>
+            <h1 className={styles.pageSlogan}>
+              Hey !, I am Sirage, welcome to Semicolons zone where i share my tech knowledge
+            </h1>
+            <div className={styles.pageExpanation}>
+              As a full stack web developer i work on various stages of a web or a mobile app development as well as
+              their full development lifecycle,
+            </div>
           </div>
-        </div>
-        <div className={styles.contactWidgetsContainer}>
-          <div>
+          <div className={styles.contactWidgetsContainer}>
             <div className={styles.contactWidgetContainer + " " + styles.githubButton}>
               <a
                 className={styles.contactWidget}
@@ -46,8 +62,6 @@ export default function HomePage(): JSX.Element {
                 <div className={styles.widgetText}>SirageDb</div>
               </a>
             </div>
-          </div>
-          <div>
             <div className={styles.contactWidgetContainer + " " + styles.twitterButton}>
               <a
                 className={styles.contactWidget}
@@ -63,60 +77,67 @@ export default function HomePage(): JSX.Element {
                 <div className={styles.widgetText}>iLoveSemicolon</div>
               </a>
             </div>
-          </div>
-          <div className={styles.contactWidgetContainer + " " + styles.linkedinButton}>
-            <a
-              className={styles.contactWidget}
-              href={"https://www.linkedin.com/in/sirage-al-dbiyat/"}
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              <img
-                className={styles.contatWidgetIcon}
-                src={linkedinIcon}
-                alt={"sirage al dbiyat semicolons linkedin account"}
-              />
-              <div className={styles.widgetText}>Sirage Al Dbiyat</div>
-            </a>
+            <div className={styles.contactWidgetContainer + " " + styles.linkedinButton}>
+              <a
+                className={styles.contactWidget}
+                href={"https://www.linkedin.com/in/sirage-al-dbiyat/"}
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                <img
+                  className={styles.contatWidgetIcon}
+                  src={linkedinIcon}
+                  alt={"sirage al dbiyat semicolons linkedin account"}
+                />
+                <div className={styles.widgetText}>Sirage Al Dbiyat</div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
       {/* ============================================================================= */}
       <section className={styles.sectionPost}>
         <div className={styles.sectionPostData}>
+          <div>
+            <div>
+              <h2 className={styles.sectionPostTitle}>Latest post</h2>
+            </div>
+            {postData && (
+              <PostCell
+                _id={postData._id}
+                imagePath={postData.image.path}
+                imageAlt={postData.image.alt}
+                title={postData.title}
+                tags={postData.tags}
+                loveInteractions={postData.interactions.love}
+                ideaInteractions={postData.interactions.idea}
+                slug={postData.slug}
+                thrillDescription= {postData.thrillDescription}
+              />
+            )}
+          </div>
           <div className={styles.sectionPostSloganContainer}>
-            <h2 className={styles.sectionPostSlogan}>
-              In Semicolons blog you can find posts about various subjects in the tech industry
-            </h2>
+            <img
+              className={styles.headIllustration}
+              src={lighthouseIllustration}
+              alt={"read my posts and tutorials"}
+            />
+            <h2>In Semicolons blog you can find posts about various subjects in the tech industry</h2>
             <div className={styles.postsButtonContainer}>
               <Link to={"/posts"}>
                 <button className={styles.postsButton}>All my posts</button>
               </Link>
             </div>
           </div>
-          <div>
-            <h2 className={styles.sectionPostTitle}>Lastest post</h2>
-            <PostCell
-              image={testpostcellimage}
-              imgaeAlt={"this is image alt"}
-              title={"this is post cell title"}
-              tags={["javascript", "devos", "frontend", "devos", "frontend"]}
-              publishDate={"08/10/2021"}
-              updatedDate={"08/10/2021"}
-              views={22}
-              readingTime={20}
-              likeInteractions={15}
-              ideaIneractions={15}
-              postSlug={"this-is-post-cell"}
-            />
-          </div>
         </div>
       </section>
+
+      {/* style={{ backgroundImage: `url(${blob})` }} */}
       {/* ============================================================================= */}
+
       <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
         <div>
-          <h2 className={styles.projectSectionTitle}>Technologies and languages i use the most <span className={styles.exeptionalText}>(beside english, french, arabic)</span></h2>
+          <h2 className={styles.projectSectionTitle}>Technologies and languages</h2>
         </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>
@@ -146,7 +167,7 @@ export default function HomePage(): JSX.Element {
             <Tag text={"GitLab"} />
           </div>
           <Link to={"/projects"}>
-            <button className={styles.projectsButton}>My projects zone</button>
+            <button className={styles.projectsButton}>Projects zone</button>
           </Link>
         </div>
       </section>
