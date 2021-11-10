@@ -11,7 +11,7 @@ import apiEndPoint from "../../config/apiEndPoint";
 //====================
 import blob from "../../assets/blob.svg";
 import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
-import lighthouseIllustration from "../../assets/lighthouse.svg";
+import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
 import dateFormatter from "../../lib/dateFormatter";
 
@@ -119,7 +119,7 @@ export default function HomePage(): JSX.Element {
           <div className={styles.sectionPostSloganContainer}>
             <img
               className={styles.headIllustration}
-              src={lighthouseIllustration}
+              src={headIllustration}
               alt={"read my posts and tutorials"}
             />
             <h2>In Semicolons blog you can find posts about various subjects in the tech industry</h2>
