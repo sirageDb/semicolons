@@ -12,7 +12,6 @@ export default function Projects(): JSX.Element {
   
   const history = useHistory();
 
-
   useEffect(() => {
     fetchProjects();
   }, []);

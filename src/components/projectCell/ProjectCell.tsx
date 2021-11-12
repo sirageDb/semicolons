@@ -1,4 +1,3 @@
-import { title } from "process";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./projectCell.module.scss";

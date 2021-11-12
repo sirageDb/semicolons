@@ -13,7 +13,6 @@ import blob from "../../assets/blob.svg";
 import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
-import dateFormatter from "../../lib/dateFormatter";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {

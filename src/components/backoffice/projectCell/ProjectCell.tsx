@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./projectCell.module.scss";
-import testProject from "../../../assets/testproject.png";
 import apiEndPoint from "../../../config/apiEndPoint";
 import { useHistory } from "react-router";
 import ProjectSDK from "../../../SDK/projectSDK";
@@ -35,26 +34,10 @@ export default function ProjectCell({
   const projectSDK = new ProjectSDK();
 
   const publishProject = async () => {
-
     projectSDK.publishProject(project_id);
-/*     await fetch(apiEndPoint + "project/publishproject", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ project_id: project_id }),
-    }); */
   };
   const unpublishProject = async () => {
     projectSDK.unpublishProject(project_id);
-/* 
-    await fetch(apiEndPoint + "project/privitiseproject", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ project_id: project_id }),
-    }); */
   };
 
   const StatusPublished = ({ isPublished }: any) => {

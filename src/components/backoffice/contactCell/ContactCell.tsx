@@ -1,5 +1,6 @@
 import React from "react";
 import apiEndPoint from "../../../config/apiEndPoint";
+import dateFormatter from "../../../lib/dateFormatter";
 
 import styles from "./contactCell.module.scss";
 
@@ -26,7 +27,7 @@ export default function ContactCell({
 }: IProps): JSX.Element {
   //===============================================
   const updateStatus = async() => {
-    const apiResponse = await fetch(apiEndPoint+"contact/updatestatus",{
+    const apiResponse = await fetch(apiEndPoint+"/contact/updatestatus",{
       "method" : "PUT",
       "headers" : {
         "Content-type" : "application/json"
@@ -65,7 +66,7 @@ export default function ContactCell({
         styles.container + " " + (isNewContact === true && styles.isNew)
       }
     >
-      <div>{dateContacted}</div>
+      <div>{dateFormatter(dateContacted)}</div>
       <div>
         <ViewStatusButton />
       </div>

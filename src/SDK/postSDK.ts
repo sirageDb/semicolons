@@ -1,6 +1,6 @@
 
 
-const setInteraction = (localStorageName: string, post_id: string, storage: any): void => {
+const setInteraction = (localStorageName: string, post_id: string, storage: [any]): void => {
     storage.push(post_id);
     window.localStorage.setItem(localStorageName, JSON.stringify(storage));
     console.log(window.localStorage.getItem(localStorageName));

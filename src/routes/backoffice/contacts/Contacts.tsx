@@ -11,7 +11,7 @@ export default function Contacts(): JSX.Element {
   }, []);
 
   const getContacts = async () => {
-    const apiResposne = await fetch(apiEndPoint + "contact/getcontacts");
+    const apiResposne = await fetch(apiEndPoint + "/contact/getcontacts");
     const data = await apiResposne.json();
     setContacts(data);
   };
@@ -23,7 +23,7 @@ export default function Contacts(): JSX.Element {
         return (
           <ContactCell
             key={contact._id}
-            dateContacted={contact.dataContacted}
+            dateContacted={contact.dateContacted}
             email={contact.email}
             subject={contact.subject}
             message={contact.message}

@@ -5,7 +5,6 @@ import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
 import styles from "./posts.module.scss";
 import apiEndPoint from "../../config/apiEndPoint";
 import { IPost } from "../../lib/types";
-import dateFormatter from "../../lib/dateFormatter";
 
 export default function Posts(): JSX.Element {
   const BACKEND_POSTS_ENDPOINT = "/post/getposts";

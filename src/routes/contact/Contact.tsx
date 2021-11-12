@@ -30,7 +30,7 @@ export default function Contact(): JSX.Element {
   };
 
   const sendForm = async () => {
-    const apiRequest = await fetch(apiEndPoint + "contact/newcontact", {
+    const apiRequest = await fetch(apiEndPoint + "/contact/newcontact", {
       method: "Post",
       mode: "cors",
       headers: {
