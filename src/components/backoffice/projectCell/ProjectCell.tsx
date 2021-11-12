@@ -3,10 +3,17 @@ import styles from "./projectCell.module.scss";
 import testProject from "../../../assets/testproject.png";
 import apiEndPoint from "../../../config/apiEndPoint";
 import { useHistory } from "react-router";
+import ProjectSDK from "../../../SDK/projectSDK";
+
+
+interface IImage {
+  alt : string;
+  path : string
+}
 
 interface IProjectCellProps {
   project_id: string;
-  image: any;
+  image: IImage;
   name: string;
   description: string;
   usedLanguages: string[];
@@ -25,25 +32,29 @@ export default function ProjectCell({
   const editProject = () => {
     history.push("/backoffice/projecteditor/"+project_id);
   };
-  
+  const projectSDK = new ProjectSDK();
 
   const publishProject = async () => {
-    await fetch(apiEndPoint + "project/publishproject", {
+
+    projectSDK.publishProject(project_id);
+/*     await fetch(apiEndPoint + "project/publishproject", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ project_id: project_id }),
-    });
+    }); */
   };
   const unpublishProject = async () => {
+    projectSDK.unpublishProject(project_id);
+/* 
     await fetch(apiEndPoint + "project/privitiseproject", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ project_id: project_id }),
-    });
+    }); */
   };
 
   const StatusPublished = ({ isPublished }: any) => {
@@ -65,7 +76,7 @@ export default function ProjectCell({
 
   return (
     <div className={styles.container}>
-      <img className={styles.image} src={image} />
+      <img className={styles.image} src={apiEndPoint + "/" + image.path} alt={image.alt} />
       <div className={styles.projectInfoContainer}>
         <div className={styles.nameDescriptionBlock}>
           <div className={styles.name}>{name}</div>
