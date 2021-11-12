@@ -1,7 +1,6 @@
 import apiEndPoint from "../config/apiEndPoint";
 
 export default class ProjectSDK {
-
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     public unpublishProject = async (project_id : string) : Promise<void> => {
         const apiResponse = await fetch(apiEndPoint + "/project/privitiseproject", {

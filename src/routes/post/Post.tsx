@@ -4,7 +4,7 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import postData from "../../lib/postTest.json";
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
-import { sharePost, loveInteractionController, ideaInteractionController } from "../../SDK/postSDK";
+import PostSDK from "../../SDK/postSDK";
 
 // ICONS =====================================
 import eyeIcon from "../../assets/eyeIcon.svg";
@@ -29,6 +29,7 @@ export default function Post(): JSX.Element {
   // const [postData, setPostData] = useState<IPostData>();
   const params = useParams<IPostParams>();
 
+  const postSDK = new PostSDK();
 
   useEffect(() => {
     getPost();
@@ -76,19 +77,19 @@ export default function Post(): JSX.Element {
           </div>
           <div className={styles.socialInteractionContainer}>
             <div className={styles.shareButtonContainer}>
-              <button onClick={sharePost} className={styles.shareButton}>
+              <button onClick={() => postSDK.sharePost()} className={styles.shareButton}>
                 <img src={shareIcon} alt={"share post"} />
                 <span className={styles.shareText}>Share</span>
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => loveInteractionController("a")}>
+              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController("a")}>
                 <img src={loveInteractionIcon} alt={"interact with love"} />
                 <div>{postData.interactions.love}</div>
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => ideaInteractionController("a")}>
+              <button className={styles.interactionButton} onClick={() => postSDK.ideaInteractionController("a")}>
                 <img src={ideaInteractionIcon} alt={"interact with idea"} />
                 <div>{postData.interactions.idea}</div>
               </button>
