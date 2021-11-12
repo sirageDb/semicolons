@@ -16,13 +16,13 @@ export default function Projects(): JSX.Element {
     // const apiResponse = await fetch(apiEndPoint + "posts/getposts");
   };
 
-  const newProject = () => {
+  const newPost = () => {
     history.push("/backoffice/newpost")
   };
 
   return (
     <MainLayoutBackoffice pageTitle={"Posts"}>
-      <button onClick={newProject} className={styles.newPostButton}>
+      <button onClick={newPost} className={styles.newPostButton}>
         New Post
       </button>
     </MainLayoutBackoffice>

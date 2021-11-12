@@ -5,28 +5,36 @@ import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrga
 import addIcon from "../../../assets/addIcon.svg";
 import apiEndPoint from "../../../config/apiEndPoint";
 import { useHistory, useParams } from "react-router";
+import ProjectSDK from "../../../SDK/projectSDK";
 
 export default function ProjectEditor(): JSX.Element {
   const [name, setName] = useState<string>("");
   const [projectLink, setProjectLink] = useState<string>("");
   const [sourceCodeLink, setSourceCodeLink] = useState<string>("");
-  const [singleLanguage, setSingleLanguages] = useState<string>("");
-  const [languages, setLanguages] = useState<any[]>([]);
+  const [singleTag, setSingleTag] = useState<string>("");
+  const [tags, setTags] = useState<any[]>([]);
   const [description, setDescription] = useState<string>("");
-  const [image, setImage] = useState<any>();
+  const [imageFile, setImageFile] = useState<any>();
+  const [imageALT, setImageALT] = useState<string>("");
   const [imagePreviewSrc, setImagePreviewSrc] = useState<any>();
+  const [imagePath, setImagePath] = useState<string>("");
   const [publish, setPublish] = useState<boolean>(false);
-  const { project_id } = useParams<any>();
-  const history = useHistory();
 
+  interface IParams {
+    project_id : string | any
+  }
+
+  const { project_id } = useParams<IParams>();
+  const projectSDK = new ProjectSDK();
   useEffect(() => {
     if (project_id) {
       getProject(project_id);
     }
   }, []);
 
+  //=========================================================
   const getProject = async (project_id: string) => {
-    const apiResponse = await fetch(apiEndPoint + "project/getsingleproject/?project_id=" + project_id, {
+    const apiResponse = await fetch(apiEndPoint + "/project/getsingleproject/?project_id=" + project_id, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -34,17 +42,72 @@ export default function ProjectEditor(): JSX.Element {
       },
     });
     const data = await apiResponse.json();
+
     setName(data.name);
     setProjectLink(data.projectLink);
     setSourceCodeLink(data.sourceCodeLink);
     setDescription(data.description);
-    setLanguages(data.usedLanguages);
-    setImage(data.image);
+    setTags(data.tags);
+    setImageALT(data.image.alt);
+    setImagePath(data.image.path);
     setPublish(data.publish);
-    // imagePreview(data.image);
-    console.log(data);
   };
 
+  // Create projecct
+  //===================================================
+  const createProject = async () => {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("alt", imageALT);
+    formData.append("image", imageFile);
+    formData.append("description", description);
+    for (let i = 0; i < tags.length; i++) {
+      formData.append("tags", tags[i]);
+    }
+    formData.append("projectLink", projectLink);
+    formData.append("sourceCodeLink", sourceCodeLink);
+
+    const apiResponse = await fetch(apiEndPoint + "/project/createproject", {
+      method: "POST",
+      body: formData,
+    });
+    if (apiResponse.status === 200) {
+      window.alert("Project saved successfully");
+      window.location.reload();
+    } else if (apiResponse.status !== 200) {
+      window.alert("Error saving project");
+    }
+  };
+
+  // save projecct
+  //===================================================
+  const saveProject = async () => {
+    const isConfirmed = window.confirm("Save project ?");
+    if (isConfirmed) {
+      const formData = new FormData();
+      formData.append("project_id", project_id);
+      formData.append("name", name);
+      formData.append("alt", imageALT);
+      formData.append("image", imageFile);
+      formData.append("description", description);
+      for (let i = 0; i < tags.length; i++) {
+        formData.append("tags", tags[i]);
+      }
+      formData.append("projectLink", projectLink);
+      formData.append("sourceCodeLink", sourceCodeLink);
+  
+      const apiResponse = await fetch(apiEndPoint + "/project/updateproject", {
+        method: "PUT",
+        body: formData,
+      });
+      if (apiResponse.status === 200) {
+        window.alert("Project updated successfully");
+        window.location.reload();
+      } else if (apiResponse.status !== 200) {
+        window.alert("Error updating project");
+      }      
+    }
+  };
   const imagePreview = (imageFile: any) => {
     const reader = new FileReader();
     reader.readAsDataURL(imageFile);
@@ -55,111 +118,42 @@ export default function ProjectEditor(): JSX.Element {
 
   const onFileChange = (uploadedImage: any) => {
     imagePreview(uploadedImage);
-    setImage(uploadedImage);
+    setImageFile(uploadedImage);
   };
 
-  // Create projecct
-  //===================================================
-  const createProject = async () => {
-    const formData = new FormData();
-    formData.append(image.name, image);
-    for (const pair of formData.entries()) {
-      console.log(pair[0]);
-      console.log(pair[1]);
-    }
-
-    const imageData = new FormData();
-    imageData.append(image.name, image);
-    for (const pair of imageData.entries()) {
-      console.log(pair[0]);
-      console.log(pair[1]);
-    }
-
-    const apiResponse = await fetch(apiEndPoint + "project/createproject", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        projectLink: projectLink,
-        sourceCodeLink: sourceCodeLink,
-        image: imageData,
-        description: description,
-        usedLanguages: languages,
-      }),
-    });
-    apiResponse;
-  };
-
-  // save projecct
-  //===================================================
-  const saveProject = () => {
-    window.alert("save project");
-  };
-
-  // publish projecct
+    // publish projecct
   //===================================================
   const publishProject = async () => {
-    await fetch(apiEndPoint + "project/publishproject", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        project_id: project_id,
-      }),
-    });
+    projectSDK.publishProject(project_id);
   };
   // unpublish projecct
   //===================================================
   const unpublishProject = async () => {
-    await fetch(apiEndPoint + "project/privitiseproject", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        project_id: project_id,
-      }),
-    });
+    projectSDK.unpublishProject(project_id);
   };
 
   // delete projecct
   //===================================================
   const deleteProject = async () => {
-    const isConfirmed = window.confirm("Delete project ?");
-    if (isConfirmed) {
-      const apiResponse = await fetch(apiEndPoint + "project/deleteproject", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          project_id: project_id,
-        }),
-      });
-      if (apiResponse.status === 200) {
-        history.push("/backoffice/projects");
-      }
-    }
+    projectSDK.deleteProject(project_id);
   };
 
-  // add language callbacck
+
+  // add tag callbacck
   //===================================================
-  const addLanguage = () => {
-    if (singleLanguage !== "") {
-      setLanguages([...languages, singleLanguage]);
-      setSingleLanguages("");
+  const addTag = () => {
+    if (singleTag !== "") {
+      setTags([...tags, singleTag]);
+      setSingleTag("");
     }
   };
 
   // remove tag callback
   //===================================================
   const removeTag = (text: string) => {
-    const index = languages.indexOf(text);
+    const index = tags.indexOf(text);
     if (index > -1) {
-      setLanguages(languages.filter((language) => language !== text));
+      setTags(tags.filter((tag) => tag !== text));
     }
   };
 
@@ -203,17 +197,17 @@ export default function ProjectEditor(): JSX.Element {
           </div>
           <div className={styles.inputContainer}>
             <div>
-              <label>Languages</label>
+              <label>Tags</label>
             </div>
-            <TagsOrganizer removeTagCallback={removeTag} tags={languages} />
+            <TagsOrganizer removeTagCallback={removeTag} tags={tags} />
             <div className={styles.languagesInput}>
               <input
-                value={singleLanguage}
-                onChange={(event) => setSingleLanguages(event.target.value)}
+                value={singleTag}
+                onChange={(event) => setSingleTag(event.target.value)}
                 type={"text"}
                 className={styles.input}
               />
-              <img alt={"Add language"} src={addIcon} onClick={addLanguage} />
+              <img alt={"Add tag"} src={addIcon} onClick={addTag} />
             </div>
           </div>
           <div className={styles.inputContainer}>
@@ -227,8 +221,19 @@ export default function ProjectEditor(): JSX.Element {
             />
           </div>
           <div className={styles.inputContainer}>
+            <div>
+              <label>Image ALT</label>
+            </div>
+            <input
+              type={"text"}
+              onChange={(e) => setImageALT(e.target.value)}
+              value={imageALT}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputContainer}>
             <input type={"file"} onChange={(e) => onFileChange(e?.target?.files?.[0])} />
-            <div>{image && <img src={imagePreviewSrc} />}</div>
+            <div>{imageFile ? <img src={imagePreviewSrc} /> : <img src={apiEndPoint + "/" + imagePath} />}</div>
           </div>
         </form>
       </div>
@@ -236,15 +241,20 @@ export default function ProjectEditor(): JSX.Element {
       <button onClick={project_id ? saveProject : createProject} className={styles.actionButton}>
         Save
       </button>
-      {publish === false ? (
-        <button onClick={publishProject} className={styles.actionButton}>
-          Publish
-        </button>
-      ) : (
-        <button onClick={unpublishProject} className={styles.actionButton}>
-          Unpublish
-        </button>
-      )}
+      {
+        project_id &&
+      <>
+        {publish === false ? (
+          <button onClick={publishProject} className={styles.actionButton}>
+            Publish
+          </button>
+        ) : (
+          <button onClick={unpublishProject} className={styles.actionButton}>
+            Unpublish
+          </button>
+        )}
+      </>
+      }
 
       {project_id && (
         <button onClick={deleteProject} className={styles.actionButtonDelete}>

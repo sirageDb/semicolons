@@ -16,12 +16,10 @@ export default function Projects(): JSX.Element {
   useEffect(() => {
     fetchProjects();
   }, []);
-
   const fetchProjects = async () => {
-    const apiResponse = await fetch(apiEndPoint + "project/getprojects");
+    const apiResponse = await fetch(apiEndPoint + "/project/getprojects");
     const data = await apiResponse.json();
     setProjects(data);
-    console.log(data);
   };
 
   const newProject = () => {

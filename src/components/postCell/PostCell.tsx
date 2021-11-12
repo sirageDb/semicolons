@@ -32,14 +32,12 @@ export default function PostCell({
     <div className={styles.container}>
       <div className={styles.postCellDataContainer}>
         <div className={styles.titleContainer}>
-          <Link to={"./posts/" + slug}>
+          <Link to={"/posts/" + slug}>
             <div className={styles.title}>{title}</div>
           </Link>
         </div>
         <div className={styles.thrillDescriptionContainer}>
-          <div>
-          {thrillDescription}
-          </div>
+          <div>{thrillDescription}</div>
           <div className={styles.tagsContainer}>
             {tags.map((tag, i) => {
               return <Tag key={i} text={tag} />;
@@ -67,10 +65,12 @@ export default function PostCell({
               </button>
             </div>
           </div>
-            <button onClick={readPost} className={styles.button + " " + styles.readButton}>
+          <Link to={`/post/${slug}`}>
+            <button className={styles.button + " " + styles.readButton}>
               <span>Read</span>
               <img src={arrowForward} alt={"share post"} />
             </button>
+          </Link>
         </div>
       </div>
       <div className={styles.postImageContainer}>
