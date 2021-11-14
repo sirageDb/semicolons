@@ -1,7 +1,7 @@
 import apiEndPoint from "../config/apiEndPoint";
 
 export default class ProjectSDK {
-    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //===================================================================================
     public unpublishProject = async (project_id : string) : Promise<void> => {
         const apiResponse = await fetch(apiEndPoint + "/project/privitiseproject", {
             method: "PUT",
@@ -20,7 +20,7 @@ export default class ProjectSDK {
           }
     }
 
-    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //===================================================================================
     public publishProject = async (project_id : string) :Promise<void>  => {
         const apiResponse = await fetch(apiEndPoint + "/project/publishproject", {
             method: "PUT",
@@ -42,7 +42,7 @@ export default class ProjectSDK {
     }
 
 
-    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //===================================================================================
     public deleteProject = async(project_id : string) : Promise<void> => {
         const isConfirmed = window.confirm("Delete project ?");
         if (isConfirmed) {

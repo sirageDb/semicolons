@@ -2,6 +2,7 @@ import apiEndPoint from "../config/apiEndPoint";
 
 
 export default class PostSDK {
+
     private setInteraction = (localStorageName: string, post_id: string, storage: [any]): void => {
         storage.push(post_id);
         window.localStorage.setItem(localStorageName, JSON.stringify(storage));
@@ -26,6 +27,67 @@ export default class PostSDK {
             })
         })
         return apiResponse;
+    }
+
+    //===================================================================================
+
+    public unpublishPost = async (post_id : string) : Promise<void> => {
+        const apiResponse = await fetch(apiEndPoint + "/post/privatizepost", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              post_id: post_id,
+            }),
+          });
+          if (apiResponse.status === 200) {
+            window.alert("Post unpublished successfully");
+            window.location.reload();
+          } else {
+            window.alert("Error unpublishing post");
+          }
+    }
+    //===================================================================================
+    public publishProject = async (post_id : string) :Promise<void>  => {
+        const apiResponse = await fetch(apiEndPoint + "/post/publishpost", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                post_id: post_id,
+            }),
+          });
+      
+          if(apiResponse.status === 200){
+            window.alert("Post published successfully");
+            window.location.reload();
+          }
+          else {
+            window.alert("Error publishing post")
+          } 
+    }
+    //===================================================================================
+    public deletePost = async(post_id : string) : Promise<void> => {
+        const isConfirmed = window.confirm("Delete post ?");
+        if (isConfirmed) {
+          const apiResponse = await fetch(apiEndPoint + "/post/deletepost", {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                post_id: post_id,
+            }),
+          });
+          if (apiResponse.status === 200) {
+            window.alert("post deleted successfully");
+            window.location.reload();
+        } else {
+            window.alert("Error deleting post");
+          } 
+        }
     }
 
     //===================================================================================
@@ -60,16 +122,25 @@ export default class PostSDK {
         const ideaInteractionsStorage = window.localStorage.getItem("ideaInteractions");
         let stored_id: any | string[] = [];
         if (!ideaInteractionsStorage) {
-            localStorage.setItem("ideaInteractions", JSON.stringify(stored_id));
-            this.setInteraction("ideaInteractions", postId, stored_id);
+            const apiResposne = await this.fetchInteractionEndPoint(postId, "add", "idea");
+            if(apiResposne.status === 200){
+                localStorage.setItem("ideaInteractions", JSON.stringify(stored_id));
+                this.setInteraction("ideaInteractions", postId, stored_id);
+            }
         }
         else if (ideaInteractionsStorage) {
             stored_id = JSON.parse(ideaInteractionsStorage);
             if (stored_id.includes(postId)) {
-                this.removeInteraction("ideaInteractions", postId, stored_id)
+                const apiResposne = await this.fetchInteractionEndPoint(postId, "remove", "idea");
+                if (apiResposne.status === 200) {
+                    this.removeInteraction("ideaInteractions", postId, stored_id)
+                }
             }
             else if (!stored_id.includes(postId)) {
-                this.setInteraction("ideaInteractions", postId, stored_id)
+                const apiResposne = await this.fetchInteractionEndPoint(postId, "add", "idea");
+                if (apiResposne.status === 200) {
+                    this.setInteraction("ideaInteractions", postId, stored_id)
+                }
             }
         }
     };
