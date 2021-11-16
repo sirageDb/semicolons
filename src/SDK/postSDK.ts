@@ -49,7 +49,7 @@ export default class PostSDK {
           }
     }
     //===================================================================================
-    public publishProject = async (post_id : string) :Promise<void>  => {
+    public publishPost = async (post_id : string) :Promise<void>  => {
         const apiResponse = await fetch(apiEndPoint + "/post/publishpost", {
             method: "PUT",
             headers: {

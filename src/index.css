@@ -4,13 +4,20 @@
 
 * {
     box-sizing: border-box;
-    color: #2c2f33;
     font-weight: inherit;
+}
+
+* ::not(code) {
+    color: #2c2f33;
 }
 
 *::selection {
     color: #0067ff;
     background-color: #ffc356;
+}
+
+pre {
+    max-width: 900px;
 }
 
 body {

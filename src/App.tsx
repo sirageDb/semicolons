@@ -6,7 +6,6 @@ import AdminAuth from "./routes/backoffice/adminAuth/AdminAuth";
 import PostsBO from "./routes/backoffice/posts/Posts";
 import HomePage from "./routes/homepage/HomePage";
 import ContactsBO from "./routes/backoffice/contacts/Contacts";
-import NewPostBO from "./routes/backoffice/newPost/NewPost";
 import ProjectEditor from "./routes/backoffice/projectEditor/ProjectEditor";
 import Posts from "./routes/posts/Posts";
 import Projects from "./routes/projects/Projects";
@@ -15,6 +14,7 @@ import About from "./routes/about/About";
 import Post from "./routes/post/Post";
 import ScrollToTop from "./lib/ScrollToTop";
 import PageNotFound from "./routes/unfound/PageNotFound";
+import PostEditor from "./routes/backoffice/postEditor/PostEditor";
 
 
 export default function App(): JSX.Element {
@@ -33,7 +33,7 @@ export default function App(): JSX.Element {
         <Route exact path={"/backoffice/ProjectEditor/"} component={ProjectEditor} />
         <Route exact path={"/backoffice/ProjectEditor/:project_id"} component={ProjectEditor} />
         <Route exact path={"/backoffice/posts"} component={PostsBO} />
-        <Route exact path={"/backoffice/newpost"} component={NewPostBO} />
+        <Route exact path={"/backoffice/posteditor"} component={PostEditor} />
         <Route exact path={"/backoffice/contacts"} component={ContactsBO} />
         <Route component={PageNotFound} />
       </Switch>
