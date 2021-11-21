@@ -1,4 +1,7 @@
+import { useHistory } from "react-router";
 import apiEndPoint from "../config/apiEndPoint";
+import { POSTS_BO } from "../lib/appRouting";
+import { DELETE_POST, INTERACT } from "../lib/endpoints";
 
 
 export default class PostSDK {
@@ -17,7 +20,7 @@ export default class PostSDK {
 
     //===================================================================================
     private fetchInteractionEndPoint = async (post_id: string, action: "add" | "remove", type: "love" | "idea"): Promise<Response> => {
-        const apiResponse = await fetch(apiEndPoint + `/post/interact?type=${type}&action=${action}`, {
+        const apiResponse = await fetch(INTERACT(type, action), {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -72,7 +75,7 @@ export default class PostSDK {
     public deletePost = async(post_id : string) : Promise<void> => {
         const isConfirmed = window.confirm("Delete post ?");
         if (isConfirmed) {
-          const apiResponse = await fetch(apiEndPoint + "/post/deletepost", {
+          const apiResponse = await fetch(DELETE_POST, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -83,7 +86,7 @@ export default class PostSDK {
           });
           if (apiResponse.status === 200) {
             window.alert("post deleted successfully");
-            window.location.reload();
+            window.location.href = POSTS_BO;
         } else {
             window.alert("Error deleting post");
           } 

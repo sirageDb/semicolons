@@ -16,7 +16,6 @@ import ScrollToTop from "./lib/ScrollToTop";
 import PageNotFound from "./routes/unfound/PageNotFound";
 import PostEditor from "./routes/backoffice/postEditor/PostEditor";
 
-
 export default function App(): JSX.Element {
   return (
     <BrowserRouter>
@@ -34,6 +33,7 @@ export default function App(): JSX.Element {
         <Route exact path={"/backoffice/ProjectEditor/:project_id"} component={ProjectEditor} />
         <Route exact path={"/backoffice/posts"} component={PostsBO} />
         <Route exact path={"/backoffice/posteditor"} component={PostEditor} />
+        <Route exact path={"/backoffice/posteditor/:post_id"} component={PostEditor} />
         <Route exact path={"/backoffice/contacts"} component={ContactsBO} />
         <Route component={PageNotFound} />
       </Switch>

@@ -7,19 +7,20 @@ import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrga
 import addIcon from "../../../assets/addIcon.svg";
 import apiEndPoint from "../../../config/apiEndPoint";
 import { useParams } from "react-router";
-import { CREATE_POST } from "../../../lib/endpoints";
+import { CREATE_POST, GET_POST_BY_ID, UPDATE_POST } from "../../../lib/endpoints";
 import PostSDK from "../../../SDK/postSDK";
 import ReactMarkdown from "react-markdown";
 import remarkGemoji from "remark-gemoji";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import language from "react-syntax-highlighter/dist/esm/languages/hljs/1c";
+import { IPost } from "../../../lib/types";
 
-export default function ProjectEditor(): JSX.Element {
+export default function PostEditor(): JSX.Element {
   const [title, setTitle] = useState<string>("");
   const [singleTag, setSingleTag] = useState<string>("");
-  const [tags, setTags] = useState<any[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
   const [thrillDescription, setThrillDescription] = useState<string>("");
+  const [readometer, setReadometer] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [imageFile, setImageFile] = useState<any>();
   const [imageALT, setImageALT] = useState<string>("");
@@ -35,42 +36,46 @@ export default function ProjectEditor(): JSX.Element {
   const postSDK = new PostSDK();
   useEffect(() => {
     if (post_id) {
-      getProject(post_id);
+      getPost(post_id);
     }
   }, []);
 
   //=========================================================
-  const getProject = async (post_id: string) => {
-    const apiResponse = await fetch(apiEndPoint + "/project/getsingleproject/?project_id=" + post_id, {
+  const getPost = async (post_id: string) => {
+    const apiResponse = await fetch(GET_POST_BY_ID(post_id), {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
-    const data = await apiResponse.json();
-
-    setTitle(data.name);
-    setThrillDescription(data.description);
+    const data : IPost = await apiResponse.json();
+    console.log(data);
+    setTitle(data.title);
+    setThrillDescription(data.thrillDescription);
     setTags(data.tags);
     setImageALT(data.image.alt);
     setImagePath(data.image.path);
+    setContent(data.content);
     setPublish(data.publish);
+    setReadometer(data.readometer.toString());
   };
 
-  // Create projecct
+  // Create post
   //===================================================
-  const createProject = async () => {
+  const createPost = async () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("alt", imageALT);
     formData.append("image", imageFile);
     formData.append("thrillDescription", thrillDescription);
+    formData.append("content", content);
+    formData.append("readometer", readometer.toString());
     for (let i = 0; i < tags.length; i++) {
       formData.append("tags", tags[i]);
     }
 
-    const apiResponse = await fetch(apiEndPoint + CREATE_POST, {
+    const apiResponse = await fetch(CREATE_POST, {
       method: "POST",
       body: formData,
     });
@@ -82,10 +87,10 @@ export default function ProjectEditor(): JSX.Element {
     }
   };
 
-  // save projecct
+  // save post
   //===================================================
-  const saveProject = async () => {
-    const isConfirmed = window.confirm("Save project ?");
+  const savePost = async () => {
+    const isConfirmed = window.confirm("Save post ?");
     if (isConfirmed) {
       const formData = new FormData();
       formData.append("post_id", post_id);
@@ -93,19 +98,21 @@ export default function ProjectEditor(): JSX.Element {
       formData.append("alt", imageALT);
       formData.append("image", imageFile);
       formData.append("thrillDescription", thrillDescription);
+      formData.append("content", content);
+      formData.append("readometer", readometer.toString());
       for (let i = 0; i < tags.length; i++) {
         formData.append("tags", tags[i]);
       }
 
-      const apiResponse = await fetch(apiEndPoint + "/project/updateproject", {
+      const apiResponse = await fetch(UPDATE_POST, {
         method: "PUT",
         body: formData,
       });
       if (apiResponse.status === 200) {
-        window.alert("Project updated successfully");
+        window.alert("Post updated successfully");
         window.location.reload();
       } else if (apiResponse.status !== 200) {
-        window.alert("Error updating project");
+        window.alert("Error updating post");
       }
     }
   };
@@ -122,20 +129,20 @@ export default function ProjectEditor(): JSX.Element {
     setImageFile(uploadedImage);
   };
 
-  // publish projecct
+  // publish post
   //===================================================
-  const publishProject = async () => {
+  const publishPost = async () => {
     postSDK.publishPost(post_id);
   };
-  // unpublish projecct
+  // unpublish post
   //===================================================
-  const unpublishProject = async () => {
+  const unpublishPost = async () => {
     postSDK.unpublishPost(post_id);
   };
 
-  // delete projecct
+  // delete post
   //===================================================
-  const deleteProject = async () => {
+  const deletePost = async () => {
     postSDK.deletePost(post_id);
   };
 
@@ -192,6 +199,18 @@ export default function ProjectEditor(): JSX.Element {
           </div>
           <div className={styles.inputContainer}>
             <div>
+              <label htmlFor={"readometer"}>Readometer</label>
+            </div>
+            <input
+              name={"readometer"}
+              type={"text"}
+              onChange={(e) => setReadometer(e.target.value)}
+              value={readometer}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputContainer}>
+            <div>
               <label>Thrill description</label>
             </div>
             <textarea
@@ -199,21 +218,6 @@ export default function ProjectEditor(): JSX.Element {
               value={thrillDescription}
               className={styles.textArea}
             />
-          </div>
-          <div className={styles.inputContainer}>
-            <div>
-              <label>Image ALT</label>
-            </div>
-            <input
-              type={"text"}
-              onChange={(e) => setImageALT(e.target.value)}
-              value={imageALT}
-              className={styles.input}
-            />
-          </div>
-          <div className={styles.inputContainer}>
-            <input type={"file"} onChange={(e) => onFileChange(e?.target?.files?.[0])} />
-            <div>{imageFile ? <img src={imagePreviewSrc} /> : <img src={apiEndPoint + "/" + imagePath} />}</div>
           </div>
           <ReactMarkdown
             remarkPlugins={[remarkGemoji]}
@@ -244,19 +248,34 @@ export default function ProjectEditor(): JSX.Element {
             </div>
             <textarea onChange={(e) => setContent(e.target.value)} value={content} className={styles.textArea} />
           </div>
+          <div className={styles.inputContainer}>
+            <div>
+              <label>Image ALT</label>
+            </div>
+            <input
+              type={"text"}
+              onChange={(e) => setImageALT(e.target.value)}
+              value={imageALT}
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputContainer}>
+            <input type={"file"} onChange={(e) => onFileChange(e?.target?.files?.[0])} />
+            <div>{imageFile ? <img src={imagePreviewSrc} /> : <img src={apiEndPoint + "/" + imagePath} />}</div>
+          </div>
         </form>
       </div>
-      <button onClick={post_id ? saveProject : createProject} className={styles.actionButton}>
+      <button onClick={post_id ? savePost : createPost} className={styles.actionButton}>
         Save
       </button>
       {post_id && (
         <>
           {publish === false ? (
-            <button onClick={publishProject} className={styles.actionButton}>
+            <button onClick={publishPost} className={styles.actionButton}>
               Publish
             </button>
           ) : (
-            <button onClick={unpublishProject} className={styles.actionButton}>
+            <button onClick={unpublishPost} className={styles.actionButton}>
               Unpublish
             </button>
           )}
@@ -264,7 +283,7 @@ export default function ProjectEditor(): JSX.Element {
       )}
 
       {post_id && (
-        <button onClick={deleteProject} className={styles.actionButtonDelete}>
+        <button onClick={deletePost} className={styles.actionButtonDelete}>
           Delete
         </button>
       )}

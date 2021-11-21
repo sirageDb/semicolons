@@ -44,7 +44,6 @@ export default function Projects(): JSX.Element {
           />
           })
         }
-
       </div>
     </MainLayoutBackoffice>
   );

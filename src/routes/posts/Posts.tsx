@@ -3,11 +3,10 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import PostCell from "../../components/postCell/PostCell";
 import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
 import styles from "./posts.module.scss";
-import apiEndPoint from "../../config/apiEndPoint";
 import { IPost } from "../../lib/types";
+import { GET_POSTS_PUBLISHED } from "../../lib/endpoints";
 
 export default function Posts(): JSX.Element {
-  const BACKEND_POSTS_ENDPOINT = "/post/getposts";
 
   const [posts, setPosts] = useState<IPost[]>();
 
@@ -16,7 +15,7 @@ export default function Posts(): JSX.Element {
   }, []);
 
   const fetchPosts = async () => {
-    const apiResponse = await fetch(apiEndPoint + BACKEND_POSTS_ENDPOINT);
+    const apiResponse = await fetch(GET_POSTS_PUBLISHED);
     const data = await apiResponse.json();
     console.log(data);
     setPosts(data);
