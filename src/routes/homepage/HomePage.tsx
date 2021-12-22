@@ -6,7 +6,6 @@ import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { Link } from "react-router-dom";
 import PostCell from "../../components/postCell/PostCell";
-import apiEndPoint from "../../config/apiEndPoint";
 //images
 //====================
 import blob from "../../assets/blob.svg";
@@ -14,6 +13,7 @@ import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 
 import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
+import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
@@ -24,9 +24,10 @@ export default function HomePage(): JSX.Element {
   }, []);
 
   const getLastPost = async () => {
-    const apiResponse = await fetch(apiEndPoint + "/post/getposts?latest=true");
+    const apiResponse = await fetch(GET_POST_PUBLISHED_LATEST);
     const extractedData = await apiResponse.json();
-    setPostData(extractedData);
+    console.log(extractedData);
+    setPostData(extractedData[0]);
   };
 
   const Tag = ({ text }: any) => {
