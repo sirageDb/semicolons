@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./projectCell.module.scss";
 import codeIcon from "../../assets/codeIcon.svg";
 import viewIcon from "../../assets/viewIcon.svg";
+import apiEndPoint from "../../config/apiEndPoint";
 
 interface IProjectCellProps {
   name: string;
@@ -33,7 +34,7 @@ export default function ProjectCell({
 
   return (
     <div className={styles.container}>
-      <img className={styles.image} src={image} alt={imageAlt} />
+      <img className={styles.image} src={apiEndPoint + "/" + image} alt={imageAlt} />
       <div>
         <div className={styles.name}>{name}</div>
         <div className={styles.description}>{description}</div>

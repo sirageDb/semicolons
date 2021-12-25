@@ -150,6 +150,7 @@ export default function HomePage(): JSX.Element {
             <Tag text={"GraphQl"} />
             <Tag text={"jQuery"} />
             <Tag text={"NodeJs"} />
+            <Tag text={"Express"} />
             <Tag text={"React"} />
             <Tag text={"React Native"} />
             <Tag text={"MySQL"} />

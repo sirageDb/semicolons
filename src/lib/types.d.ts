@@ -9,7 +9,7 @@ export interface IProject {
     description : string,
     image: IImage,
     publish : boolean,
-    usedLanguages: string[], 
+    tags: string[], 
 } 
 
 //========================================

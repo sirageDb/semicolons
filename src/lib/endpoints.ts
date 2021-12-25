@@ -1,5 +1,8 @@
 import apiEndPoint from "../config/apiEndPoint";
 
+
+// POSTS
+//=================================================================
 export const CREATE_POST = apiEndPoint + "/post/createpost";
 export const GET_POSTS = apiEndPoint + "/post/getposts";
 export const GET_POSTS_PUBLISHED = apiEndPoint + "/post/getpostspublished";
@@ -23,7 +26,8 @@ export const INTERACT = (type: string, action: string): string => {
     return `${apiEndPoint}/post/interact?type=${type}&action=${action}`
 }
 
-//=====================================
+// PROJECTS
+//=================================================================
 export const CREATE_PROJECT = apiEndPoint + "/post/createproject"
 export const GET_PROJECT = apiEndPoint + "/project/getprojects"
 export const GET_SINGLE_PROJECT = (project_id : string) : string => {
@@ -34,3 +38,4 @@ export const DELETE_PROJECT = apiEndPoint + "/project/deleteproject";
 export const UPDATE_PROJECT = apiEndPoint + "/project/deleteproject";
 export const PUBLISH_PROJECT = apiEndPoint + "/project/publishproject";
 export const PRIVIISE_PROJECT = apiEndPoint + "/project/privitiseproject";
+//=================================================================
