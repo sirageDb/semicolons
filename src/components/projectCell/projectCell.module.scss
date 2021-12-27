@@ -1,7 +1,15 @@
 @import "../../globalStyles.scss";
 .container {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid $colorDarker;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: $colorWhite;
 }
 
 .image {
@@ -27,10 +35,14 @@
     display: inline-block;
     background-color: $colorViolet;
     color: $colorWhite;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 2px 5px;
     margin-right: 10px;
     margin-bottom: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
 .buttonsContainer {

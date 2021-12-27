@@ -17,7 +17,6 @@ export default function Posts(): JSX.Element {
   const fetchPosts = async () => {
     const apiResponse = await fetch(GET_POSTS_PUBLISHED);
     const data = await apiResponse.json();
-    console.log(data);
     setPosts(data);
   };
 
@@ -34,7 +33,7 @@ export default function Posts(): JSX.Element {
             </h2>
           </div>
           <div>
-            <img src={spaceshipIllustration} alt={"posts and articles page"} />
+            <img className={styles.postsImage} src={spaceshipIllustration} alt={"posts and articles page"} />
           </div>
         </div>
       </div>
@@ -52,6 +51,7 @@ export default function Posts(): JSX.Element {
               ideaInteractions={post.interactions.idea}
               slug={post.slug}
               thrillDescription= {post.thrillDescription}
+              fetchCallback={fetchPosts}
             />
           );
         })}

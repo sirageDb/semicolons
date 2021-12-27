@@ -21,6 +21,7 @@ export default function PostCell({
   ideaInteractions,
   slug,
   thrillDescription,
+  fetchCallback,
 }: IPostCellProps): JSX.Element {
   const Tag = ({ text }: ITagProps) => {
     return <div className={styles.tag}># {text}</div>;
@@ -54,13 +55,13 @@ export default function PostCell({
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController(_id)}>
+              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController(_id, fetchCallback)}>
                 <div>{loveInteractions}</div>
                 <img src={loveInteractionIcon} alt={"interact with love"} />
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() =>  postSDK.ideaInteractionController(_id)}>
+              <button className={styles.interactionButton} onClick={() =>  postSDK.ideaInteractionController(_id ,fetchCallback)}>
                 <div>{ideaInteractions}</div>
                 <img src={ideaInteractionIcon} alt={"interact with idea"} />
               </button>

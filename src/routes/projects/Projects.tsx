@@ -32,7 +32,7 @@ export default function Projects(): JSX.Element {
             </h2>
           </div>
           <div>
-            <img src={spacemanProjects} alt={"posts and articles page"} />
+            <img className={styles.projectsImage} src={spacemanProjects} alt={"posts and articles page"} />
           </div>
         </div>
       </div>

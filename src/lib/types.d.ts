@@ -53,6 +53,7 @@ export interface IPostCellProps {
     loveInteractions : number,
     ideaInteractions : number,
     thrillDescription : string
+    fetchCallback : CallableFunction
   }
   
 

@@ -8,7 +8,8 @@
 }
 
 .pageTitleContainer {
-    border: 5px solid $colorGreenBright;
+    border: 3px solid $colorDarker;
+    background-color: $colorWhite;
     max-width: 450px;
     padding: 0 20px 20px 20px;
 }
@@ -24,6 +25,11 @@
     font-weight: inherit;
     width: 500px;
     background-color: $colorWhiteExtra;
+}
+
+.projectsImage {
+    filter: drop-shadow(0 0 0.6rem $colorGray);
+    -webkit-filter: drop-shadow(0 0 0.6rem $colorGray);
 }
 
 //======================================================

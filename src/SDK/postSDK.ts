@@ -94,7 +94,7 @@ export default class PostSDK {
     }
 
     //===================================================================================
-    public loveInteractionController = async (postId: string): Promise<void> => {
+    public loveInteractionController = async (postId: string ,callback : CallableFunction): Promise<void> => {
         const loveInteractionsStorage = window.localStorage.getItem("loveInteractions");
         let stored_id: any | string[] = [];
         if (!loveInteractionsStorage) {
@@ -119,9 +119,10 @@ export default class PostSDK {
                 }
             }
         }
+        callback();
     };
 
-    public ideaInteractionController = async (postId: string): Promise<void> => {
+    public ideaInteractionController = async (postId: string, callback : CallableFunction): Promise<void> => {
         const ideaInteractionsStorage = window.localStorage.getItem("ideaInteractions");
         let stored_id: any | string[] = [];
         if (!ideaInteractionsStorage) {
@@ -146,6 +147,7 @@ export default class PostSDK {
                 }
             }
         }
+        callback();
     };
 
 

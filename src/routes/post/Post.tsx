@@ -40,6 +40,7 @@ export default function Post(): JSX.Element {
         const data = await apiResponse.json();
         console.log(data) */
     // setPostData(postTest);
+    console.log("yes")
   };
 
   const TagsOrganizer = (tags: string[]) => {
@@ -83,13 +84,13 @@ export default function Post(): JSX.Element {
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController("a")}>
+              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController("a", getPost)}>
                 <img src={loveInteractionIcon} alt={"interact with love"} />
                 <div>{postData.interactions.love}</div>
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.ideaInteractionController("a")}>
+              <button className={styles.interactionButton} onClick={() => postSDK.ideaInteractionController("a", getPost)}>
                 <img src={ideaInteractionIcon} alt={"interact with idea"} />
                 <div>{postData.interactions.idea}</div>
               </button>

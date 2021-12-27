@@ -26,7 +26,6 @@ export default function HomePage(): JSX.Element {
   const getLastPost = async () => {
     const apiResponse = await fetch(GET_POST_PUBLISHED_LATEST);
     const extractedData = await apiResponse.json();
-    console.log(extractedData);
     setPostData(extractedData[0]);
   };
 
@@ -117,6 +116,7 @@ export default function HomePage(): JSX.Element {
                 ideaInteractions={postData.interactions.idea}
                 slug={postData.slug}
                 thrillDescription={postData.thrillDescription}
+                fetchCallback={getLastPost}
               />
             )}
           </div>

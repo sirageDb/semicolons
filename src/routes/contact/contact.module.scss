@@ -10,6 +10,7 @@
     border: 5px solid $colorVioletDark;
     max-width: 450px;
     padding: 0 20px 20px 20px;
+    background-color: $colorWhiteExtra;
 }
 
 .pageTitle {
@@ -38,7 +39,7 @@
     margin-top: 15px;
     color: $colorWhite;
     background-color: $colorVioletDark;
-    padding: 2px 25px;
+    padding: 2px 50px;
     border-radius: 15px;
     border: 2px solid $colorVioletDark;
     transition: 200ms;
