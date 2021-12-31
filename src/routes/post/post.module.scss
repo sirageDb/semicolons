@@ -3,12 +3,25 @@ $pageWidth: 1100px;
 $tableOfContentContainerWidth :250px;
 $postContentMarginLeft: 30px;
 $mainComponentVerticalMargin: 15px;
+//=================================
+.postPageContentContainer {
+    position: relative;
+    min-height: 100vh;
+    background-size: 40px 40px;
+    background-color: #e4e4e4;
+}
+
+.postPageContent {
+    max-width: 900px;
+    padding-bottom: 150px;
+    margin: auto;
+}
+
+//========================
 .postContent {
     margin-top: 40px;
     white-space: pre-line;
     top: 20px; // headerwidth - tableofcontent top position
-    background-color: $colorWhite;
-    background-color: $colorWhite;
 }
 
 .postImage {
