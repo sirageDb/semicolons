@@ -7,6 +7,8 @@ $mainComponentVerticalMargin: 15px;
     margin-top: 40px;
     white-space: pre-line;
     top: 20px; // headerwidth - tableofcontent top position
+    background-color: $colorWhite;
+    background-color: $colorWhite;
 }
 
 .postImage {
@@ -107,4 +109,5 @@ $mainComponentVerticalMargin: 15px;
 //====================================================================
 .postText {
     margin-top: 60px;
+    border-top: 4px solid $colorGray;
 }

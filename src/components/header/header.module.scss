@@ -1,0 +1,30 @@
+@import "../../globalStyles.scss";
+.headerContainer {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid $colorBlue;
+    background-color: $colorWhiteExtra;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: $unifiedPageMaxWidth;
+    margin: auto;
+}
+
+.logo {
+    max-width: 160px;
+}
+
+.pageLink {
+    font-size: $fontsizeSheep;
+    margin-left: 20px;
+    color: $colorDarker;
+    font-weight: 700;
+}

@@ -67,7 +67,7 @@ export default function PostCell({
               </button>
             </div>
           </div>
-          <Link to={`/post/${slug}`}>
+          <Link to={`/posts/${slug}`}>
             <button className={styles.button + " " + styles.readButton}>
               <span>Read</span>
               <img src={arrowForward} alt={"share post"} />

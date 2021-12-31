@@ -1,7 +1,8 @@
+/* eslint-disable react/no-children-prop */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import PageLayout from "../../components/pageLayout/PageLayout";
-import postData from "../../lib/postTest.json";
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
 import PostSDK from "../../SDK/postSDK";
@@ -14,20 +15,24 @@ import timeIcon from "../../assets/timeIcon.svg";
 import shareIcon from "../../assets/shareIcon.svg";
 import dateIcon from "../../assets/dateIcond.svg";
 import dateFormatter from "../../lib/dateFormatter";
-import testProjectIllustration from "../../assets/testproject.png";
+import { GET_POST_BY_SLUG } from "../../lib/endpoints";
+import { IPost } from "../../lib/types";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import remarkGemoji from "remark-gemoji";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import apiEndPoint from "../../config/apiEndPoint";
 
 interface IPostData {
   title: string;
 }
 
-
 interface IPostParams {
-  slug : string
+  slug: string;
 }
 
 export default function Post(): JSX.Element {
-  // const [postData, setPostData] = useState<IPostData>();
-  const params = useParams<IPostParams>();
+  const [postData, setPostData] = useState<IPost>();
+  const { slug } = useParams<IPostParams>();
 
   const postSDK = new PostSDK();
 
@@ -36,11 +41,10 @@ export default function Post(): JSX.Element {
   }, []);
 
   const getPost = async () => {
-    /*         const apiResponse = await fetch("../../lib/postTest.json");
-        const data = await apiResponse.json();
-        console.log(data) */
-    // setPostData(postTest);
-    console.log("yes")
+    const apiResponse = await fetch(GET_POST_BY_SLUG(slug));
+    const data = await apiResponse.json();
+    console.log(data);
+    setPostData(data);
   };
 
   const TagsOrganizer = (tags: string[]) => {
@@ -58,22 +62,30 @@ export default function Post(): JSX.Element {
       <div className={styles.postContainer}>
         <div className={styles.datesContainer}></div>
         <div className={styles.postContent}>
-          <img className={styles.postImage} src={testProjectIllustration} />
-          <h1 className={styles.title}>{postData.title}</h1>
-          <div className={styles.tagsContainer}>{TagsOrganizer(postData.tags)}</div>
+          <img
+            className={styles.postImage}
+            alt={postData && postData.image.alt}
+            src={apiEndPoint + "/" + (postData && postData.image.path)}
+          />
+          <h1 className={styles.title}>{postData && postData.title}</h1>
+          <div className={styles.tagsContainer}>{postData && TagsOrganizer(postData.tags)}</div>
           <div className={styles.postStatsContainer}>
             <div className={styles.datesContainer}>
               <img className={styles.postStatIcon} src={dateIcon} alt={"post publish date"} />
-              <div>{dateFormatter(postData.creationDate)}</div>
-              <div>{postData.lastModificationDate && <span>Last mofidication : {dateFormatter(postData.lastModificationDate)}</span>}</div>
+              <div>{postData && dateFormatter(postData.creationDate)}</div>
+              <div>
+                {postData && postData.lastModificationDate && (
+                  <span>Last mofidication : {dateFormatter(postData.lastModificationDate)}</span>
+                )}
+              </div>
             </div>
             <div className={styles.readometerContainer}>
               <img className={styles.postStatIcon} src={timeIcon} alt={"minutes to read the post"} />
-              <div>{postData.readometer}</div>
+              <div>{postData && postData.readometer}</div>
             </div>
             <div className={styles.viewsContainer}>
               <img className={styles.postStatIcon} src={eyeIcon} alt={"post views counter"} />
-              <div>{postData.views}</div>
+              <div>{postData && postData.views}</div>
             </div>
           </div>
           <div className={styles.socialInteractionContainer}>
@@ -84,20 +96,51 @@ export default function Post(): JSX.Element {
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController("a", getPost)}>
+              <button
+                className={styles.interactionButton}
+                onClick={postData && (() => postSDK.loveInteractionController(postData._id, getPost))}
+              >
                 <img src={loveInteractionIcon} alt={"interact with love"} />
-                <div>{postData.interactions.love}</div>
+                <div>{postData && postData.interactions.love}</div>
               </button>
             </div>
             <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.ideaInteractionController("a", getPost)}>
+              <button
+                className={styles.interactionButton}
+                onClick={postData && (() => postSDK.ideaInteractionController(postData._id, getPost))}
+              >
                 <img src={ideaInteractionIcon} alt={"interact with idea"} />
-                <div>{postData.interactions.idea}</div>
+                <div>{postData && postData.interactions.idea}</div>
               </button>
             </div>
           </div>
           <div className={styles.postText}>
-            <ReactMarkdown>{postData.textContent}</ReactMarkdown>
+            {/* <ReactMarkdown>{postData && postData.content}</ReactMarkdown> */}
+            {postData && (
+              <ReactMarkdown
+                remarkPlugins={[remarkGemoji]}
+                components={{
+                  code({ node, inline, className, children, ...props }: any) {
+                    const match = /language-(\w+)/.exec(className || "");
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        children={String(children).replace(/\n$/, "")}
+                        language={match[1]}
+                        PreTag="div"
+                        style={atomOneDark}
+                        {...props}
+                      />
+                    ) : (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              >
+                {postData.content}
+              </ReactMarkdown>
+            )}
           </div>
         </div>
       </div>
