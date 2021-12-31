@@ -19,8 +19,6 @@ $mainComponentVerticalMargin: 15px;
 
 //========================
 .postContent {
-    margin-top: 40px;
-    white-space: pre-line;
     top: 20px; // headerwidth - tableofcontent top position
 }
 
@@ -43,7 +41,7 @@ $mainComponentVerticalMargin: 15px;
     margin-top: $mainComponentVerticalMargin;
     font-weight: 600;
     * {
-        color: $colorGrayDark;
+        color: $colorDarker;
     }
 }
 
@@ -121,6 +119,6 @@ $mainComponentVerticalMargin: 15px;
 
 //====================================================================
 .postText {
-    margin-top: 60px;
-    border-top: 4px solid $colorGray;
+    margin-top: 20px;
+    border-top: 4px solid $colorOrange;
 }
