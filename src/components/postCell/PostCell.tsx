@@ -51,7 +51,7 @@ export default function PostCell({
             <div>
               <button onClick={() => postSDK.sharePost()} className={styles.button + " " + styles.shareButton}>
                 <img src={shareIcon} alt={"share post"} />
-                <span>Share</span>
+                <span>Copy</span>
               </button>
             </div>
             <div>

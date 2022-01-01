@@ -13,7 +13,7 @@ export default function Header(): JSX.Element {
   };
 
   return (
-    <header onMouseEnter={changeColor} className={styles.headerContainer} style={{ borderBottomColor: headerColor }}>
+    <header onMouseEnter={changeColor} onMouseLeave={changeColor} className={styles.headerContainer} style={{ borderBottomColor: headerColor }}>
       <div className={styles.header}>
         {/* TODO SEO for image here */}
         <Link to={"/"}>

@@ -1,5 +1,5 @@
 @import "../../globalStyles.scss";
-$cellMaxWidth: 360px;
+$cellMaxWidth: 380px;
 $borderWidth: 2px;
 .container {
     text-align: left;
@@ -26,39 +26,24 @@ $borderWidth: 2px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    height: 300px;
+    // height: 300px;
 }
 
 .thrillDescriptionContainer {
-    height: 300px;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        width: none;
-    }
+    // height: 300px;
+    // overflow-y: scroll;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar {
+    // width: none;
+    // }
 }
 
 .tagsContainer {
     margin-top: 10px;
 }
 
-//=====================================
-.postImageContainer {
-    position: relative;
-    height: auto;
-}
-
-.postImageWavy {
-    position: absolute;
-}
-
-.postImage {
-    border-radius: 0 0 5px 5px;
-    max-width: $cellMaxWidth - $borderWidth - 1;
-    margin-bottom: -4px;
-}
-
+//=========================================
 .titleContainer {
     margin-bottom: 10px;
 }
@@ -148,4 +133,18 @@ $borderWidth: 2px;
     }
 }
 
-//==========================================================
+//==========================================================//=====================================
+.postImageContainer {
+    position: relative;
+    height: auto;
+}
+
+.postImageWavy {
+    position: absolute;
+}
+
+.postImage {
+    border-radius: 0 0 5px 5px;
+    max-width: $cellMaxWidth - $borderWidth - 1;
+    margin-bottom: -4px;
+}

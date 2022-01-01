@@ -42,3 +42,23 @@
         margin-top: 40px;
     }
 }
+
+.myMasonryGrid {
+    display: -webkit-box;
+    /* Not needed if autoprefixing */
+    display: -ms-flexbox;
+    /* Not needed if autoprefixing */
+    display: flex;
+    /* gutter size offset */
+}
+
+.myMasonryGridColumn {
+    /* gutter size */
+    background-clip: padding-box;
+    width: auto !important;
+}
+
+.singlePostCellContainer {
+    display: inline-block;
+    margin-bottom: 100px;
+}

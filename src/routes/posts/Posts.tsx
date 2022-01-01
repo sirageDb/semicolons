@@ -5,9 +5,9 @@ import spaceshipIllustration from "../../assets/spaceshipIllustration.svg";
 import styles from "./posts.module.scss";
 import { IPost } from "../../lib/types";
 import { GET_POSTS_PUBLISHED } from "../../lib/endpoints";
+import Masonry from "react-masonry-css";
 
 export default function Posts(): JSX.Element {
-
   const [posts, setPosts] = useState<IPost[]>();
 
   useEffect(() => {
@@ -17,6 +17,7 @@ export default function Posts(): JSX.Element {
   const fetchPosts = async () => {
     const apiResponse = await fetch(GET_POSTS_PUBLISHED);
     const data = await apiResponse.json();
+    // setPosts([data[0]]);
     setPosts(data);
   };
 
@@ -38,23 +39,26 @@ export default function Posts(): JSX.Element {
         </div>
       </div>
       <div className={styles.postsContainer}>
-        {posts?.map((post: IPost, i: number) => {
-          return (
-            <PostCell
-              key={i}
-              _id={post?._id}
-              imagePath={post?.image?.path}
-              imageAlt={post?.image?.alt}
-              title={post.title}
-              tags={post.tags}
-              loveInteractions={post.interactions.love}
-              ideaInteractions={post.interactions.idea}
-              slug={post.slug}
-              thrillDescription= {post.thrillDescription}
-              fetchCallback={fetchPosts}
-            />
-          );
-        })}
+        <Masonry breakpointCols={2} className={styles.myMasonryGrid} columnClassName={styles.myMasonryGridColumn}>
+          {posts?.map((post: IPost, i: number) => {
+            return (
+              <div className={styles.singlePostCellContainer} key={i}>
+                <PostCell
+                  _id={post?._id}
+                  imagePath={post?.image?.path}
+                  imageAlt={post?.image?.alt}
+                  title={post.title}
+                  tags={post.tags}
+                  loveInteractions={post.interactions.love}
+                  ideaInteractions={post.interactions.idea}
+                  slug={post.slug}
+                  thrillDescription={post.thrillDescription}
+                  fetchCallback={fetchPosts}
+                />
+              </div>
+            );
+          })}
+        </Masonry>
       </div>
     </PageLayout>
   );
