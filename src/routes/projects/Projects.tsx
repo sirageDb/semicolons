@@ -26,10 +26,9 @@ export default function Projects(): JSX.Element {
       <div className={styles.headingContainer}>
         <div className={styles.pageHeadingContainer}>
           <div className={styles.pageTitleContainer}>
-            <h1 className={styles.pageTitle}>Posts and articles zone</h1>
+            <h1 className={styles.pageTitle}>Projects zone</h1>
             <h2 className={styles.pageExplanation}>
-              Here is the portfolio of my personal finished or in progress projects , some of them are also opensource.<br /> i work on various stages of projects lifecycle, starting from defining projects roadmap, UI/UX development, coding and testing till the deployment and maintenance
-            </h2>
+              My projects and my side projects..., have a look, some of them might interest you ;-)</h2>
           </div>
           <div>
             <img className={styles.projectsImage} src={spacemanProjects} alt={"posts and articles page"} />

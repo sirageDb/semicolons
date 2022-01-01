@@ -33,7 +33,6 @@ export default function HomePage(): JSX.Element {
     return <div className={styles.singleTag}>#&nbsp; {text}</div>;
   };
 
-  /* style={{ backgroundImage: `url(${wavyHomePageBackground})` }} */
   return (
     <PageLayout>
       <div className={styles.pageHeadingContainer} >
@@ -41,11 +40,10 @@ export default function HomePage(): JSX.Element {
           <div className={styles.pageHeading}>
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
               <h1 className={styles.pageSlogan}>
-                Hey !, I am Sirage, welcome to Semicolons zone where i share my tech knowledge
+                Hey !, I am Sirage, welcome to Semicolons zone where I share my tech knowledge
               </h1>
               <div className={styles.pageExpanation}>
-                As a full stack web developer i work on various stages of a web or a mobile app development as well as
-                their full development lifecycle,
+                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a vision that allows me to have a better control over my projects. 
               </div>
             </div>
             <div className={styles.contactWidgetsContainer}>
