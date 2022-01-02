@@ -1,4 +1,5 @@
 import { useHistory } from "react-router";
+import { createPrinter } from "typescript";
 import apiEndPoint from "../config/apiEndPoint";
 import { POSTS_BO } from "../lib/appRouting";
 import { ADD_VIEW, DELETE_POST, INTERACT } from "../lib/endpoints";
@@ -195,6 +196,14 @@ export default class PostSDK {
 
     }
 
+    //==================================================================================
+
+
+    public copy2Clipboard = (text : string) : void => {
+        navigator.clipboard.writeText(text);
+    }
+
+    //==================================================================================
 
     public sharePost = () => {
         window.alert("share");

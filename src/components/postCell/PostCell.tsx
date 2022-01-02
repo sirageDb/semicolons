@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./postCell.module.scss";
 import { IPostCellProps, ITagProps } from "../../lib/types";
@@ -28,6 +28,7 @@ export default function PostCell({
   };
 
   const postSDK = new PostSDK();
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
   //TODO post slug in amdin mode
   return (
@@ -48,29 +49,39 @@ export default function PostCell({
         </div>
         <div className={styles.interactionContainer}>
           <div className={styles.socialInteractionContainer}>
-            <div>
-              <button onClick={() => postSDK.sharePost()} className={styles.button + " " + styles.shareButton}>
-                <img src={shareIcon} alt={"share post"} />
-                <span>Copy</span>
-              </button>
-            </div>
-            <div>
-              <button className={styles.interactionButton} onClick={() => postSDK.loveInteractionController(_id, fetchCallback)}>
-                <div>{loveInteractions}</div>
-                <img src={loveInteractionIcon} alt={"interact with love"} />
-              </button>
-            </div>
-            <div>
-              <button className={styles.interactionButton} onClick={() =>  postSDK.ideaInteractionController(_id ,fetchCallback)}>
-                <div>{ideaInteractions}</div>
-                <img src={ideaInteractionIcon} alt={"interact with idea"} />
-              </button>
-            </div>
+            {/* ========================================== */}
+            <button
+              onClick={() => {
+                postSDK.copy2Clipboard(`https://www.semicolons.dev/posts/${slug}`);
+                setIsCopied(true);
+              }}
+              className={styles.button + " " + styles.shareButton}
+            >
+              <img src={shareIcon} alt={"Copy link to clipboard"} />
+              <span>{isCopied ? "Copied !" : "Copy"} </span>
+            </button>
+            {/* ========================================== */}
+            <button
+              className={styles.interactionButton}
+              onClick={() => postSDK.loveInteractionController(_id, fetchCallback)}
+            >
+              <div>{loveInteractions}</div>
+              <img src={loveInteractionIcon} alt={"interact with love"} />
+            </button>
+            {/* ========================================== */}
+            <button
+              className={styles.interactionButton}
+              onClick={() => postSDK.ideaInteractionController(_id, fetchCallback)}
+            >
+              <div>{ideaInteractions}</div>
+              <img src={ideaInteractionIcon} alt={"interact with idea"} />
+            </button>
+            {/* ========================================== */}
           </div>
           <Link to={`/posts/${slug}`}>
             <button className={styles.button + " " + styles.readButton}>
               <span>Read</span>
-              <img src={arrowForward} alt={"share post"} />
+              <img src={arrowForward} alt={"Read post"} />
             </button>
           </Link>
         </div>

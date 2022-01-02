@@ -30,6 +30,7 @@ interface IPostParams {
 export default function Post(): JSX.Element {
   const [postData, setPostData] = useState<IPost>();
   const { slug } = useParams<IPostParams>();
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
   const postSDK = new PostSDK();
 
@@ -39,10 +40,10 @@ export default function Post(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    if(postData){
-      postSDK.addView(postData?._id);      
+    if (postData) {
+      postSDK.addView(postData?._id);
     }
-  }, [postData])
+  }, [postData]);
 
   const getPost = async () => {
     const apiResponse = await fetch(GET_POST_BY_SLUG(slug));
@@ -78,7 +79,7 @@ export default function Post(): JSX.Element {
               <div className={styles.datesContainer}>
                 <img className={styles.postStatIcon} src={dateIcon} alt={"post publish date"} />
                 <div>{postData && dateFormatter(postData.creationDate)}</div>
-{/*                 <div>
+                {/*                 <div>
                   {postData && postData.lastModificationDate && (
                     <span>Last mofidication : {dateFormatter(postData.lastModificationDate)}</span>
                   )}
@@ -94,13 +95,16 @@ export default function Post(): JSX.Element {
               </div>
             </div>
             <div className={styles.socialInteractionContainer}>
-              <div className={styles.shareButtonContainer}>
-                <button onClick={() => postSDK.sharePost()} className={styles.shareButton}>
+                <button
+                  onClick={() => {
+                    postSDK.copy2Clipboard(window.location.href);
+                    setIsCopied(true);
+                  }}
+                  className={styles.shareButton}
+                >
                   <img src={shareIcon} alt={"share post"} />
-                  <span className={styles.shareText}>Share</span>
+                  <span className={styles.shareText}>{isCopied ? "Copied !" : "Copy"}</span>
                 </button>
-              </div>
-              <div>
                 <button
                   className={styles.interactionButton}
                   onClick={postData && (() => postSDK.loveInteractionController(postData._id, getPost))}
@@ -108,8 +112,6 @@ export default function Post(): JSX.Element {
                   <img src={loveInteractionIcon} alt={"interact with love"} />
                   <div>{postData && postData.interactions.love}</div>
                 </button>
-              </div>
-              <div>
                 <button
                   className={styles.interactionButton}
                   onClick={postData && (() => postSDK.ideaInteractionController(postData._id, getPost))}
@@ -117,7 +119,6 @@ export default function Post(): JSX.Element {
                   <img src={ideaInteractionIcon} alt={"interact with idea"} />
                   <div>{postData && postData.interactions.idea}</div>
                 </button>
-              </div>
             </div>
             <div className={styles.postText}>
               {/* <ReactMarkdown>{postData && postData.content}</ReactMarkdown> */}
