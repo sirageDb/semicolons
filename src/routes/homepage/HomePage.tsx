@@ -40,10 +40,10 @@ export default function HomePage(): JSX.Element {
           <div className={styles.pageHeading}>
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
               <h1 className={styles.pageSlogan}>
-                Hey !, I am Sirage, welcome to Semicolons zone where I share my tech knowledge
+                Hey !, I am Sirage, welcome to Semicolons zone where I share my Tech knowledge.
               </h1>
               <div className={styles.pageExpanation}>
-                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a vision that allows me to have a better control over my projects. 
+                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a vision allows me to have a better control over my projects. 
               </div>
             </div>
             <div className={styles.contactWidgetsContainer}>
@@ -120,7 +120,7 @@ export default function HomePage(): JSX.Element {
           </div>
           <div className={styles.sectionPostSloganContainer}>
             <img className={styles.headIllustration} src={headIllustration} alt={"read my posts and tutorials"} />
-            <h2>In Semicolons blog you can find posts about various subjects in the tech industry</h2>
+            <h2>In Semicolons blog you can find posts about various subjects in the Tech industry</h2>
             <div className={styles.postsButtonContainer}>
               <Link to={"/posts"}>
                 <button className={styles.postsButton}>All my posts</button>
@@ -135,7 +135,7 @@ export default function HomePage(): JSX.Element {
 
       <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
         <div>
-          <h2 className={styles.projectSectionTitle}>Technologies and languages</h2>
+          <h2 className={styles.projectSectionTitle}>Technologies i work on...</h2>
         </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>

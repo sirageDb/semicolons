@@ -21,7 +21,7 @@ export const DELETE_POST = apiEndPoint + "/post/deletepost";
 export const UPDATE_POST = apiEndPoint + "/post/updatepost";
 export const PUBLISH_POST = apiEndPoint + "/post/publishpost";
 export const PRIVATIZE_POST = apiEndPoint + "/post/privatizepost";
-export const ADD_VIEW = apiEndPoint + "/post/addView";
+export const ADD_VIEW = `${apiEndPoint}/post/addView`;
 export const INTERACT = (type: string, action: string): string => {
     return `${apiEndPoint}/post/interact?type=${type}&action=${action}`
 }

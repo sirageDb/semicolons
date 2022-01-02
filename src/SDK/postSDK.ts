@@ -1,7 +1,7 @@
 import { useHistory } from "react-router";
 import apiEndPoint from "../config/apiEndPoint";
 import { POSTS_BO } from "../lib/appRouting";
-import { DELETE_POST, INTERACT } from "../lib/endpoints";
+import { ADD_VIEW, DELETE_POST, INTERACT } from "../lib/endpoints";
 
 
 export default class PostSDK {
@@ -10,12 +10,18 @@ export default class PostSDK {
         storage.push(post_id);
         window.localStorage.setItem(localStorageName, JSON.stringify(storage));
     }
-
     //===================================================================================
     private removeInteraction = (localStorageName: string, post_id: string, storage: any) => {
         const index = storage.indexOf(post_id);
         storage.splice(index, 1);
         window.localStorage.setItem(localStorageName, JSON.stringify(storage));
+    }
+
+    //===================================================================================
+
+    private setView = (post_id: string, storage: [any]): void => {
+        storage.push(post_id);
+        window.localStorage.setItem("views", JSON.stringify(storage));
     }
 
     //===================================================================================
@@ -34,67 +40,67 @@ export default class PostSDK {
 
     //===================================================================================
 
-    public unpublishPost = async (post_id : string) : Promise<void> => {
+    public unpublishPost = async (post_id: string): Promise<void> => {
         const apiResponse = await fetch(apiEndPoint + "/post/privatizepost", {
             method: "PUT",
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              post_id: post_id,
+                post_id: post_id,
             }),
-          });
-          if (apiResponse.status === 200) {
+        });
+        if (apiResponse.status === 200) {
             window.alert("Post unpublished successfully");
             window.location.reload();
-          } else {
+        } else {
             window.alert("Error unpublishing post");
-          }
+        }
     }
     //===================================================================================
-    public publishPost = async (post_id : string) :Promise<void>  => {
+    public publishPost = async (post_id: string): Promise<void> => {
         const apiResponse = await fetch(apiEndPoint + "/post/publishpost", {
             method: "PUT",
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 post_id: post_id,
             }),
-          });
-      
-          if(apiResponse.status === 200){
+        });
+
+        if (apiResponse.status === 200) {
             window.alert("Post published successfully");
             window.location.reload();
-          }
-          else {
+        }
+        else {
             window.alert("Error publishing post")
-          } 
+        }
     }
     //===================================================================================
-    public deletePost = async(post_id : string) : Promise<void> => {
+    public deletePost = async (post_id: string): Promise<void> => {
         const isConfirmed = window.confirm("Delete post ?");
         if (isConfirmed) {
-          const apiResponse = await fetch(DELETE_POST, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                post_id: post_id,
-            }),
-          });
-          if (apiResponse.status === 200) {
-            window.alert("post deleted successfully");
-            window.location.href = POSTS_BO;
-        } else {
-            window.alert("Error deleting post");
-          } 
+            const apiResponse = await fetch(DELETE_POST, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    post_id: post_id,
+                }),
+            });
+            if (apiResponse.status === 200) {
+                window.alert("post deleted successfully");
+                window.location.href = POSTS_BO;
+            } else {
+                window.alert("Error deleting post");
+            }
         }
     }
 
     //===================================================================================
-    public loveInteractionController = async (postId: string ,callback : CallableFunction): Promise<void> => {
+    public loveInteractionController = async (postId: string, callback: CallableFunction): Promise<void> => {
         const loveInteractionsStorage = window.localStorage.getItem("loveInteractions");
         let stored_id: any | string[] = [];
         if (!loveInteractionsStorage) {
@@ -122,12 +128,14 @@ export default class PostSDK {
         callback();
     };
 
-    public ideaInteractionController = async (postId: string, callback : CallableFunction): Promise<void> => {
+    //===================================================================================
+
+    public ideaInteractionController = async (postId: string, callback: CallableFunction): Promise<void> => {
         const ideaInteractionsStorage = window.localStorage.getItem("ideaInteractions");
         let stored_id: any | string[] = [];
         if (!ideaInteractionsStorage) {
             const apiResposne = await this.fetchInteractionEndPoint(postId, "add", "idea");
-            if(apiResposne.status === 200){
+            if (apiResposne.status === 200) {
                 localStorage.setItem("ideaInteractions", JSON.stringify(stored_id));
                 this.setInteraction("ideaInteractions", postId, stored_id);
             }
@@ -149,6 +157,43 @@ export default class PostSDK {
         }
         callback();
     };
+    //==================================================================================
+    public fetchAddView = async (post_id: string): Promise<Response> => {
+        console.log(ADD_VIEW);
+        const apiResponse = await fetch(ADD_VIEW, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                post_id: post_id
+            })
+        })
+        return apiResponse;
+    }
+
+    //==================================================================================
+    public addView = async (post_id: string): Promise<void> => {
+        const viewInteractionStorage = window.localStorage.getItem("views");
+        let stored_id: any | string[] = [];
+        if (!viewInteractionStorage) {
+            const apiResposne = await this.fetchAddView(post_id);
+            if (apiResposne.status === 200) {
+                localStorage.setItem("views", JSON.stringify(stored_id));
+                this.setView(post_id, stored_id);
+            }
+        }
+        else if (viewInteractionStorage) {
+            stored_id = JSON.parse(viewInteractionStorage);
+            if (!stored_id.includes(post_id)) {
+                const apiResposne = await this.fetchAddView(post_id);
+                if (apiResposne.status === 200) {
+                    this.setView(post_id, stored_id)
+                }
+            }
+        }
+
+    }
 
 
     public sharePost = () => {

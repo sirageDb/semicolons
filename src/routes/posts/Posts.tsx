@@ -31,7 +31,7 @@ export default function Posts(): JSX.Element {
 {/*               While working on my projects, i will simply make sidenotes about problems i encounter as a developer or
               problems i believe any programmer of any knowledge level might encounter, then i develop these sidenotes
               into posts that i can sahre them with you ! */}
-              My posts are some well developed sidenotes that I simply took while working on my real life projects in order to share the problem as well as the solution with you (plus how i found a solution! ).
+              My posts are some well developed sidenotes I simply took while working on my real life projects in order to share the problem as well as the solution with you (plus how I found the solution! ).
             </h2>
           </div>
           <div>

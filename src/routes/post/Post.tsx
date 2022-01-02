@@ -34,13 +34,19 @@ export default function Post(): JSX.Element {
   const postSDK = new PostSDK();
 
   useEffect(() => {
+    // getPost();
     getPost();
   }, []);
+
+  useEffect(() => {
+    if(postData){
+      postSDK.addView(postData?._id);      
+    }
+  }, [postData])
 
   const getPost = async () => {
     const apiResponse = await fetch(GET_POST_BY_SLUG(slug));
     const data = await apiResponse.json();
-    console.log(data);
     setPostData(data);
   };
 
