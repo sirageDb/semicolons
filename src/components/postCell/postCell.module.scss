@@ -34,16 +34,6 @@ $borderWidth: 3px;
     // height: 300px;
 }
 
-.thrillDescriptionContainer {
-    // height: 300px;
-    // overflow-y: scroll;
-    // -ms-overflow-style: none;
-    // scrollbar-width: none;
-    // &::-webkit-scrollbar {
-    // width: none;
-    // }
-}
-
 .tagsContainer {
     margin-top: 10px;
 }
@@ -70,10 +60,14 @@ $borderWidth: 3px;
     display: inline-block;
     background-color: $colorViolet;
     color: $colorWhite;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 2px 5px;
     margin-right: 10px;
     margin-bottom: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 .dateContainer {
@@ -102,9 +96,21 @@ $borderWidth: 3px;
 }
 
 .interactionButton {
+    height: 27px;
+    padding: 2px 5px;
+    border: 2px solid $colorYellow;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
     display: flex;
     justify-content: center;
     margin-left: 10px;
+    font-weight: bold;
+    * {
+        color: $colorBlue;
+    }
     >img {
         margin-left: 5px;
     }

@@ -109,15 +109,16 @@ export default function Post(): JSX.Element {
                   className={styles.interactionButton}
                   onClick={postData && (() => postSDK.loveInteractionController(postData._id, getPost))}
                 >
-                  <img src={loveInteractionIcon} alt={"interact with love"} />
                   <div>{postData && postData.interactions.love}</div>
+
+                  <img src={loveInteractionIcon} alt={"interact with love"} />
                 </button>
                 <button
                   className={styles.interactionButton}
                   onClick={postData && (() => postSDK.ideaInteractionController(postData._id, getPost))}
                 >
-                  <img src={ideaInteractionIcon} alt={"interact with idea"} />
                   <div>{postData && postData.interactions.idea}</div>
+                  <img src={ideaInteractionIcon} alt={"interact with idea"} />
                 </button>
             </div>
             <div className={styles.postText}>

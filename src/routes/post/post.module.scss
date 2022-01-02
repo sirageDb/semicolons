@@ -53,10 +53,10 @@ $mainComponentVerticalMargin: 15px;
     display: inline-block;
     padding: 2px 5px;
     background-color: $colorViolet;
-    margin-right: 15px;
-    border-radius: 3px;
+    margin-right: 10px;
+    border-radius: 15px;
     color: $colorWhiteExtra;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .readometerContainer {
@@ -91,15 +91,23 @@ $mainComponentVerticalMargin: 15px;
 }
 
 .interactionButton {
+    height: 27px;
+    padding: 2px 5px;
+    border: 2px solid $colorYellow;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
     display: flex;
     justify-content: center;
-    margin-left: 20px;
-    font-weight: 600;
+    margin-left: 10px;
+    font-weight: bold;
     * {
-        color: $colorGrayDark;
+        color: $colorBlue;
     }
     >img {
-        margin-right: 5px;
+        margin-left: 5px;
     }
 }
 
