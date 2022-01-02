@@ -78,11 +78,11 @@ export default function Post(): JSX.Element {
               <div className={styles.datesContainer}>
                 <img className={styles.postStatIcon} src={dateIcon} alt={"post publish date"} />
                 <div>{postData && dateFormatter(postData.creationDate)}</div>
-                <div>
+{/*                 <div>
                   {postData && postData.lastModificationDate && (
                     <span>Last mofidication : {dateFormatter(postData.lastModificationDate)}</span>
                   )}
-                </div>
+                </div> */}
               </div>
               <div className={styles.readometerContainer}>
                 <img className={styles.postStatIcon} src={timeIcon} alt={"minutes to read the post"} />
