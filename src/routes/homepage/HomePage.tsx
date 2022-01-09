@@ -35,7 +35,7 @@ export default function HomePage(): JSX.Element {
 
   return (
     <PageLayout>
-      <div className={styles.pageHeadingContainer} >
+      <div className={styles.pageHeadingContainer}>
         <div className={styles.secondaryBackground} style={{ backgroundImage: `url(${wavyHomePageBackground})` }}>
           <div className={styles.pageHeading}>
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
@@ -43,7 +43,8 @@ export default function HomePage(): JSX.Element {
                 Hey !, I am Sirage, welcome to Semicolons zone where I share my Tech knowledge.
               </h1>
               <div className={styles.pageExpanation}>
-                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a vision allows me to have a better control over my projects. 
+                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a
+                vision allows me to have a better control over my projects.
               </div>
             </div>
             <div className={styles.contactWidgetsContainer}>
