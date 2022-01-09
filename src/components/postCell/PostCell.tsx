@@ -87,8 +87,11 @@ export default function PostCell({
         </div>
       </div>
       <div className={styles.postImageContainer}>
-        <img className={styles.postImageWavy} src={wavyPostCellbackground} alt={"ok"} />
-        <img className={styles.postImage} src={apiEndPoint + "/" + imagePath} alt={imageAlt} />
+        <Link to={`/posts/${slug}`}>
+          <img className={styles.postImageWavy} src={wavyPostCellbackground} alt={"ok"} />
+
+          <img className={styles.postImage} src={apiEndPoint + "/" + imagePath} alt={imageAlt} />
+        </Link>
       </div>
     </div>
   );

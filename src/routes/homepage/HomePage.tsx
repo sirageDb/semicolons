@@ -30,7 +30,7 @@ export default function HomePage(): JSX.Element {
   };
 
   const Tag = ({ text }: any) => {
-    return <div className={styles.singleTag}>#&nbsp; {text}</div>;
+    return <div className={styles.singleTag}>#&nbsp;{text}</div>;
   };
 
   return (
