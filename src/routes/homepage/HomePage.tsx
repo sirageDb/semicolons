@@ -40,11 +40,11 @@ export default function HomePage(): JSX.Element {
           <div className={styles.pageHeading}>
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
               <h1 className={styles.pageSlogan}>
-                Hey !, I am Sirage, welcome to Semicolons zone where I share my Tech knowledge.
+                Hey !, welcome to Semicolons zone where I share my Tech knowledge.
               </h1>
               <div className={styles.pageExpanation}>
                 As a full stack web developer I work on the full development lifecycle of web and mobile apps with a
-                vision allows me to have a better control over my projects.
+                vision that allows me to have a full control over my projects.
               </div>
             </div>
             <div className={styles.contactWidgetsContainer}>

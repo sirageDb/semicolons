@@ -12,8 +12,15 @@ export default function Header(): JSX.Element {
     setHeaderColor(colors[Math.floor(randomIndex)]);
   };
 
+  const [isChecked, setIsChecked] = useState<boolean>(true);
+
   return (
-    <header onMouseEnter={changeColor} onMouseLeave={changeColor} className={styles.headerContainer} style={{ borderBottomColor: headerColor }}>
+    <header
+      onMouseEnter={changeColor}
+      onMouseLeave={changeColor}
+      className={styles.headerContainer}
+      style={{ borderBottomColor: headerColor }}
+    >
       <div className={styles.header}>
         {/* TODO SEO for image here */}
         <Link to={"/"}>
@@ -33,6 +40,14 @@ export default function Header(): JSX.Element {
             About
           </NavLink>
         </div>
+
+        {/*         <label className={styles.menu}>
+          <input type="checkbox" onClick={() => setIsChecked(!isChecked)} checked={isChecked} />
+          <div>
+            <span></span>
+            <span></span>
+          </div>
+        </label> */}
       </div>
     </header>
   );
