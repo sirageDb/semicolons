@@ -40,7 +40,7 @@ export default function Posts(): JSX.Element {
         <Masonry breakpointCols={2} className={styles.myMasonryGrid} columnClassName={styles.myMasonryGridColumn}>
           {posts?.map((post: IPost, i: number) => {
             return (
-              <div className={styles.singlePostCellContainer} key={i}>
+              <div  className={styles.singlePostCellContainer} key={i}>
                 <PostCell
                   _id={post?._id}
                   imagePath={post?.image?.path}

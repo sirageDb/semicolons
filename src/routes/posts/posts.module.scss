@@ -50,17 +50,15 @@
 
 .myMasonryGrid {
     display: -webkit-box;
-    /* Not needed if autoprefixing */
     display: -ms-flexbox;
-    /* Not needed if autoprefixing */
     display: flex;
-    /* gutter size offset */
+    width: 100%;
+    justify-content: space-between;
 }
 
 .myMasonryGridColumn {
-    /* gutter size */
     background-clip: padding-box;
-    width: auto !important;
+    max-width: 375px;
 }
 
 .singlePostCellContainer {
