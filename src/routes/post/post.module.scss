@@ -26,6 +26,14 @@ $mainComponentVerticalMargin: 15px;
     width: 100%;
 }
 
+.titleContainer {
+    width: 95%;
+    margin: auto;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
 .title {
     display: inline-block;
     background-color: $colorDarker;
@@ -35,18 +43,13 @@ $mainComponentVerticalMargin: 15px;
     padding: 5px 10px 5px 10px;
 }
 
-.postStatsContainer {
-    display: flex;
-    align-items: center;
-    margin-top: $mainComponentVerticalMargin;
-    font-weight: 600;
-    * {
-        color: $colorDarker;
-    }
-}
-
 .tagsContainer {
+    width: 95%;
+    margin: auto;
     margin-top: 10px;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
 }
 
 .singleTag {
@@ -59,6 +62,21 @@ $mainComponentVerticalMargin: 15px;
     margin-top: 10px;
 }
 
+.postStatsContainer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 95%;
+    margin-top: $mainComponentVerticalMargin;
+    font-weight: 600;
+    * {
+        color: $colorDarker;
+    }
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
 .readometerContainer {
     display: flex;
     align-items: center;
@@ -69,9 +87,6 @@ $mainComponentVerticalMargin: 15px;
     display: flex;
     align-items: center;
     margin-right: 20px;
-    /*     >div {
-        margin-right: 20px;
-    } */
 }
 
 .viewsContainer {
@@ -87,7 +102,12 @@ $mainComponentVerticalMargin: 15px;
 //====================================================================
 .socialInteractionContainer {
     display: flex;
+    margin: auto;
+    width: 95%;
     margin-top: $mainComponentVerticalMargin;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
 }
 
 .interactionButton {
@@ -127,6 +147,11 @@ $mainComponentVerticalMargin: 15px;
 
 //====================================================================
 .postText {
+    width: 95%;
+    margin: auto;
     margin-top: 20px;
     border-top: 4px solid $colorOrange;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
 }

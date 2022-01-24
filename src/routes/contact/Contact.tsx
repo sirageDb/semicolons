@@ -111,7 +111,10 @@ export default function Contact(): JSX.Element {
             value={message}
             style={{ resize: "vertical" }}
           />
-          <input className={styles.submitButton} type={"submit"} value={"Send"} />
+          <div className={styles.submitButtonContainer}>
+            <input className={styles.submitButton} type={"submit"} value={"Send"} />
+          </div>
+          
         </form>
       </div>
     </PageLayout>
