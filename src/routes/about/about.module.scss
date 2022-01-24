@@ -1,4 +1,12 @@
 @import "../../globalStyles.scss";
+.container {
+    width: 95%;
+    margin: auto;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
 .pageTitle {
     text-decoration: $mainTextDecoration;
 }
@@ -41,8 +49,14 @@
     color: $colorDarker;
 }
 
+.imageContainer {
+    margin-top: 10px;
+}
+
 .brand {
     display: block;
     margin: auto;
     max-width: 400px;
+    width: 90%;
+    margin-top: 20px;
 }

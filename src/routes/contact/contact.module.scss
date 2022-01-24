@@ -4,6 +4,10 @@
     margin: auto;
     margin-top: 40px;
     max-width: 600px;
+    width: 95%;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
 }
 
 .pageTitleContainer {
