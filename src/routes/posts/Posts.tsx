@@ -23,7 +23,6 @@ export default function Posts(): JSX.Element {
 
   return (
     <PageLayout contentMaxWidth={900}>
-      <div className={styles.headingContainer}>
         <div className={styles.pageHeadingContainer}>
           <div className={styles.pageTitleContainer}>
             <h1 className={styles.pageTitle}>Posts and articles zone</h1>
@@ -35,9 +34,8 @@ export default function Posts(): JSX.Element {
             <img className={styles.postsImage} src={spaceshipIllustration} alt={"posts and articles page"} />
           </div>
         </div>
-      </div>
       <div className={styles.postsContainer}>
-        <Masonry breakpointCols={2} className={styles.myMasonryGrid} columnClassName={styles.myMasonryGridColumn}>
+        <Masonry breakpointCols={{default : 2, 576:1}} className={styles.myMasonryGrid} columnClassName={styles.myMasonryGridColumn}>
           {posts?.map((post: IPost, i: number) => {
             return (
               <div  className={styles.singlePostCellContainer} key={i}>
