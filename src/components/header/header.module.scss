@@ -26,8 +26,17 @@
 .pageLink {
     font-size: $fontsizeSheep;
     margin-left: 20px;
-    color: $colorDarker;
     font-weight: 700;
+    padding: 2px 15px;
+    border-radius: 4px;
+}
+
+.pageLinkInside {
+    background-color: $colorDarker;
+    color: $colorWhite;
+    &:hover {
+        color: $colorWhite;
+    }
 }
 
 //=====================================

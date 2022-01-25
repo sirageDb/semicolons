@@ -14,6 +14,13 @@ export default function Header(): JSX.Element {
 
   const [isChecked, setIsChecked] = useState<boolean>(true);
 
+  const isCurrentWinodw = (path: string): boolean => {
+    if(window.location.pathname === path){
+      return true;
+    }
+    return false
+  };
+
   return (
     <header
       onMouseEnter={changeColor}
@@ -27,16 +34,16 @@ export default function Header(): JSX.Element {
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />
         </Link>
         <div>
-          <NavLink className={styles.pageLink} to={"/posts"}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/posts") && styles.pageLinkInside)} to={"/posts"}>
             Posts
           </NavLink>
-          <NavLink className={styles.pageLink} to={"/projects"}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/projects") && styles.pageLinkInside)} to={"/projects"}>
             Projects
           </NavLink>
-          <NavLink className={styles.pageLink} to={"/contact"}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/contact") && styles.pageLinkInside)} to={"/contact"}>
             Contact
           </NavLink>
-          <NavLink className={styles.pageLink} to={"/about"}>
+          <NavLink className={styles.pageLink  + " " + (isCurrentWinodw("/about") && styles.pageLinkInside)} to={"/about"}>
             About
           </NavLink>
         </div>
