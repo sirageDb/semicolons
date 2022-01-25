@@ -101,7 +101,7 @@ export default function HomePage(): JSX.Element {
       <section className={styles.sectionPost}>
         <div className={styles.sectionPostData}>
           <div>
-            <div>
+            <div className={styles.sectionPostTitleContainer}>
               <h2 className={styles.sectionPostTitle}>Latest post</h2>
             </div>
             {postData && (

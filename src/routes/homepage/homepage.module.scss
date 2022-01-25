@@ -119,14 +119,20 @@
     .sectionPost {
         margin: auto;
         margin-top: 60px;
-        width: 90%;
+        width: 95%;
+        @media (min-width: $screenWidthMobileBig) {
+            width: 90%;
+        }
     }
     
     .headIllustration {
-        max-width: 280px;
-        margin: auto;
-        filter: drop-shadow(0 0 0.9rem $colorYellow);
-        -webkit-filter: drop-shadow(0 0 0.9rem $colorYellow);
+        display: none;
+        @media (min-width: $screenWidthMobileBig) {
+            max-width: 280px;
+            margin: auto;
+            filter: drop-shadow(0 0 0.9rem $colorYellow);
+            -webkit-filter: drop-shadow(0 0 0.9rem $colorYellow);
+        }
     }
     
     .sectionPostSloganContainer {
@@ -139,9 +145,15 @@
         text-align: center;
     }
     
+    .sectionPostTitleContainer {
+        text-align: center;
+    }
+    
     .sectionPostTitle {
+        font-weight: bold;
+        text-align: center;
         display: inline-block;
-        border-bottom: 4px solid $colorGreenBright;
+        border-bottom: 10px solid $colorGray;
         margin-top: 0;
     }
     
