@@ -155,6 +155,7 @@ $borderWidth: 3px;
 }
 
 .postImage {
+    width: 100%;
     border-radius: 0 0 5px 5px;
     max-width: $cellMaxWidth - $borderWidth - 2;
     margin-bottom: -4px;

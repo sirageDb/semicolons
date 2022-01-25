@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 30px;
     flex-wrap: wrap;
     flex-direction: column;
     width: 95%;
@@ -12,7 +12,7 @@
         flex-direction: row;
         width: 100%;
         justify-content: center;
-        background: beige;
+        margin-top: 60px;
     }
     @media (min-width: $screenWidthMobileLandScape) {
         justify-content: space-between;
@@ -57,15 +57,15 @@
 .postsContainer {
     margin: auto;
     display: flex;
-    margin-top: 40px;
     justify-content: space-between;
     flex-wrap: wrap;
     >div {
-        margin-top: 40px;
+        margin-top: 30px;
     }
     width: 95%;
     @media (min-width: $screenWidthMobileBig) {
         width: 100%;
+        margin-top: 40px;
     }
 }
 
@@ -84,6 +84,7 @@
 
 .singlePostCellContainer {
     display: inline-block;
+    margin: auto;
     margin-bottom: 50px;
     @media (min-width: $screenWidthMobileBig) {
         margin-bottom: 100px;
