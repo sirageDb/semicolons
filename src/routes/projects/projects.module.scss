@@ -1,10 +1,24 @@
 @import "../../globalStyles.scss";
 .pageHeadingContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 30px;
+    width: 95%;
+    @media (min-width: $screenWidthMobileBig) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        margin-top: 60px;
+    }
+}
+
+.illustrationContainer {
+    display: none;
+    @media (min-width: $screenWidthMobileBig) {
+        display: block;
+    }
 }
 
 .pageTitleContainer {
@@ -35,8 +49,14 @@
 
 //======================================================
 .projectsContainer {
-    margin-top: 40px;
+    margin-top: 30px;
     >div {
+        margin-top: 30px;
+    }
+    @media (min-width: $screenWidthMobileBig) {
         margin-top: 40px;
+        >div {
+            margin-top: 40px;
+        }
     }
 }

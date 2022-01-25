@@ -30,7 +30,7 @@ export default function Projects(): JSX.Element {
             <h2 className={styles.pageExplanation}>
               My projects and my side projects..., have a look, some of them might interest you ;-)</h2>
           </div>
-          <div>
+          <div className={styles.illustrationContainer}>
             <img className={styles.projectsImage} src={spacemanProjects} alt={"posts and articles page"} />
           </div>
         </div>
@@ -38,8 +38,6 @@ export default function Projects(): JSX.Element {
 
 
       <div className={styles.projectsContainer}>
-
-
         {
           projects.map((project, index : number) => {
             return (<ProjectCell 

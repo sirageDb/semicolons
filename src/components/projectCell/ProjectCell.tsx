@@ -35,7 +35,7 @@ export default function ProjectCell({
   return (
     <div className={styles.container}>
       <img className={styles.image} src={apiEndPoint + "/" + image} alt={imageAlt} />
-      <div>
+      <div className={styles.projectDataContainer}>
         <div className={styles.name}>{name}</div>
         <div className={styles.description}>{description}</div>
         <div className={styles.tagsContainer}>
