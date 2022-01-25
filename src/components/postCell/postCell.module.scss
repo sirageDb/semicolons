@@ -134,13 +134,17 @@ $borderWidth: 3px;
 }
 
 .readButton {
-    border-color: $colorDarker;
+    border-color: $colorBlue;
     background-color: $colorDarker;
     >span {
         color: $colorWhiteExtra
     }
     >img {
         margin-left: 10px;
+    }
+    &:hover {
+        border-color: $colorDarker;
+        background-color: $colorBlue;
     }
 }
 
