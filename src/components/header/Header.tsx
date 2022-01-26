@@ -33,17 +33,17 @@ export default function Header(): JSX.Element {
         <Link to={"/"}>
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />
         </Link>
-        <div>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/posts") && styles.pageLinkInside)} to={"/posts"}>
+        <div className={styles.linksContainer}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/posts") && styles.isCurrentPageLink)} to={"/posts"}>
             Posts
           </NavLink>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/projects") && styles.pageLinkInside)} to={"/projects"}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/projects") && styles.isCurrentPageLink)} to={"/projects"}>
             Projects
           </NavLink>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/contact") && styles.pageLinkInside)} to={"/contact"}>
+          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/contact") && styles.isCurrentPageLink)} to={"/contact"}>
             Contact
           </NavLink>
-          <NavLink className={styles.pageLink  + " " + (isCurrentWinodw("/about") && styles.pageLinkInside)} to={"/about"}>
+          <NavLink className={styles.pageLink  + " " + (isCurrentWinodw("/about") && styles.isCurrentPageLink)} to={"/about"}>
             About
           </NavLink>
         </div>

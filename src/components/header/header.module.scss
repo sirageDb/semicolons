@@ -13,25 +13,44 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     max-width: $unifiedPageMaxWidth;
     margin: auto;
     align-items: center;
+    @media (min-width: $screenWidthMobileBig) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .logo {
     max-width: 160px;
 }
 
-.pageLink {
-    font-size: $fontsizeSheep;
-    margin-left: 20px;
-    font-weight: 700;
-    padding: 2px 15px;
-    border-radius: 4px;
+.linksContainer {
+    margin-top: 3px;
+    width: 100%;
+    text-align: center;
+    @media (min-width: $screenWidthMobileBig) {
+        margin: 0;
+        width: auto;
+        text-align: right;
+    }
 }
 
-.pageLinkInside {
+.pageLink {
+    font-size: $fontsizeSheep;
+    margin-left: 6px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    @media (min-width: $screenWidthMobileBig) {
+        margin-left: 20px;
+        padding: 2px 15px;
+        font-weight: 700;
+    }
+}
+
+.isCurrentPageLink {
     background-color: $colorDarker;
     color: $colorWhite;
     &:hover {
