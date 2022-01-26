@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
     setHeaderColor(colors[Math.floor(randomIndex)]);
   };
 
-  const [isChecked, setIsChecked] = useState<boolean>(true);
+  // const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const isCurrentWinodw = (path: string): boolean => {
     if(window.location.pathname === path){
