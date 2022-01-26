@@ -134,8 +134,9 @@ $borderWidth: 3px;
 }
 
 .readButton {
-    border-color: $colorBlue;
-    background-color: $colorDarker;
+    border-color: $colorDarker;
+    background-color: $colorBlue;
+    transition: 200ms;
     >span {
         color: $colorWhiteExtra
     }
@@ -143,8 +144,9 @@ $borderWidth: 3px;
         margin-left: 10px;
     }
     &:hover {
-        border-color: $colorDarker;
-        background-color: $colorBlue;
+        border-color: $colorBlue;
+        background-color: $colorDarker;
+        transition: 200ms;
     }
 }
 

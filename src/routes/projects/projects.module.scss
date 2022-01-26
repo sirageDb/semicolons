@@ -22,16 +22,15 @@
 }
 
 .pageTitleContainer {
-    border: 3px solid $colorVioletDark;
+    border: 5px solid $colorVioletDark;
     background-color: $colorWhite;
-    border-radius: 5px;
     max-width: 450px;
     padding: 0 20px 20px 20px;
 }
 
 .pageTitle {
     display: inline-block;
-    border-bottom: 4px solid $colorGreenBright;
+    border-bottom: 5px solid $colorGreenBright;
 }
 
 .pageExplanation {
