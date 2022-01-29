@@ -30,7 +30,7 @@ export default function Projects(): JSX.Element {
       </button>
 
       <div className={styles.postsContainer}>
-        {posts?.map((post: IPost, i: number) => {
+        {(posts && posts.length > 0) && posts.map((post: IPost, i: number) => {
           return <PostCell key={i} post_id={post._id} publish={post.publish} title={post.title} />;
         })}
       </div>

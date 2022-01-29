@@ -6,9 +6,10 @@ import styles from "./projects.module.scss";
 import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import ProjectCell from "../../../components/backoffice/projectCell/ProjectCell";
 import apiEndPoint from "../../../config/apiEndPoint";
+import { IProject } from "../../../lib/types";
 
 export default function Projects(): JSX.Element {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState<[]>()
   
   const history = useHistory();
 
@@ -32,7 +33,7 @@ export default function Projects(): JSX.Element {
       </button>
       <div className={styles.projectsContainer}>
         {
-          projects.map((project : any) => {
+          (projects && projects.length > 0 ) && projects.map((project : any) => {
             return <ProjectCell
             key = {project._id}
             project_id={project._id}

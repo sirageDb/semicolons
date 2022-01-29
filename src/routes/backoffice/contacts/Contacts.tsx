@@ -19,7 +19,7 @@ export default function Contacts(): JSX.Element {
 
   return (
     <MainLayout pageTitle={"Contacts"}>
-      {contacts.map((contact: any) => {
+      {(contacts && contacts.length > 0) && contacts.map((contact: any) => {
         return (
           <ContactCell
             key={contact._id}
