@@ -22,6 +22,7 @@ import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import apiEndPoint from "../../config/apiEndPoint";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import Seo from "../../components/seo/seo";
 
 interface IPostParams {
   slug: string;
@@ -63,6 +64,7 @@ export default function Post(): JSX.Element {
 
   return (
     <div className={styles.postPageContentContainer}>
+      {/* <Seo/> */}
       <Header />
       <main className={styles.postPageContent}>
         <div className={styles.postContainer}>
