@@ -10,6 +10,7 @@ export default function AdminAuth(): JSX.Element {
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
+    
     history.push("/backoffice/projects");
   };
 

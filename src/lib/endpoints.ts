@@ -1,6 +1,12 @@
 import apiEndPoint from "../config/apiEndPoint";
 
 
+// AUTH
+//=================================================================
+export const SIGNIN = apiEndPoint + "/user/signin";
+export const LOGOUT = apiEndPoint + "/user/logout";
+
+
 // POSTS
 //=================================================================
 export const CREATE_POST = apiEndPoint + "/post/createpost";
