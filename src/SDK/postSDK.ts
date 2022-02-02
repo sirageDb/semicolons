@@ -1,12 +1,14 @@
-import { useHistory } from "react-router";
-import { createPrinter } from "typescript";
+import { useContext } from "react";
 import apiEndPoint from "../config/apiEndPoint";
 import { POSTS_BO } from "../lib/appRouting";
+import { AuthContext } from "../lib/AuthContext";
 import { ADD_VIEW, DELETE_POST, INTERACT } from "../lib/endpoints";
 
 
 export default class PostSDK {
 
+    private authContext = useContext(AuthContext);
+    //===================================================================================
     private setInteraction = (localStorageName: string, post_id: string, storage: [any]): void => {
         storage.push(post_id);
         window.localStorage.setItem(localStorageName, JSON.stringify(storage));
@@ -46,6 +48,8 @@ export default class PostSDK {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
+                authorization: this.authContext.getToken()
+
             },
             body: JSON.stringify({
                 post_id: post_id,
@@ -64,6 +68,8 @@ export default class PostSDK {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
+                authorization: this.authContext.getToken()
+
             },
             body: JSON.stringify({
                 post_id: post_id,
@@ -86,6 +92,8 @@ export default class PostSDK {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
+                    authorization: this.authContext.getToken()
+
                 },
                 body: JSON.stringify({
                     post_id: post_id,
@@ -199,7 +207,7 @@ export default class PostSDK {
     //==================================================================================
 
 
-    public copy2Clipboard = (text : string) : void => {
+    public copy2Clipboard = (text: string): void => {
         navigator.clipboard.writeText(text);
     }
 

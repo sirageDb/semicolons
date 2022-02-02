@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import apiEndPoint from "../config/apiEndPoint";
+import { AuthContext } from "../lib/AuthContext";
 
 export default class ProjectSDK {
+
+  private authContext = useContext(AuthContext);
     //===================================================================================
     public unpublishProject = async (project_id : string) : Promise<void> => {
         const apiResponse = await fetch(apiEndPoint + "/project/privitiseproject", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
+              authorization : this.authContext.getToken()
             },
             body: JSON.stringify({
               project_id: project_id,
@@ -26,6 +31,7 @@ export default class ProjectSDK {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
+              authorization : this.authContext.getToken()
             },
             body: JSON.stringify({
               project_id: project_id,
@@ -50,6 +56,7 @@ export default class ProjectSDK {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
+              authorization : this.authContext.getToken()
             },
             body: JSON.stringify({
               project_id: project_id,

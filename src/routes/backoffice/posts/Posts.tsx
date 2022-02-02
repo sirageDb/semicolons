@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./posts.module.scss";
 import MainLayoutBackoffice from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import { GET_POSTS } from "../../../lib/endpoints";
 import { IPost } from "../../../lib/types";
 import PostCell from "../../../components/backoffice/postCell/PostCell";
+import { AuthContext } from "../../../lib/AuthContext";
 
 export default function Projects(): JSX.Element {
   const [posts, setPosts] = useState<IPost[]>();
+  const {getToken} = useContext(AuthContext);
   const history = useHistory();
   useEffect(() => {
     fetchPosts();
   }, []);
 
   const fetchPosts = async () => {
-    const apiResponse = await fetch(GET_POSTS);
+    const apiResponse = await fetch(GET_POSTS, {headers : {authorization : getToken()}});
     const data = await apiResponse.json();
     setPosts(data);
   };

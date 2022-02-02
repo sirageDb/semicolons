@@ -1,17 +1,24 @@
-import React, { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useContext } from "react";
 import { useState } from "react";
 import styles from "./adminAuth.module.scss";
 import { useHistory } from "react-router";
+import { AuthContext } from "../../../lib/AuthContext";
+import { PROJECTS_BO } from "../../../lib/appRouting";
 
 export default function AdminAuth(): JSX.Element {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signIn } = useContext(AuthContext);
 
-  const handleSubmit = (event: SyntheticEvent) => {
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    
-    history.push("/backoffice/projects");
+    if (email.length > 0 && password.length > 0) {
+      signIn(email, password);
+      history.push(PROJECTS_BO);
+    } else {
+      window.alert("Provide email and password");
+    }
   };
 
   return (
@@ -20,9 +27,9 @@ export default function AdminAuth(): JSX.Element {
         <div>
           <input
             className={styles.textInput}
-            id={"emailInput"} 
+            id={"emailInput"}
             type={"text"}
-            placeholder={"Email"} 
+            placeholder={"Email"}
             onChange={(event) => setEmail(event.target.value)}
             value={email}
           />
@@ -37,11 +44,7 @@ export default function AdminAuth(): JSX.Element {
             value={password}
           />
         </div>
-        <input
-          className={styles.signinButton}
-          type={"submit"}
-          value={"Sign in"}
-        />
+        <input className={styles.signinButton} type={"submit"} value={"Sign in"} />
       </form>
     </main>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { AUTH_PAGE } from "../../lib/appRouting";
 
 const CustomRoute = ({ component: Component, auth, ...rest }: any): JSX.Element => (
   <Route
@@ -8,10 +9,9 @@ const CustomRoute = ({ component: Component, auth, ...rest }: any): JSX.Element 
       auth === true ? (
         <Component {...props} />
       ) : (
-        // : <Resdirect to='/' />
         <Redirect
           to={{
-            pathname: "/",
+            pathname: AUTH_PAGE,
             state: { from: props.location },
           }}
         />

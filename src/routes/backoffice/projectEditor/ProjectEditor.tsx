@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./projectEditor.module.scss";
 import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrganizer";
 import addIcon from "../../../assets/addIcon.svg";
 import apiEndPoint from "../../../config/apiEndPoint";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import ProjectSDK from "../../../SDK/projectSDK";
+import { AuthContext } from "../../../lib/AuthContext";
 
 export default function ProjectEditor(): JSX.Element {
   const [name, setName] = useState<string>("");
@@ -21,10 +22,11 @@ export default function ProjectEditor(): JSX.Element {
   const [publish, setPublish] = useState<boolean>(false);
 
   interface IParams {
-    project_id : string | any
+    project_id: string | any;
   }
 
   const { project_id } = useParams<IParams>();
+  const { getToken } = useContext(AuthContext);
   const projectSDK = new ProjectSDK();
   useEffect(() => {
     if (project_id) {
@@ -39,6 +41,7 @@ export default function ProjectEditor(): JSX.Element {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        authorization: getToken(),
       },
     });
     const data = await apiResponse.json();
@@ -70,6 +73,7 @@ export default function ProjectEditor(): JSX.Element {
     const apiResponse = await fetch(apiEndPoint + "/project/createproject", {
       method: "POST",
       body: formData,
+      headers: { authorization: getToken() },
     });
     if (apiResponse.status === 200) {
       window.alert("Project saved successfully");
@@ -95,7 +99,7 @@ export default function ProjectEditor(): JSX.Element {
       }
       formData.append("projectLink", projectLink);
       formData.append("sourceCodeLink", sourceCodeLink);
-  
+
       const apiResponse = await fetch(apiEndPoint + "/project/updateproject", {
         method: "PUT",
         body: formData,
@@ -105,7 +109,7 @@ export default function ProjectEditor(): JSX.Element {
         window.location.reload();
       } else if (apiResponse.status !== 200) {
         window.alert("Error updating project");
-      }      
+      }
     }
   };
   const imagePreview = (imageFile: any) => {
@@ -121,7 +125,7 @@ export default function ProjectEditor(): JSX.Element {
     setImageFile(uploadedImage);
   };
 
-    // publish projecct
+  // publish projecct
   //===================================================
   const publishProject = async () => {
     projectSDK.publishProject(project_id);
@@ -137,7 +141,6 @@ export default function ProjectEditor(): JSX.Element {
   const deleteProject = async () => {
     projectSDK.deleteProject(project_id);
   };
-
 
   // add tag callbacck
   //===================================================
@@ -241,20 +244,19 @@ export default function ProjectEditor(): JSX.Element {
       <button onClick={project_id ? saveProject : createProject} className={styles.actionButton}>
         Save
       </button>
-      {
-        project_id &&
-      <>
-        {publish === false ? (
-          <button onClick={publishProject} className={styles.actionButton}>
-            Publish
-          </button>
-        ) : (
-          <button onClick={unpublishProject} className={styles.actionButton}>
-            Unpublish
-          </button>
-        )}
-      </>
-      }
+      {project_id && (
+        <>
+          {publish === false ? (
+            <button onClick={publishProject} className={styles.actionButton}>
+              Publish
+            </button>
+          ) : (
+            <button onClick={unpublishProject} className={styles.actionButton}>
+              Unpublish
+            </button>
+          )}
+        </>
+      )}
 
       {project_id && (
         <button onClick={deleteProject} className={styles.actionButtonDelete}>

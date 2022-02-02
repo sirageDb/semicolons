@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ProjectsBO from "./routes/backoffice/projects/Projects";
@@ -16,10 +16,12 @@ import ScrollToTop from "./lib/ScrollToTop";
 import PageNotFound from "./routes/unfound/PageNotFound";
 import PostEditor from "./routes/backoffice/postEditor/PostEditor";
 import CustomRoute from "./components/CustomRoute/CustomRoute";
-import AuthProvider from "./lib/AuthContext";
+import { AuthProvider, AuthContext } from "./lib/AuthContext";
+import { AUTH_PAGE } from "./lib/appRouting";
 
 export default function App(): JSX.Element {
-  const isAuth = false;
+  const isAuth = true;
+  
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -31,7 +33,7 @@ export default function App(): JSX.Element {
           <Route exact path={"/projects"} component={Projects} />
           <Route exact path={"/contact"} component={Contact} />
           <Route exact path={"/about"} component={About} />
-          <Route exact path={"/auth"} component={AdminAuth} />
+          <Route exact path={AUTH_PAGE} component={AdminAuth} />
           <CustomRoute exact path={"/backoffice/projects"} component={ProjectsBO} auth={isAuth} />
           <CustomRoute exact path={"/backoffice/ProjectEditor/"} component={ProjectEditor} auth={isAuth} />
           <CustomRoute exact path={"/backoffice/ProjectEditor/:project_id"} component={ProjectEditor} auth={isAuth} />

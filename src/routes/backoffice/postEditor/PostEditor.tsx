@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./postEditor.module.scss";
 import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrganizer";
@@ -14,6 +14,7 @@ import remarkGemoji from "remark-gemoji";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { IPost } from "../../../lib/types";
+import { AuthContext } from "../../../lib/AuthContext";
 
 export default function PostEditor(): JSX.Element {
   const [title, setTitle] = useState<string>("");
@@ -27,6 +28,8 @@ export default function PostEditor(): JSX.Element {
   const [imagePreviewSrc, setImagePreviewSrc] = useState<any>();
   const [imagePath, setImagePath] = useState<string>("");
   const [publish, setPublish] = useState<boolean>(false);
+
+  const { getToken } = useContext(AuthContext);
 
   interface IParams {
     post_id: string | any;
@@ -47,9 +50,10 @@ export default function PostEditor(): JSX.Element {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        authorization: getToken(),
       },
     });
-    const data : IPost = await apiResponse.json();
+    const data: IPost = await apiResponse.json();
     console.log(data);
     setTitle(data.title);
     setThrillDescription(data.thrillDescription);
@@ -78,6 +82,9 @@ export default function PostEditor(): JSX.Element {
     const apiResponse = await fetch(CREATE_POST, {
       method: "POST",
       body: formData,
+      headers: {
+        authorization: getToken(),
+      },
     });
     if (apiResponse.status === 200) {
       window.alert("Post saved successfully");
@@ -107,6 +114,9 @@ export default function PostEditor(): JSX.Element {
       const apiResponse = await fetch(UPDATE_POST, {
         method: "PUT",
         body: formData,
+        headers: {
+          authorization: getToken(),
+        },
       });
       if (apiResponse.status === 200) {
         window.alert("Post updated successfully");
