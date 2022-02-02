@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import ContactCell from "../../../components/backoffice/contactCell/ContactCell";
 import apiEndPoint from "../../../config/apiEndPoint";
+import { AuthContext } from "../../../lib/AuthContext";
 export default function Contacts(): JSX.Element {
   const [contacts, setContacts] = useState([]);
-
+  const {getToken} = useContext(AuthContext);
   useEffect(() => {
     getContacts();
   }, []);
 
   const getContacts = async () => {
-    const apiResposne = await fetch(apiEndPoint + "/contact/getcontacts");
+    const apiResposne = await fetch(apiEndPoint + "/contact/getcontacts", {headers : {authorization : getToken()}});
     const data = await apiResposne.json();
     setContacts(data);
   };

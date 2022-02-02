@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import apiEndPoint from "../../../config/apiEndPoint";
+import { AuthContext } from "../../../lib/AuthContext";
 import dateFormatter from "../../../lib/dateFormatter";
 
 import styles from "./contactCell.module.scss";
@@ -26,11 +27,14 @@ export default function ContactCell({
   updateStatusCallback,
 }: IProps): JSX.Element {
   //===============================================
+  const {getToken} = useContext(AuthContext);
+  //===============================================
   const updateStatus = async() => {
     const apiResponse = await fetch(apiEndPoint+"/contact/updatestatus",{
       "method" : "PUT",
       "headers" : {
-        "Content-type" : "application/json"
+        "Content-type" : "application/json",
+        authorization : getToken()
       },
       "body" : JSON.stringify({contact_id : contact_id})
     })
