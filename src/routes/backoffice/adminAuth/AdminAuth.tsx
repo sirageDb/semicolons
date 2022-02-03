@@ -14,7 +14,7 @@ export default function AdminAuth(): JSX.Element {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     if (email.length > 0 && password.length > 0) {
-      signIn(email, password);
+      await signIn(email, password);
       history.push(PROJECTS_BO);
     } else {
       window.alert("Provide email and password");

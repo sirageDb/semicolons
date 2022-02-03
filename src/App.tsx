@@ -16,14 +16,13 @@ import ScrollToTop from "./lib/ScrollToTop";
 import PageNotFound from "./routes/unfound/PageNotFound";
 import PostEditor from "./routes/backoffice/postEditor/PostEditor";
 import CustomRoute from "./components/CustomRoute/CustomRoute";
-import { AuthProvider, AuthContext } from "./lib/AuthContext";
+import { AuthContext } from "./lib/AuthContext";
 import { AUTH_PAGE } from "./lib/appRouting";
 
 export default function App(): JSX.Element {
-  const isAuth = true;
-  
+  const {isAuth} = useContext(AuthContext);
+  const isAuthStatus = isAuth();
   return (
-    <AuthProvider>
       <BrowserRouter>
         <ScrollToTop />
         <Switch>
@@ -34,16 +33,15 @@ export default function App(): JSX.Element {
           <Route exact path={"/contact"} component={Contact} />
           <Route exact path={"/about"} component={About} />
           <Route exact path={AUTH_PAGE} component={AdminAuth} />
-          <CustomRoute exact path={"/backoffice/projects"} component={ProjectsBO} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/ProjectEditor/"} component={ProjectEditor} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/ProjectEditor/:project_id"} component={ProjectEditor} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/posts"} component={PostsBO} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/posteditor"} component={PostEditor} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/posteditor/:post_id"} component={PostEditor} auth={isAuth} />
-          <CustomRoute exact path={"/backoffice/contacts"} component={ContactsBO} auth={isAuth} />
+          <CustomRoute exact path={"/backoffice/projects"} component={ProjectsBO} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/ProjectEditor/"} component={ProjectEditor} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/ProjectEditor/:project_id"} component={ProjectEditor} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/posts"} component={PostsBO} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/posteditor"} component={PostEditor} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/posteditor/:post_id"} component={PostEditor} auth={isAuthStatus} />
+          <CustomRoute exact path={"/backoffice/contacts"} component={ContactsBO} auth={isAuthStatus} />
           <Route component={PageNotFound} />
         </Switch>
       </BrowserRouter>
-    </AuthProvider>
   );
 }
