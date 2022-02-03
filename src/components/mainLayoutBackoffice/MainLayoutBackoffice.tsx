@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { AuthContext } from "../../lib/AuthContext";
 import styles from "./mainLayoutBackoffice.module.scss";
 
 
@@ -9,16 +10,13 @@ interface IProps {
 }
 
 export default function MainLayout({ children, pageTitle }: IProps): JSX.Element {
-  const history = useHistory();
 
-  const logout = () => {
-    const isConfirmedLogout = window.confirm(
-      "Are You sure you want to logout ?"
-    );
-    if (isConfirmedLogout) {
-      history.push("/auth");
-    }
-  };
+  const {logOut} = useContext(AuthContext);
+
+  const logOutClick = async () => {
+    await logOut();
+  }
+
 
   return (
     <div className={styles.mainLayoutContainer}>
@@ -33,7 +31,7 @@ export default function MainLayout({ children, pageTitle }: IProps): JSX.Element
           <NavLink to={"/backoffice/contacts"}>Contacts</NavLink>
         </div>
         <div>
-          <button className={styles.logoutButton} onClick={logout}>
+          <button className={styles.logoutButton} onClick={() => logOutClick()}>
             Logout
           </button>
         </div>

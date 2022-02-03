@@ -1,18 +1,17 @@
 import React, { createContext, ReactNode } from "react";
 import { AUTH_PAGE } from "./appRouting";
-import { SIGNIN } from "./endpoints";
+import { SIGNIN, LOGOUT } from "./endpoints";
 
 interface IAuthContext {
   getToken: () => string;
   signIn: (email: string, password: string) => Promise<void>;
-  signOut: () => Promise<void>;
+  logOut: () => Promise<void>;
   isAuth: () => boolean;
 }
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
-
   //================================================================================
 
   const localStorageAuthTokenItemName = "authToken";
@@ -30,12 +29,15 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
     if (apiResponse.status === 200) {
       localStorage.setItem(localStorageAuthTokenItemName, data.token);
       localStorage.setItem("isAuth", "true");
+      window.location.href = "/backoffice/projects";
     } else {
       window.alert("Could not connect to admin space ERROR ::: " + data.message);
     }
   };
   //================================================================================
   const isAuth = (): boolean => {
+    console.log("calling here");
+
     const isAuthItem = localStorage.getItem("isAuth");
     if (!isAuthItem || (isAuthItem && isAuthItem === "false")) {
       return false;
@@ -43,8 +45,25 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
     return true;
   };
   //================================================================================
-  const signOut = async (): Promise<void> => {
-    window.alert("signout");
+  const logOut = async (): Promise<void> => {
+    const isConfirmedLogOut = window.confirm("Are you sure you want to log out ?");
+    if (isConfirmedLogOut) {
+      console.log("here");
+      const apiResponse = await fetch(LOGOUT, {
+        headers : {authorization : getToken()}
+      });
+      if (apiResponse.status === 401) {
+        const isConfirmed = window.confirm("Access denied, will be redirected to /auth");
+        if (isConfirmed) {
+          window.location.href = AUTH_PAGE;
+        }
+      }
+      if (apiResponse.status === 200) {
+        localStorage.removeItem(localStorageAuthTokenItemName);
+        localStorage.removeItem("isAuth");
+        window.location.href = "/";
+      }
+    }
   };
   //================================================================================
   const getToken = (): string => {
@@ -59,7 +78,7 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   };
   //================================================================================
 
-  return <AuthContext.Provider value={{ getToken, signIn, signOut, isAuth }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ getToken, signIn, logOut, isAuth }}>{children}</AuthContext.Provider>;
 };
 
 export { AuthProvider, AuthContext };
