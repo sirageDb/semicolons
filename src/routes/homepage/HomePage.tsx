@@ -148,11 +148,11 @@ export default function HomePage(): JSX.Element {
             <Tag text={"Docker"} />
             <Tag text={"GraphQl"} />
             <Tag text={"jQuery"} />
-            <Tag text={"NodeJs"} />
+            <Tag text={"Node"} />
             <Tag text={"Express"} />
             <Tag text={"React"} />
             <Tag text={"React Native"} />
-            <Tag text={"MySQL"} />
+            <Tag text={"SQL"} />
             <Tag text={"Open Source"} />
             <Tag text={"Scrum"} />
             <Tag text={"MongoDb"} />
@@ -163,8 +163,6 @@ export default function HomePage(): JSX.Element {
             <Tag text={"Nginx"} />
             <Tag text={"Linux"} />
             <Tag text={"Git"} />
-            <Tag text={"Github"} />
-            <Tag text={"GitLab"} />
           </div>
           <Link to={"/projects"}>
             <button className={styles.projectsButton}>Projects zone</button>

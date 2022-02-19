@@ -4,6 +4,7 @@ import styles from "./adminAuth.module.scss";
 import { useHistory } from "react-router";
 import { AuthContext } from "../../../lib/AuthContext";
 import { PROJECTS_BO } from "../../../lib/appRouting";
+import Seo from "../../../components/seo/seo";
 
 export default function AdminAuth(): JSX.Element {
   const history = useHistory();

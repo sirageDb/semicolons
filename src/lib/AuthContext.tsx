@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 import { AUTH_PAGE } from "./appRouting";
 import { SIGNIN, LOGOUT } from "./endpoints";
 
@@ -7,13 +7,14 @@ interface IAuthContext {
   signIn: (email: string, password: string) => Promise<void>;
   logOut: () => Promise<void>;
   isAuth: () => boolean;
+  isAuthState : boolean;
 }
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   //================================================================================
-
+  const [isAuthState, setIsAuthState] = useState<boolean>(false);
   const localStorageAuthTokenItemName = "authToken";
 
   //================================================================================
@@ -29,15 +30,14 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
     if (apiResponse.status === 200) {
       localStorage.setItem(localStorageAuthTokenItemName, data.token);
       localStorage.setItem("isAuth", "true");
-      window.location.href = "/backoffice/projects";
+      setIsAuthState(true);
+
     } else {
       window.alert("Could not connect to admin space ERROR ::: " + data.message);
     }
   };
   //================================================================================
   const isAuth = (): boolean => {
-    console.log("calling here");
-
     const isAuthItem = localStorage.getItem("isAuth");
     if (!isAuthItem || (isAuthItem && isAuthItem === "false")) {
       return false;
@@ -78,7 +78,7 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   };
   //================================================================================
 
-  return <AuthContext.Provider value={{ getToken, signIn, logOut, isAuth }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ getToken, signIn, logOut, isAuth, isAuthState}}>{children}</AuthContext.Provider>;
 };
 
 export { AuthProvider, AuthContext };
