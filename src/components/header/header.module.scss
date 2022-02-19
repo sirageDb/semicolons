@@ -1,0 +1,134 @@
+@import "../../globalStyles.scss";
+.headerContainer {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    border-bottom: 4px solid;
+    background-color: $colorWhiteExtra;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    max-width: $unifiedPageMaxWidth;
+    margin: auto;
+    align-items: center;
+    @media (min-width: $screenWidthMobileBig) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    max-width: 160px;
+}
+
+.linksContainer {
+    margin-top: 3px;
+    width: 100%;
+    text-align: center;
+    @media (min-width: $screenWidthMobileBig) {
+        margin: 0;
+        width: auto;
+        text-align: right;
+    }
+}
+
+.pageLink {
+    font-size: $fontsizeSheep;
+    margin-left: 6px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    @media (min-width: $screenWidthMobileBig) {
+        margin-left: 20px;
+        padding: 2px 15px;
+        font-weight: 700;
+    }
+}
+
+.isCurrentPageLink {
+    background-color: $colorDarker;
+    color: $colorWhite;
+    &:hover {
+        color: $colorWhite;
+    }
+}
+
+//=====================================
+.menu {
+    --front: #0067FF;
+    --back: #D93757;
+    --icon: white;
+    perspective: 600px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    input {
+        display: none;
+        &+div {
+            span {
+                --rotateY: 0deg;
+                --background: var(--front);
+                transform: rotateY(var(--rotateY));
+                transform-style: preserve-3d;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: var(--background);
+                backface-visibility: hidden;
+                transition: transform .6s cubic-bezier(.2, .64, .48, 1.24);
+                &:before,
+                &:after {
+                    --rotate: 0deg;
+                    content: '';
+                    position: absolute;
+                    width: 16px;
+                    height: 2px;
+                    border-radius: 1px;
+                    top: 50%;
+                    left: 50%;
+                    background: var(--icon);
+                    backface-visibility: hidden;
+                    transform: translate(-50%, -50%) rotate(var(--rotate)) translateZ(6px);
+                }
+                &:first-child {
+                    --background: var(--back);
+                    &:before {
+                        --rotate: -45deg;
+                    }
+                    &:after {
+                        --rotate: 45deg;
+                    }
+                }
+                &:last-child {
+                    --rotateY: 180deg;
+                    &:before {
+                        box-shadow: 0 -5px 0 var(--icon), 0 5px 0 var(--icon);
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &:checked+div {
+            span {
+                &:first-child {
+                    --rotateY: -180deg;
+                }
+                &:last-child {
+                    --rotateY: 0deg;
+                }
+            }
+        }
+    }
+}

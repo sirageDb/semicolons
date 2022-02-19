@@ -1,0 +1,168 @@
+@import "../../globalStyles.scss";
+$cellMaxWidth: 380px;
+$borderWidth: 3px;
+.container {
+    text-align: left;
+    display: inline-block;
+    border: $borderWidth solid $colorDarkest;
+    border-radius: 5px;
+    max-width: $cellMaxWidth;
+    background-color: $colorWhiteExtra;
+    color: $colorGrayDark;
+    transition: border-color 300ms;
+    box-shadow: 0 0 10px 5px rgba($colorOrange, 0);
+    -webkit-transition: border-color 300ms;
+    -moz-transition: border-color 300ms;
+    -ms-transition: border-color 300ms;
+    -o-transition: border-color 300ms;
+    * {
+        color: $colorDarker;
+    }
+    &:hover {
+        border-color: $colorOrange;
+        transition: border-color 300ms box-shadow 300ms;
+    }
+}
+
+.postCellDataContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    // height: 300px;
+}
+
+.tagsContainer {
+    margin-top: 10px;
+}
+
+//=========================================
+.titleContainer {
+    margin-bottom: 10px;
+}
+
+.title {
+    display: inline-block;
+    font-size: $fontsizeCow;
+    color: $colorWhite;
+    background-color: $colorDarker;
+    text-decoration: solid underline 1px $colorWhite;
+    padding: 1px 8px;
+    margin-top: 10px;
+    &:hover {
+        color: $colorYellow;
+    }
+}
+
+.tag {
+    display: inline-block;
+    background-color: $colorViolet;
+    color: $colorWhite;
+    border-radius: 15px;
+    padding: 2px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.dateContainer {
+    margin-bottom: 10px;
+}
+
+//==========================================================
+.postReaderInfo {
+    display: flex;
+}
+
+.postReaderInfoIcon {
+    margin-right: 5px;
+}
+
+//==========================================================
+.interactionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socialInteractionContainer {
+    display: flex;
+    align-items: center;
+}
+
+.interactionButton {
+    height: 27px;
+    padding: 2px 5px;
+    border: 2px solid $colorYellow;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    font-weight: bold;
+    * {
+        color: $colorBlue;
+    }
+    >img {
+        margin-left: 5px;
+    }
+}
+
+.button {
+    display: flex;
+    border: 2px solid;
+    border-radius: 3px;
+    padding: 2px 10px;
+}
+
+.shareButton {
+    border-color: $colorBlue;
+    >span {
+        color: $colorBlue
+    }
+    >img {
+        margin-right: 5px;
+    }
+}
+
+.readButton {
+    border-color: $colorDarker;
+    background-color: $colorBlue;
+    transition: 200ms;
+    >span {
+        color: $colorWhiteExtra
+    }
+    >img {
+        margin-left: 10px;
+    }
+    &:hover {
+        border-color: $colorBlue;
+        background-color: $colorDarker;
+        transition: 200ms;
+    }
+}
+
+//==========================================================//=====================================
+.postImageContainer {
+    position: relative;
+    height: auto;
+}
+
+.postImageWavy {
+    position: absolute;
+}
+
+.postImage {
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    max-width: $cellMaxWidth - $borderWidth - 2;
+    margin-bottom: -4px;
+}

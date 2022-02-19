@@ -1,0 +1,29 @@
+@import "../../globalStyles.scss";
+.pageContent {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px
+}
+
+.illustration {
+    max-width: 300px;
+}
+
+.pageTitle {
+    color: $colorGrayDark;
+}
+
+.homepageButton {
+    color: $colorDarker;
+    background-color: $colorGreen;
+    padding: 2px 20px;
+    border: 2px solid $colorGreen;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 200ms;
+    &:hover {
+        transition: 200ms;
+        background-color: white;
+    }
+}

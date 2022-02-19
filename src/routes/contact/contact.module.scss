@@ -1,0 +1,76 @@
+@import "../../globalStyles.scss";
+.pageSubContainer {
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 600px;
+    width: 95%;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
+.pageTitleContainer {
+    border: 5px solid $colorVioletDark;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+    background-color: $colorWhiteExtra;
+}
+
+.pageTitle {
+    display: inline-block;
+    border-bottom: 4px solid $colorVioletDark;
+}
+
+.pageExplanation {
+    font-size: $fontsizeSheep;
+    // width: 500px;
+    background-color: $colorWhiteExtra;
+}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.formtextInput {
+    display: block;
+    border: 1px solid $colorGray;
+    border-radius: 3px;
+    padding: 5px 5px;
+    margin-top: 15px;
+    font-family: inherit;
+    width: 100%;
+    cursor: pointer;
+}
+
+.submitButtonContainer {
+    text-align: right;
+}
+
+.submitButton {
+    margin-top: 15px;
+    color: $colorWhite;
+    background-color: $colorVioletDark;
+    padding: 2px 50px;
+    border-radius: 15px;
+    border: 2px solid $colorVioletDark;
+    transition: 200ms;
+    &:hover {
+        background-color: $colorWhite;
+        color: $colorVioletDark;
+        transition: 200ms;
+    }
+}
+
+.submitNotification {
+    padding: 5px 5px;
+    color: $colorWhite;
+    border: 4px solid;
+}
+
+.confirmation {
+    border-color: $colorGreenBright;
+    background-color: $colorVioletDark;
+}
+
+.error {
+    border-color: $colorOrange;
+    background-color: $colorDanger;
+}

@@ -1,0 +1,62 @@
+@import "../../globalStyles.scss";
+.container {
+    width: 95%;
+    margin: auto;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
+.pageTitle {
+    text-decoration: $mainTextDecoration;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contentText {
+    flex: 2;
+}
+
+.image {
+    display: block;
+    margin: auto;
+    max-width: 200px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionHeading {
+    font-weight: bold;
+}
+
+.sectionTitle {
+    display: inline-block;
+    border-bottom: 4px solid $colorGreenBright;
+    font-size: $fontsizeSheep;
+    font-weight: bold;
+    color: $colorDarker;
+}
+
+.sectionExplanation {
+    margin-top: 10px;
+    font-size: $fontsizeSheep;
+    color: $colorDarker;
+}
+
+.imageContainer {
+    margin-top: 10px;
+}
+
+.brand {
+    display: block;
+    margin: auto;
+    max-width: 400px;
+    width: 90%;
+    margin-top: 20px;
+}

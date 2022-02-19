@@ -1,0 +1,87 @@
+@import "../../globalStyles.scss";
+// @media (min-width: $screenWidthMobileBig) {
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+    border: 3px solid $colorDarker;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: $colorWhite;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
+.image {
+    width: 100%;
+    @media (min-width: $screenWidthMobileBig) {
+        max-width: 300px;
+        margin-right: 40px;
+    }
+}
+
+.projectDataContainer {
+    padding: 10px;
+    @media (min-width: $screenWidthMobileBig) {
+        padding: 0;
+    }
+}
+
+.name {
+    font-size: $fontsizeCow;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: $fontsizeHuman;
+    flex: 1;
+}
+
+.tagsContainer {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: $colorViolet;
+    color: $colorWhite;
+    border-radius: 15px;
+    padding: 2px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.buttonsContainer {
+    display: flex;
+}
+
+.button {
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    >img {
+        margin-right: 5px;
+    }
+    border: 3px solid;
+    border-radius: 3px;
+}
+
+.sourceCodeLinkButton {
+    border-color: $colorBlue;
+    margin-right: 20px;
+}
+
+.projectLinkButton {
+    border-color: $colorGreen;
+}

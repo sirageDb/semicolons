@@ -1,0 +1,87 @@
+@import "../../globalStyles.scss";
+.pageHeadingContainer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 95%;
+    justify-content: center;
+    @media (min-width: $screenWidthMobileBig) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        margin-top: 60px;
+    }
+    @media (min-width: $screenWidthMobileLandScape) {
+        justify-content: space-between;
+    }
+}
+
+.pageTitleContainer {
+    background-color: $colorWhite;
+    border: 5px solid $colorVioletDark;
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+}
+
+.pageTitle {
+    display: inline-block;
+    border-bottom: 5px solid $colorGreenBright;
+}
+
+.pageExplanation {
+    margin: 0;
+    font-size: $fontsizeSheep;
+    font-weight: inherit;
+    // width: 500px;
+    background-color: $colorWhite;
+}
+
+.postsImage {
+    display: none;
+    filter: drop-shadow(0 0 0.6rem $colorGray);
+    -webkit-filter: drop-shadow(0 0 0.6rem $colorGray);
+    @media (min-width: $screenWidthMobileBig) {
+        display: block;
+    }
+}
+
+//======================================================
+.postsContainer {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >div {
+        margin-top: 30px;
+    }
+    width: 95%;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
+.myMasonryGrid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.myMasonryGridColumn {
+    background-clip: padding-box;
+    max-width: 375px;
+}
+
+.singlePostCellContainer {
+    display: inline-block;
+    margin: auto;
+    margin-bottom: 50px;
+    @media (min-width: $screenWidthMobileBig) {
+        margin-bottom: 100px;
+    }
+}

@@ -1,0 +1,11 @@
+@import "../../../globalStyles.scss";
+.newPostButton {
+    padding: 3px 20px;
+    color: $colorWhite;
+    background-color: $colorViolet;
+    border-radius: 20px;
+}
+
+.postsContainer {
+    margin-top: 20px;
+}

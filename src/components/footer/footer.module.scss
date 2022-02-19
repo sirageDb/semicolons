@@ -1,0 +1,26 @@
+@import "../../globalStyles.scss";
+.footerContainer {
+    border-top: 4px solid $colorGreenBright;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $colorWhiteExtra;
+    // height: 50px;
+}
+
+.footer {
+    max-width: $unifiedPageMaxWidth;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    @media (min-width: $screenWidthMobileBig) {
+        width: 100%;
+    }
+}
+
+.logo {
+    max-width: 120px;
+}

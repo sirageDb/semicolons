@@ -1,0 +1,33 @@
+@import "../../../globalStyles.scss";
+.container {
+    position: relative;
+    padding: 20px 20px;
+    border: 1px solid;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-color: $colorGray;
+}
+
+.message {
+    padding-top: 10px;
+    border-top: 1px solid $colorGray;
+    margin-top: 10px;
+}
+
+.isNew {
+    border-left: 5px solid $colorGreen;
+}
+
+.statusButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: $colorWhiteExtra;
+    padding: 3px 20px;
+    border-radius: 20px;
+    background-color: $colorGray;
+}
+
+.statusButtonIsNew {
+    background-color: $colorGreen;
+}
