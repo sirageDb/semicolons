@@ -14,6 +14,7 @@ import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
 import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
+import Seo from "../../components/seo/seo";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
@@ -35,13 +36,20 @@ export default function HomePage(): JSX.Element {
 
   return (
     <PageLayout>
+      <Seo
+        robots="index,follow"
+        ogType="website"
+        title="Semicolons azdazodazd"
+        imagePath="d"
+        path=""
+        keywards="Semicolons, Sirage, AL DBIYAT, sirage al dbiyat, fullstack development, blog, opensource, open source, projects, best projects, french tech, lyon, france"
+        description="Welcome to Semicolons zone where I share my Tech knowledge."
+      />
       <div className={styles.pageHeadingContainer}>
         <div className={styles.secondaryBackground} style={{ backgroundImage: `url(${wavyHomePageBackground})` }}>
           <div className={styles.pageHeading}>
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
-              <h1 className={styles.pageSlogan}>
-                Hey !, welcome to Semicolons zone where I share my Tech knowledge.
-              </h1>
+              <h1 className={styles.pageSlogan}>Hey !, welcome to Semicolons zone where I share my Tech knowledge.</h1>
               <div className={styles.pageExpanation}>
                 As a full stack web developer I work on the full development lifecycle of web and mobile apps with a
                 vision that allows me to have a full control over my projects.

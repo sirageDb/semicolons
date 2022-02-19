@@ -31,7 +31,7 @@ export default function Seo({ title, description, keywards, robots, imagePath, o
       {/* ===================================================================== */}
       <meta property="og:title" content={`${title} - Semicolons`} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={path} />
+      <meta property="og:url" content={`https://www.semicolons.dev/${path}`} />
       <meta property="og:image" content={apiEndPoint + "/" + imagePath} />
       <meta property="og:image:width" content="150" />
       <meta property="og:image:width" content="50" />
@@ -42,7 +42,7 @@ export default function Seo({ title, description, keywards, robots, imagePath, o
       <meta property="og:site_name" content="" />
 
       {/* <!-- Facebook Meta Tags --> */}
-      <meta property="og:url" content={path} />
+      <meta property="og:url" content={`https://www.semicolons.dev/${path}`} />
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={`${title} - Semicolons`} />
       <meta property="og:description" content={description} />
@@ -52,7 +52,7 @@ export default function Seo({ title, description, keywards, robots, imagePath, o
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content={domain} />
-      <meta property="twitter:url" content={path} />
+      <meta property="twitter:url" content={`https://www.semicolons.dev/${path}`} />
       <meta name="twitter:title" content={`${title} - Semicolons`} />
       <meta
         name="twitter:description"
