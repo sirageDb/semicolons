@@ -15,6 +15,7 @@
     -o-border-radius: 3px;
     background-color: $colorWhite;
     @media (min-width: $screenWidthMobileBig) {
+        flex-wrap: nowrap;
         width: 100%;
     }
 }

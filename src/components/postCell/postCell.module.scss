@@ -35,12 +35,13 @@ $borderWidth: 3px;
 }
 
 .tagsContainer {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 //=========================================
 .titleContainer {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -68,10 +69,6 @@ $borderWidth: 3px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-}
-
-.dateContainer {
-    margin-bottom: 10px;
 }
 
 //==========================================================
@@ -154,6 +151,7 @@ $borderWidth: 3px;
 .postImageContainer {
     position: relative;
     height: auto;
+    margin-top: 10px;
 }
 
 .postImageWavy {
