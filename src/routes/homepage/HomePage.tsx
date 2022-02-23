@@ -51,8 +51,8 @@ export default function HomePage(): JSX.Element {
             <div className={styles.pageSloganContainer + " " + styles.rainbow}>
               <h1 className={styles.pageSlogan}>Hey !, welcome to Semicolons zone where I share my Tech knowledge.</h1>
               <div className={styles.pageExpanation}>
-                As a full stack web developer I work on the full development lifecycle of web and mobile apps with a
-                vision that allows me to have a full control over my projects.
+                As a full stack web developer, I work on the entire development lifecycle of web and mobile apps with
+                the goal of having complete control over my projects.
               </div>
             </div>
             <div className={styles.contactWidgetsContainer}>

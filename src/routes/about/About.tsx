@@ -17,29 +17,28 @@ export default function About(): JSX.Element {
                 <span className={styles.sectionTitle}>Who am i...Simple question...complicated answer(s)</span>
               </div>
               <p className={styles.sectionExplanation}>
-                My name is Sirage Al dbiyat, I am a full stack web developer at KOLABS. Interested in creating new
-                solutions to existing problems using the power i have as a developer, also developing the DEV community
-                by sharing my knowledge, writing posts, and sharing my opensource projects.{" "}
+                My name is Sirage Al dbiyat, and I work at KOLABS as a full stack web developer. Interested in
+                developing the DEV community by sharing my knowledge, writing posts, and sharing my opensource projects,
+                as well as creating new solutions to existing problems using the power I have as a developer.
               </p>
             </div>
             <div className={styles.section}>
               <span className={styles.sectionTitle}>Why semicolons</span>
               <p className={styles.sectionExplanation}>
-                At the begining i named this website iLoveSemiColon, because obviously as a former C++ programmer i am
-                so attached to semicolons, but then it was time for a better name and i got the idea to simply name it
+                I originally named this website iLoveSemiColon because, obviously, as a former C++ programmer, I am a
+                big fan of semicolons, but it was time for a change, and I came up with the idea to simply call it
                 Semicolons :)
               </p>
             </div>
             <div className={styles.section}>
               <span className={styles.sectionTitle}>A company ?, web agency ? , then what ?</span>
               <p className={styles.sectionExplanation}>
-                Nope, as i said i already work at KOLABS, Semicolons is not a company, nor a web agency, it is only my
-                dev blog where i can share with others my experience and knowledge.
+                No, as I previously stated, I already work at KOLABS. Semicolons is neither a company nor a web agency;
+                it is simply my dev blog where I can share my experience and knowledge with others.
               </p>
             </div>
           </div>
         </div>
-        {/* <img src={brand} className={styles.brand} alt={"Logo semicolons"}/> */}
         <div className={styles.imageContainer}>
           <img className={styles.image} src={meCircle} alt={"sirage al dbiyat image personal website blog"} />
         </div>
