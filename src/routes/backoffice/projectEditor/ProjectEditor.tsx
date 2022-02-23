@@ -103,6 +103,7 @@ export default function ProjectEditor(): JSX.Element {
       const apiResponse = await fetch(apiEndPoint + "/project/updateproject", {
         method: "PUT",
         body: formData,
+        headers: { authorization: getToken() },
       });
       if (apiResponse.status === 200) {
         window.alert("Project updated successfully");
