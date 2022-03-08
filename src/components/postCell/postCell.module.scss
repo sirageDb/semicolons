@@ -95,7 +95,7 @@ $borderWidth: 3px;
 .interactionButton {
     height: 27px;
     padding: 2px 5px;
-    border: 2px solid $colorYellow;
+    border: 2px solid $colorBlue;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -103,6 +103,7 @@ $borderWidth: 3px;
     -o-border-radius: 3px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-left: 10px;
     font-weight: bold;
     * {
