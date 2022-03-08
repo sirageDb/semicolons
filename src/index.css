@@ -1,86 +1,87 @@
 * :not(h1, h2, h3, h4, h5, h6) {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 * {
-    box-sizing: border-box;
-    font-weight: inherit;
+  box-sizing: border-box;
+  font-weight: inherit;
 }
 
 * ::not(code) {
-    color: #2c2f33;
+  color: #2c2f33;
 }
 
 *::selection {
-    color: #0067ff;
-    background-color: #ffc356;
+  color: #0067ff;
+  background-color: #ffc356;
 }
 
 pre {
-    max-width: 900px;
+  max-width: 900px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /*=========================================== */
-    /*   background-size: 40px 40px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*=========================================== */
+  /*   background-size: 40px 40px;
   background-image: linear-gradient(to right, rgba(153, 170, 181, 0.5) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(153, 170, 181, 0.5) 1px, transparent 1px); */
-    /* =========================================== */
+  /* =========================================== */
 }
 
 h1 {
-    font-size: 27px;
-    color: #2c2f33;
+  font-size: 27px;
+  color: #2c2f33;
 }
 
 h2 {
-    font-size: 22.5px;
-    color: #2c2f33;
+  font-size: 22.5px;
+  color: #2c2f33;
 }
 
 button {
-    border-radius: 0;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input {
-    border-radius: 0;
-    border: none;
-    cursor: pointer;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
 }
 
 a,
 a:hover,
 a:focus,
 a:active {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 ode {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

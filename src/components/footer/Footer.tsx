@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import styles from "./footer.module.scss";
 
 export default function Footer(): JSX.Element {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./header.module.scss";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 
 export default function Header(): JSX.Element {
   const [headerColor, setHeaderColor] = useState("#0067FF");
@@ -15,10 +15,10 @@ export default function Header(): JSX.Element {
   // const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const isCurrentWinodw = (path: string): boolean => {
-    if(window.location.pathname === path){
+    if (window.location.pathname === path) {
       return true;
     }
-    return false
+    return false;
   };
 
   return (
@@ -34,16 +34,28 @@ export default function Header(): JSX.Element {
           <img alt={"Semicolons website"} src={logo} className={styles.logo} />
         </Link>
         <div className={styles.linksContainer}>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/posts") && styles.isCurrentPageLink)} to={"/posts"}>
+          <NavLink
+            className={styles.pageLink + " " + (isCurrentWinodw("/posts") && styles.isCurrentPageLink)}
+            to={"/posts"}
+          >
             Posts
           </NavLink>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/projects") && styles.isCurrentPageLink)} to={"/projects"}>
+          <NavLink
+            className={styles.pageLink + " " + (isCurrentWinodw("/projects") && styles.isCurrentPageLink)}
+            to={"/projects"}
+          >
             Projects
           </NavLink>
-          <NavLink className={styles.pageLink + " " + (isCurrentWinodw("/contact") && styles.isCurrentPageLink)} to={"/contact"}>
+          <NavLink
+            className={styles.pageLink + " " + (isCurrentWinodw("/contact") && styles.isCurrentPageLink)}
+            to={"/contact"}
+          >
             Contact
           </NavLink>
-          <NavLink className={styles.pageLink  + " " + (isCurrentWinodw("/about") && styles.isCurrentPageLink)} to={"/about"}>
+          <NavLink
+            className={styles.pageLink + " " + (isCurrentWinodw("/about") && styles.isCurrentPageLink)}
+            to={"/about"}
+          >
             About
           </NavLink>
         </div>
