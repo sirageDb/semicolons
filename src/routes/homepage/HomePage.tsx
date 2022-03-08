@@ -139,12 +139,11 @@ export default function HomePage(): JSX.Element {
         </div>
       </section>
 
-      {/* style={{ backgroundImage: `url(${blob})` }} */}
       {/* ============================================================================= */}
 
       <section className={styles.projectSection} style={{ backgroundImage: `url(${blob})` }}>
         <div>
-          <h2 className={styles.projectSectionTitle}>Technologies i work on...</h2>
+          <h2 className={styles.projectSectionTitle}>Technologies</h2>
         </div>
         <div className={styles.projectSectionDataContainer}>
           <div className={styles.tagsContainer}>

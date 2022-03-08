@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="102.34399mm"
-   height="17.143417mm"
-   viewBox="0 0 102.34405 17.143419"
+   width="82.268913mm"
+   height="10.789961mm"
+   viewBox="0 0 82.268958 10.789962"
    version="1.1"
    id="svg8"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
@@ -40,10 +40,10 @@
        id="rect1154" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="-815.02148 : -98.482504 : 1"
-       inkscape:vp_y="174.32972 : 10538.071 : 0"
-       inkscape:vp_z="97.369036 : -71.249067 : 1"
-       inkscape:persp3d-origin="-418.56419 : -125.07093 : 1"
+       inkscape:vp_x="-815.02143 : -104.83595 : 1"
+       inkscape:vp_y="174.32971 : 10538.07 : 0"
+       inkscape:vp_z="97.36903 : -77.602517 : 1"
+       inkscape:persp3d-origin="-418.56417 : -131.42438 : 1"
        id="perspective914" />
     <linearGradient
        inkscape:collect="always"
@@ -171,24 +171,24 @@
        gradientTransform="translate(1.4552086,0.09921876)" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="42.532711 : -66.529817 : 1"
-       inkscape:vp_y="-6.3158627 : 400.18515 : 0"
-       inkscape:vp_z="72.007684 : -67.287767 : 1"
-       inkscape:persp3d-origin="57.612826 : -67.052439 : 1"
+       inkscape:vp_x="42.532709 : -72.883267 : 1"
+       inkscape:vp_y="-6.3158623 : 400.18511 : 0"
+       inkscape:vp_z="72.007679 : -73.641217 : 1"
+       inkscape:persp3d-origin="57.612823 : -73.405889 : 1"
        id="perspective914-6" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="-29.467917 : -67.46311 : 1"
-       inkscape:vp_y="-22.41929 : 1420.5292 : 0"
-       inkscape:vp_z="75.158798 : -70.153585 : 1"
-       inkscape:persp3d-origin="24.061667 : -69.318247 : 1"
+       inkscape:vp_x="-29.467916 : -73.81656 : 1"
+       inkscape:vp_y="-22.419288 : 1420.529 : 0"
+       inkscape:vp_z="75.158793 : -76.507035 : 1"
+       inkscape:persp3d-origin="24.061665 : -75.671697 : 1"
        id="perspective914-63" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="45.129615 : -68.443264 : 1"
-       inkscape:vp_y="-5.9317702 : 375.8483 : 0"
-       inkscape:vp_z="72.812102 : -69.155118 : 1"
-       inkscape:persp3d-origin="59.29265 : -68.934102 : 1"
+       inkscape:vp_x="45.129612 : -74.796714 : 1"
+       inkscape:vp_y="-5.9317698 : 375.84827 : 0"
+       inkscape:vp_z="72.812097 : -75.508568 : 1"
+       inkscape:persp3d-origin="59.292646 : -75.287552 : 1"
        id="perspective914-63-5" />
     <linearGradient
        inkscape:collect="always"
@@ -259,13 +259,13 @@
      id="layer2"
      inkscape:label="Layer 2"
      style="display:inline"
-     transform="translate(-93.147127,-33.117302)" />
+     transform="translate(-113.22221,-35.95758)" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
-     transform="translate(-93.147127,-33.117302)">
+     transform="translate(-113.22221,-35.95758)">
     <g
        id="g982"
        style="fill:#000000;fill-opacity:1"

@@ -54,9 +54,7 @@ export default function Seo({ title, description, keywards, robots, imagePath, o
       <meta property="twitter:domain" content={domain} />
       <meta property="twitter:url" content={`https://www.semicolons.dev/${path}`} />
       <meta name="twitter:title" content={`${title} - Semicolons`} />
-      <meta
-        name="twitter:description"
-        content={description}/>
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={apiEndPoint + "/" + imagePath} />
       <meta name="og:image:width" content="150" />
       <meta name="og:image:width" content="50" />
