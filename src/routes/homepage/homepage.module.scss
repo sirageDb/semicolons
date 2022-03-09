@@ -126,6 +126,18 @@
         }
     }
     
+    .sectionCompetenceTitleContainer {
+        text-align: center;
+    }
+    
+    .sectionCompetenceTitle {
+        display: inline-block;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 10px solid $colorBlue;
+        padding: 0 10px;
+    }
+    
     .competencesContainer {
         display: flex;
         flex-direction: row;

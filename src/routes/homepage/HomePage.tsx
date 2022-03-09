@@ -11,12 +11,6 @@ import PostCell from "../../components/postCell/PostCell";
 //======================================
 import blob from "../../assets/blob.svg";
 import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
-import designIcon from "../../assets/competences/design.svg";
-import developmentIcon from "../../assets/competences/development.svg";
-import devopsIcon from "../../assets/competences/devops.svg";
-import innovationIcon from "../../assets/competences/innovation.svg";
-import opensourceIcon from "../../assets/competences/opensource.svg";
-import projectManagmentIcon from "../../assets/competences/projectManagment.svg";
 //======================================
 
 import headIllustration from "../../assets/headIllustration.svg";
@@ -118,6 +112,9 @@ export default function HomePage(): JSX.Element {
       {/* ============================================================================= */}
 
       <section className={styles.sectionCompetences}>
+        <div className={styles.sectionCompetenceTitleContainer}>
+          <h2 className={styles.sectionCompetenceTitle}>SKILLS</h2>
+        </div>
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
@@ -152,7 +149,7 @@ export default function HomePage(): JSX.Element {
           <CompetenceBlock
             title="Design & UI/UX"
             contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
-            titleColor={"#6D37DA"}
+            titleColor={"#FFC356"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M492.7 42.75C517.7 67.74 517.7 108.3 492.7 133.3L436.3 189.7L322.3 75.72L378.7 19.32C403.7-5.678 444.3-5.678 469.3 19.32L492.7 42.75zM44.89 353.2L299.7 98.34L413.7 212.3L158.8 467.1C152.1 473.8 143.8 478.7 134.6 481.4L30.59 511.1C22.21 513.5 13.19 511.1 7.03 504.1C.8669 498.8-1.47 489.8 .9242 481.4L30.65 377.4C33.26 368.2 38.16 359.9 44.89 353.2zM249.4 103.4L103.4 249.4L16 161.9C-2.745 143.2-2.745 112.8 16 94.06L94.06 16C112.8-2.745 143.2-2.745 161.9 16L181.7 35.76C181.4 36.05 181 36.36 180.7 36.69L116.7 100.7C110.4 106.9 110.4 117.1 116.7 123.3C122.9 129.6 133.1 129.6 139.3 123.3L203.3 59.31C203.6 58.99 203.1 58.65 204.2 58.3L249.4 103.4zM453.7 307.8C453.4 308 453 308.4 452.7 308.7L388.7 372.7C382.4 378.9 382.4 389.1 388.7 395.3C394.9 401.6 405.1 401.6 411.3 395.3L475.3 331.3C475.6 330.1 475.1 330.6 476.2 330.3L496 350.1C514.7 368.8 514.7 399.2 496 417.9L417.9 496C399.2 514.7 368.8 514.7 350.1 496L262.6 408.6L408.6 262.6L453.7 307.8z" />
@@ -162,7 +159,7 @@ export default function HomePage(): JSX.Element {
           <CompetenceBlock
             title="Open-source & writing"
             contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
-            titleColor={"#FFC356"}
+            titleColor={"#6D37DA"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M8 266.44C10.3 130.64 105.4 34 221.8 18.34c138.8-18.6 255.6 75.8 278 201.1 21.3 118.8-44 230-151.6 274-9.3 3.8-14.4 1.7-18-7.7q-26.7-69.45-53.4-139c-3.1-8.1-1-13.2 7-16.8 24.2-11 39.3-29.4 43.3-55.8a71.47 71.47 0 0 0-64.5-82.2c-39-3.4-71.8 23.7-77.5 59.7-5.2 33 11.1 63.7 41.9 77.7 9.6 4.4 11.5 8.6 7.8 18.4q-26.85 69.9-53.7 139.9c-2.6 6.9-8.3 9.3-15.5 6.5-52.6-20.3-101.4-61-130.8-119-24.9-49.2-25.2-87.7-26.8-108.7zm20.9-1.9c.4 6.6.6 14.3 1.3 22.1 6.3 71.9 49.6 143.5 131 183.1 3.2 1.5 4.4.8 5.6-2.3q22.35-58.65 45-117.3c1.3-3.3.6-4.8-2.4-6.7-31.6-19.9-47.3-48.5-45.6-86 1-21.6 9.3-40.5 23.8-56.3 30-32.7 77-39.8 115.5-17.6a91.64 91.64 0 0 1 45.2 90.4c-3.6 30.6-19.3 53.9-45.7 69.8-2.7 1.6-3.5 2.9-2.3 6q22.8 58.8 45.2 117.7c1.2 3.1 2.4 3.8 5.6 2.3 35.5-16.6 65.2-40.3 88.1-72 34.8-48.2 49.1-101.9 42.3-161-13.7-117.5-119.4-214.8-255.5-198-106.1 13-195.3 102.5-197.1 225.8z" />
@@ -187,7 +184,7 @@ export default function HomePage(): JSX.Element {
         <div className={styles.sectionPostData}>
           <div>
             <div className={styles.sectionPostTitleContainer}>
-              <h2 className={styles.sectionPostTitle}>Latest post</h2>
+              <h2 className={styles.sectionPostTitle}>LATEST POST</h2>
             </div>
             {postData && (
               <PostCell
