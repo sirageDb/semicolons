@@ -108,7 +108,7 @@ export default function HomePage(): JSX.Element {
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
-            contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
+            contentText=" Peoducing high-qualaty softwares, working with the Back end and the Front end as well as databases, having skills in wide variaty of coding niches"
             titleColor={"#0067FF"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -118,7 +118,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Project management"
-            contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
+            contentText="Using scrum framework or the Agile methodology and applying theses methodologies on small and large scale IT projects"
             titleColor={"#FF886F"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -128,7 +128,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Devops"
-            contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
+            contentText="Increasing the frequency and pace of different releases of an application, making them more secure, tested, scalable, and maintainable"
             titleColor={"#707070"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -138,7 +138,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Design & UI/UX"
-            contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
+            contentText="Designing attractive user interfaces while also making user's overall experience a better one"
             titleColor={"#FFC356"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -148,7 +148,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Open-source & writing"
-            contentText="of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap ing, remaining essentially unchanged"
+            contentText="Contributing to the open source community, writing tutorials and blog posts to share my tech culture !"
             titleColor={"#6D37DA"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -158,7 +158,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="innovation"
-            contentText="of type and scrambled it to make a type aepjgap efjapeojfpoaie foaein funchanged"
+            contentText="Identifying problems and finding new solutions based on testing and analysis that may help meet user needs"
             titleColor={"#58E1A5"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
