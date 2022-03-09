@@ -1,7 +1,7 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
 import PostSDK from "../../SDK/postSDK";
@@ -22,6 +22,7 @@ import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import apiEndPoint from "../../config/apiEndPoint";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import { POSTS } from "../../lib/appRouting";
 
 interface IPostParams {
   slug: string;
@@ -32,9 +33,9 @@ export default function Post(): JSX.Element {
   const { slug } = useParams<IPostParams>();
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [isFetched, setIsFetched] = useState<boolean>(false);
-  const [isErrored, setIsErrored] = useState<boolean>(false);
   const postSDK = new PostSDK();
 
+  const history = useHistory();
   useEffect(() => {
     getPost();
   }, []);
@@ -53,15 +54,17 @@ export default function Post(): JSX.Element {
         setPostData(data);
         window.setTimeout(() => {
           setIsFetched(true);
-          setIsErrored(false);
-        }, 1000);
+        }, 900);
       }
-      if (apiResponse.status != 200) {
+      if (apiResponse.status !== 200) {
         setIsFetched(false);
-        setIsErrored(true);
+        window.alert("Sorry we couldn't bring this post :( , we will get you to posts page...");
+        history.push(POSTS);
       }
     } catch (error) {
       console.log(error);
+      window.alert("Sorry we couldn't bring this post :( , we will get you to posts page...");
+      history.push(POSTS);
     }
   };
 
@@ -193,9 +196,7 @@ export default function Post(): JSX.Element {
   return (
     <div className={styles.postPageContentContainer}>
       <Header />
-      <main className={styles.postPageContent}>
-        {isFetched === false && isErrored === false ? <Suspense /> : <Suspense />}
-      </main>
+      <main className={styles.postPageContent}>{isFetched === false ? <Suspense /> : <PostContent />}</main>
       <Footer />
     </div>
   );
