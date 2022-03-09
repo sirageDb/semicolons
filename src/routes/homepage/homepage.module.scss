@@ -116,7 +116,30 @@
         margin-right: 10px;
     }
     
-    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    .sectionCompetences {
+        margin: auto;
+        margin-top: 60px;
+        width: 95%;
+        @media (min-width: $screenWidthMobileBig) {
+            width: 90%;
+        }
+    }
+    
+    .competencesContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: auto;
+        >div {
+            margin: 4% 2%;
+        }
+    }
+    
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     .sectionPost {
         margin: auto;
         margin-top: 60px;

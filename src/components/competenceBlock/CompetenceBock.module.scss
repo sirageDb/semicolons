@@ -1,0 +1,40 @@
+@import "../../globalStyles.scss";
+.container {
+    position: relative;
+    width: 28%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: $colorWhiteExtra;
+}
+
+.content {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.competenceTitle {
+    font-size: $fontsizeCow;
+    font-weight: bold;
+}
+
+.competenceText {
+    flex: 1;
+}
+
+.icon {
+    position: absolute;
+    width: 30%;
+    bottom: 10%;
+    right: 10%;
+}
+
+.competenceText {}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
