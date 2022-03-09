@@ -225,11 +225,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3759553"
-     inkscape:cx="377.91925"
-     inkscape:cy="-49.056826"
+     inkscape:zoom="15.567157"
+     inkscape:cx="207.23116"
+     inkscape:cy="42.172119"
      inkscape:document-units="mm"
-     inkscape:current-layer="g63034-5"
+     inkscape:current-layer="g73405"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
@@ -290,17 +290,59 @@
                id="g73405">
               <text
                  xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="170.35786"
+                 y="-70.069885"
+                 id="text904-8-6-8"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0-5"
+                   x="170.35786"
+                   y="-70.069885"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#0067ff;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="170.79007"
+                 y="-70.944946"
+                 id="text904-8-6"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0"
+                   x="170.79007"
+                   y="-70.944946"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#0067ff;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#ffc356;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="171.27118"
+                 y="-71.681351"
+                 id="text904-8-6-0"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0-2"
+                   x="171.27118"
+                   y="-71.681351"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#ffc356;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
                  style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#333333;fill-opacity:1;stroke-width:0.374033"
-                 x="171.26018"
-                 y="-72.132668"
+                 x="171.78934"
+                 y="-72.661835"
                  id="text904-8"
                  inkscape:export-xdpi="191"
                  inkscape:export-ydpi="191"
                  inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
                    sodipodi:role="line"
                    id="tspan902-8"
-                   x="171.26018"
-                   y="-72.132668"
+                   x="171.78934"
+                   y="-72.661835"
                    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
               <g
                  id="g63034-5"
@@ -415,6 +457,34 @@
                  transform="matrix(0.26458333,0,0,0.26458333,171.8064,-82.771963)"
                  id="text109102"
                  style="font-size:40px;line-height:1.25;font-family:Gilroy-Bold;-inkscape-font-specification:Gilroy-Bold;white-space:pre;shape-inside:url(#rect109104)" />
+              <ellipse
+                 style="fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.7"
+                 id="path1512"
+                 cx="218.1512"
+                 cy="-76.008995"
+                 rx="2.3284864"
+                 ry="2.5834303" />
+              <ellipse
+                 style="display:inline;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.7"
+                 id="path1512-0"
+                 cx="235.16444"
+                 cy="-76.484894"
+                 rx="2.3284864"
+                 ry="2.5834303" />
+              <ellipse
+                 style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.619394"
+                 id="path1949"
+                 cx="218.35252"
+                 cy="-76.332596"
+                 rx="1.7546521"
+                 ry="1.6908466" />
+              <ellipse
+                 style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.619394"
+                 id="path1949-7"
+                 cx="235.25006"
+                 cy="-76.292824"
+                 rx="1.7546521"
+                 ry="1.6908466" />
             </g>
           </g>
         </g>

@@ -12,6 +12,8 @@ $colorGreenBright: #72FDB8;
 $colorYellow: #FFC356;
 $colorBlue: #0067FF;
 $colorVioletDark: #6D37DA;
+$colorSuspense: #e4e4e4;
+$colorSuspenseDark: #b8b8b8;
 //======================================
 $fontsizeHuman: 13.5px;
 $fontsizeElephant: 27px;
@@ -24,3 +26,26 @@ $unifiedPageMaxWidth: 900px;
 //======================================
 $screenWidthMobileBig: 576px;
 $screenWidthMobileLandScape: 690px;
+//======================================
+@mixin suspenseLoadingEffect {
+    @keyframes suspenseLoading {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+@mixin suspenseStyles {
+    @include suspenseLoadingEffect;
+    background: linear-gradient(90deg, $colorSuspense, $colorSuspenseDark);
+    background-size: 200% 200%;
+    animation: suspenseLoading 1s infinite;
+}
+
+//======================================

@@ -16,7 +16,6 @@ import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
 import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
-import Seo from "../../components/seo/seo";
 import CompetenceBlock from "../../components/competenceBlock/CompetenceBlock";
 
 //TODO an astroid from the sky when scrolling ...
@@ -39,15 +38,6 @@ export default function HomePage(): JSX.Element {
 
   return (
     <PageLayout>
-      <Seo
-        robots="index,follow"
-        ogType="website"
-        title="Semicolons azdazodazd"
-        imagePath="d"
-        path=""
-        keywards="Semicolons, Sirage, AL DBIYAT, sirage al dbiyat, fullstack development, blog, opensource, open source, projects, best projects, french tech, lyon, france"
-        description="Welcome to Semicolons zone where I share my Tech knowledge."
-      />
       <div className={styles.pageHeadingContainer}>
         <div className={styles.secondaryBackground} style={{ backgroundImage: `url(${wavyHomePageBackground})` }}>
           <div className={styles.pageHeading}>
