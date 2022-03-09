@@ -140,14 +140,17 @@
     
     .competencesContainer {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
+        max-width: 900px;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
-        max-width: 900px;
         margin: auto;
         >div {
-            margin: 4% 2%;
+            margin: 10px auto;
+            @media (min-width: $screenWidthMobileBig) {
+                margin: 20px auto;
+            }
         }
     }
     
