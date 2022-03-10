@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="102.34399mm"
+   height="17.143417mm"
+   viewBox="0 0 102.34406 17.143419"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"
+   inkscape:export-xdpi="191.978"
+   inkscape:export-ydpi="191.978"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <rect
+       x="-156.25508"
+       y="-87.938904"
+       width="619.93292"
+       height="250.00812"
+       id="rect109104" />
+    <rect
+       x="-176.78244"
+       y="-38.028782"
+       width="364.87073"
+       height="126.42"
+       id="rect2241" />
+    <rect
+       x="172.18382"
+       y="0.48530483"
+       width="47.109947"
+       height="53.46431"
+       id="rect1154" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-815.02156 : -98.482516 : 1"
+       inkscape:vp_y="174.32974 : 10538.072 : 0"
+       inkscape:vp_z="97.369046 : -71.249075 : 1"
+       inkscape:persp3d-origin="-418.56423 : -125.07094 : 1"
+       id="perspective914" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient880">
+      <stop
+         style="stop-color:#ff0010;stop-opacity:1;"
+         offset="0"
+         id="stop876" />
+      <stop
+         style="stop-color:#ff0010;stop-opacity:0;"
+         offset="1"
+         id="stop878" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient900">
+      <stop
+         style="stop-color:#002338;stop-opacity:1"
+         offset="0"
+         id="stop896" />
+      <stop
+         style="stop-color:#ff0028;stop-opacity:0.56626505"
+         offset="1"
+         id="stop898" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1014">
+      <stop
+         style="stop-color:#002338;stop-opacity:1"
+         offset="0"
+         id="stop1010" />
+      <stop
+         style="stop-color:#ff0028;stop-opacity:0.56626505"
+         offset="1"
+         id="stop1012" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient982">
+      <stop
+         style="stop-color:#ff0010;stop-opacity:1"
+         offset="0"
+         id="stop978" />
+      <stop
+         style="stop-color:#d8a1aa;stop-opacity:0.58634537"
+         offset="1"
+         id="stop980" />
+    </linearGradient>
+    <rect
+       x="64.399818"
+       y="87.031593"
+       width="63.890781"
+       height="40.59824"
+       id="rect952" />
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect905"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="fill:#7797ff;fill-rule:evenodd;stroke:none;stroke-width:34.3015;stroke-linejoin:round;fill-opacity:1" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath901">
+      <circle
+         style="display:block;fill:#fb3600;fill-opacity:1;stroke-width:1.687;paint-order:stroke markers fill"
+         id="circle903"
+         cx="140.10057"
+         cy="-99.159004"
+         r="3.7183871"
+         transform="scale(1,-1)"
+         clip-path="none" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient982"
+       id="linearGradient984"
+       x1="112.18041"
+       y1="95.053024"
+       x2="129.57402"
+       y2="95.053024"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,1.3563928)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1014"
+       id="linearGradient984-6"
+       x1="112.18041"
+       y1="95.053024"
+       x2="129.57402"
+       y2="95.053024"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.49801968,0,0,0.49801968,64.803963,50.620783)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient982"
+       id="linearGradient1113"
+       x1="213.97009"
+       y1="-77.947998"
+       x2="208.51561"
+       y2="-77.923447"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-14.756619,-6.7585782)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient880"
+       id="linearGradient882"
+       x1="132.84702"
+       y1="58.85022"
+       x2="200.60617"
+       y2="58.85022"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient900"
+       id="linearGradient884"
+       gradientUnits="userSpaceOnUse"
+       x1="132.84702"
+       y1="58.85022"
+       x2="200.60617"
+       y2="58.85022"
+       gradientTransform="translate(1.4552086,0.09921876)" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="42.532715 : -66.529825 : 1"
+       inkscape:vp_y="-6.3158634 : 400.1852 : 0"
+       inkscape:vp_z="72.007691 : -67.287775 : 1"
+       inkscape:persp3d-origin="57.612832 : -67.052447 : 1"
+       id="perspective914-6" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-29.46792 : -67.463118 : 1"
+       inkscape:vp_y="-22.419292 : 1420.5294 : 0"
+       inkscape:vp_z="75.158806 : -70.153593 : 1"
+       inkscape:persp3d-origin="24.061669 : -69.318255 : 1"
+       id="perspective914-63" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="45.129619 : -68.443272 : 1"
+       inkscape:vp_y="-5.9317708 : 375.84834 : 0"
+       inkscape:vp_z="72.812109 : -69.155126 : 1"
+       inkscape:persp3d-origin="59.292656 : -68.93411 : 1"
+       id="perspective914-63-5" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient880"
+       id="linearGradient1306"
+       x1="224.98863"
+       y1="58.407749"
+       x2="226.66685"
+       y2="52.801891"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       id="mask-powermask-path-effect39850_inverse"
+       inkscape:label="filtermask-powermask-path-effect39850"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect39850_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect39850_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.567157"
+     inkscape:cx="207.23116"
+     inkscape:cy="42.172119"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g73405"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-grids="false"
+     inkscape:pagecheckerboard="0"
+     inkscape:lockguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline"
+     transform="translate(-93.147127,-33.117302)" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(-93.147127,-33.117302)">
+    <g
+       id="g982"
+       style="fill:#000000;fill-opacity:1"
+       transform="translate(-28.310416,2.4473958)">
+      <text
+         xml:space="preserve"
+         id="text950"
+         style="font-size:10.5833px;line-height:1.25;font-family:'Bell MT';-inkscape-font-specification:'Bell MT';letter-spacing:0.407458px;white-space:pre;shape-inside:url(#rect952)" />
+      <g
+         id="g888"
+         transform="translate(-30.867177,116.26479)">
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,179.25652,-65.599263)"
+           id="text2239"
+           style="font-size:40px;line-height:1.25;font-family:Gilroy-Bold;-inkscape-font-specification:Gilroy-Bold;white-space:pre;shape-inside:url(#rect2241)" />
+        <g
+           id="g73156">
+          <g
+             id="g73422">
+            <g
+               id="g73405">
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="170.35786"
+                 y="-70.069885"
+                 id="text904-8-6-8"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0-5"
+                   x="170.35786"
+                   y="-70.069885"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#0067ff;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="170.79007"
+                 y="-70.944946"
+                 id="text904-8-6"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0"
+                   x="170.79007"
+                   y="-70.944946"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#0067ff;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#ffc356;fill-opacity:1;stroke:none;stroke-width:0.374033"
+                 x="171.27118"
+                 y="-71.681351"
+                 id="text904-8-6-0"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8-0-2"
+                   x="171.27118"
+                   y="-71.681351"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#ffc356;fill-opacity:1;stroke:none;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <text
+                 xml:space="preserve"
+                 style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.9613px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.248789px;display:inline;fill:#333333;fill-opacity:1;stroke-width:0.374033"
+                 x="171.78934"
+                 y="-72.661835"
+                 id="text904-8"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                   sodipodi:role="line"
+                   id="tspan902-8"
+                   x="171.78934"
+                   y="-72.661835"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:'Consolas Bold';fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:0.374033;stroke-opacity:1">semicolons</tspan></text>
+              <g
+                 id="g63034-5"
+                 transform="matrix(1.3402114,0,0,1.3402114,-181.388,2.3219964)"
+                 inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"
+                 inkscape:export-xdpi="191"
+                 inkscape:export-ydpi="191"
+                 style="display:inline;fill:#000000;fill-opacity:1">
+                <rect
+                   style="display:inline;fill:#ffc356;fill-opacity:1;stroke-width:1.32808;paint-order:stroke markers fill"
+                   id="rect1262-6-3-9"
+                   width="9.9439535"
+                   height="9.9395809"
+                   x="134.83994"
+                   y="-226.13052"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   ry="2.1792669"
+                   transform="matrix(0.71294673,0.7012182,-0.70312017,0.71107104,0,0)"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png" />
+                <path
+                   style="fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.312569px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                   d="m 252.27448,-64.192632 c 0,0 0.87805,-1.418154 2.45782,-1.40656 0.63893,0.0047 1.04599,0.176732 1.4482,0.450183 0.59228,0.40267 1.08897,0.924631 1.08897,0.924631 l 0.79364,0.868112 z"
+                   id="path41086-40"
+                   sodipodi:nodetypes="ccsccc"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191" />
+                <path
+                   style="display:inline;fill:#ff886f;fill-opacity:1;stroke:none;stroke-width:0.330247px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                   d="m 252.12862,-54.293876 c 0,0 0.92771,1.498365 2.59684,1.486115 0.67507,-0.005 1.10515,-0.186728 1.53011,-0.475645 0.62577,-0.425445 1.15056,-0.976929 1.15056,-0.976929 l 0.83853,-0.917212 z"
+                   id="path41086-4-8"
+                   sodipodi:nodetypes="ccsccc"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191" />
+                <rect
+                   style="display:inline;fill:#0067ff;fill-opacity:1;stroke-width:1.26981;paint-order:stroke markers fill"
+                   id="rect1262-6-32"
+                   width="8.9626913"
+                   height="10.081064"
+                   x="249.00006"
+                   y="-64.159119"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   ry="2.2102873"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png" />
+                <rect
+                   style="fill:#333333;fill-opacity:1;stroke-width:1.21858;paint-order:stroke markers fill"
+                   id="rect1262-3"
+                   width="9.1219997"
+                   height="9.1219492"
+                   x="250.01477"
+                   y="-63.693462"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   ry="2"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png" />
+                <text
+                   xml:space="preserve"
+                   style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.1986px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.431145px;display:inline;fill:#0067ff;fill-opacity:1;fill-rule:nonzero;stroke-width:0.279966"
+                   x="252.62912"
+                   y="-57.026939"
+                   id="text1224-9-2"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                     sodipodi:role="line"
+                     id="tspan1222-1-6"
+                     x="252.62912"
+                     y="-57.026939"
+                     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';fill:#0067ff;fill-opacity:1;fill-rule:nonzero;stroke-width:0.279966">;</tspan></text>
+                <text
+                   xml:space="preserve"
+                   style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.8117px;line-height:1.25;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';letter-spacing:0.416255px;fill:#ffc356;fill-opacity:1;fill-rule:nonzero;stroke-width:0.270297"
+                   x="253.53593"
+                   y="-57.419258"
+                   id="text1224-6"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png"><tspan
+                     sodipodi:role="line"
+                     id="tspan1222-2"
+                     x="253.53593"
+                     y="-57.419258"
+                     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Montserrat Alternates';-inkscape-font-specification:'Montserrat Alternates Bold Italic';fill:#ffc356;fill-opacity:1;fill-rule:nonzero;stroke-width:0.270297">;</tspan></text>
+                <rect
+                   style="display:inline;fill:#0067ff;fill-opacity:1;fill-rule:nonzero;stroke-width:1.58636;paint-order:stroke markers fill"
+                   id="rect1558-1-7"
+                   height="1.1726346"
+                   x="254.98213"
+                   y="55.177547"
+                   transform="scale(1,-1)"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   width="3.2625268"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png" />
+                <rect
+                   style="fill:#ffc356;fill-opacity:1;fill-rule:nonzero;stroke-width:1.58636;paint-order:stroke markers fill"
+                   id="rect1558-5"
+                   width="3.2629833"
+                   height="1.1726346"
+                   x="255.32217"
+                   y="55.710407"
+                   transform="scale(1,-1)"
+                   inkscape:export-xdpi="191"
+                   inkscape:export-ydpi="191"
+                   inkscape:export-filename="C:\me\Amigos\semicolons\src\assets\logo.png" />
+              </g>
+              <text
+                 xml:space="preserve"
+                 transform="matrix(0.26458333,0,0,0.26458333,171.8064,-82.771963)"
+                 id="text109102"
+                 style="font-size:40px;line-height:1.25;font-family:Gilroy-Bold;-inkscape-font-specification:Gilroy-Bold;white-space:pre;shape-inside:url(#rect109104)" />
+              <ellipse
+                 style="fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.7"
+                 id="path1512"
+                 cx="218.1512"
+                 cy="-76.008995"
+                 rx="2.3284864"
+                 ry="2.5834303" />
+              <ellipse
+                 style="display:inline;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.7"
+                 id="path1512-0"
+                 cx="235.16444"
+                 cy="-76.484894"
+                 rx="2.3284864"
+                 ry="2.5834303" />
+              <ellipse
+                 style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.619394"
+                 id="path1949"
+                 cx="218.35252"
+                 cy="-76.332596"
+                 rx="1.7546521"
+                 ry="1.6908466" />
+              <ellipse
+                 style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.619394"
+                 id="path1949-7"
+                 cx="235.25006"
+                 cy="-76.292824"
+                 rx="1.7546521"
+                 ry="1.6908466" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
