@@ -108,7 +108,7 @@ export default function HomePage(): JSX.Element {
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
-            contentText=" Peoducing high-qualaty softwares, working with the Back end and the Front end as well as databases, having skills in wide variaty of coding niches"
+            contentText="Producing high-quality software, working with the back end and front end, as well as databases, and possessing expertise in a wide range of coding niches."
             titleColor={"#0067FF"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -118,7 +118,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Project management"
-            contentText="Using scrum framework or the Agile methodology and applying theses methodologies on small and large scale IT projects"
+            contentText="Using the scrum framework or the Agile methodology on small and large-scale IT projects"
             titleColor={"#FF886F"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -128,7 +128,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Devops"
-            contentText="Increasing the frequency and pace of different releases of an application, making them more secure, tested, scalable, and maintainable"
+            contentText="Increasing the frequency and pace of different releases of an application, making them more secure, tested, scalable, and maintained"
             titleColor={"#707070"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -138,7 +138,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Design & UI/UX"
-            contentText="Designing attractive user interfaces while also making user's overall experience a better one"
+            contentText="Creating appealing user interfaces while also improving the user's overall experience"
             titleColor={"#FFC356"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -148,7 +148,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Open-source & writing"
-            contentText="Contributing to the open source community, writing tutorials and blog posts to share my tech culture !"
+            contentText="Contributing to the open source community and sharing my tech culture through tutorials and blog posts!"
             titleColor={"#6D37DA"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -158,7 +158,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="innovation"
-            contentText="Identifying problems and finding new solutions based on testing and analysis that may help meet user needs"
+            contentText="Identifying issues and developing innovative solutions based on testing and analysis to meet user requirements"
             titleColor={"#58E1A5"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">

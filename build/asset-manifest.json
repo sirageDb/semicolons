@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.277071d4.chunk.css",
-    "main.js": "/static/js/main.96edd11a.chunk.js",
-    "main.js.map": "/static/js/main.96edd11a.chunk.js.map",
+    "main.js": "/static/js/main.6ab0b32a.chunk.js",
+    "main.js.map": "/static/js/main.6ab0b32a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2a2dbec9.js",
     "runtime-main.js.map": "/static/js/runtime-main.2a2dbec9.js.map",
     "static/js/2.94f757d8.chunk.js": "/static/js/2.94f757d8.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/addIcon.ac119277.svg": "/static/media/addIcon.ac119277.svg",
     "static/media/arrowForward.69fc0858.svg": "/static/media/arrowForward.69fc0858.svg",
     "static/media/blob.f71b99e7.svg": "/static/media/blob.f71b99e7.svg",
-    "static/media/codeIcon.f8fca504.svg": "/static/media/codeIcon.f8fca504.svg",
+    "static/media/codeIcon.e140e27e.svg": "/static/media/codeIcon.e140e27e.svg",
     "static/media/dateIcond.3534c5dd.svg": "/static/media/dateIcond.3534c5dd.svg",
     "static/media/eyeIcon.82a5ab5f.svg": "/static/media/eyeIcon.82a5ab5f.svg",
     "static/media/githubIcon.3dcb1fd5.svg": "/static/media/githubIcon.3dcb1fd5.svg",
@@ -40,6 +40,6 @@
     "static/js/runtime-main.2a2dbec9.js",
     "static/js/2.94f757d8.chunk.js",
     "static/css/main.277071d4.chunk.css",
-    "static/js/main.96edd11a.chunk.js"
+    "static/js/main.6ab0b32a.chunk.js"
   ]
 }
