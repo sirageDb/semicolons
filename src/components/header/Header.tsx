@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./header.module.scss";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.webp";
 
 export default function Header(): JSX.Element {
   const [headerColor, setHeaderColor] = useState("#0067FF");
