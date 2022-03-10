@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./header.module.scss";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.svg";
 
 export default function Header(): JSX.Element {
   const [headerColor, setHeaderColor] = useState("#0067FF");
@@ -11,8 +11,6 @@ export default function Header(): JSX.Element {
     const randomIndex = Math.random() * colors.length;
     setHeaderColor(colors[Math.floor(randomIndex)]);
   };
-
-  // const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const isCurrentWinodw = (path: string): boolean => {
     if (window.location.pathname === path) {

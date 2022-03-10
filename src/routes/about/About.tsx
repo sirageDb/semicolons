@@ -3,7 +3,7 @@ import PageLayout from "../../components/pageLayout/PageLayout";
 import styles from "./about.module.scss";
 import meCircle from "../../assets/meCircle.png";
 import brand from "../../assets/brand.png";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.svg";
 
 export default function About(): JSX.Element {
   return (
