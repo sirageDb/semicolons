@@ -73,6 +73,7 @@ export default function HomePage(): JSX.Element {
       {/* ============================================================================= */}
 
       <section className={styles.sectionCompetences}>
+        <div className = {styles.sectionCompetencesIllustration} />
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"

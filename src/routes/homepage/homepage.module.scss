@@ -66,11 +66,28 @@
     
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     .sectionCompetences {
+        position: relative;
         margin: auto;
-        // margin-top: 60px;
         width: 95%;
+        @media (min-width: $screenWidthMobileBig) {}
+    }
+    
+    .sectionCompetencesIllustration {
+        width: 3%;
+        position: absolute;
+        height: 80%;
+        left: 50%;
+        width: 8px;
+        top: 10%;
+        background-color: $colorYellow;
         @media (min-width: $screenWidthMobileBig) {
-            // width: 90%;
+            background: none;
+            border: 8px solid $colorYellow;
+            height: 50%;
+            width: 44%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     }
     
