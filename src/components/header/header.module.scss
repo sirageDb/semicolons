@@ -5,34 +5,47 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 6px;
-    border-bottom: 4px solid;
     background-color: $colorWhiteExtra;
+    border-bottom: 3px solid $colorDarker;
+    @media (min-width: $screenWidthMobileBig) {
+        padding-top: 10px;
+        background: none;
+        border: none;
+    }
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    max-width: $unifiedPageMaxWidth;
+    position: relative;
+    width: 95%;
     margin: auto;
+    background-color: $colorWhiteExtra;
+    padding: 5px 0 5px 0;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     @media (min-width: $screenWidthMobileBig) {
+        flex-direction: column;
+        max-width: $unifiedPageMaxWidth;
+        margin: auto;
+        align-items: center;
+        border: 3px solid;
         flex-direction: row;
         justify-content: space-between;
+        padding: 10px;
+        border-radius: 30px;
     }
 }
 
 .logo {
-    max-width: 160px;
+    max-width: 180px;
     image-rendering: -webkit-optimize-contrast;
 }
 
 .linksContainer {
-    margin-top: 3px;
-    width: 100%;
-    text-align: center;
+    display: none;
     @media (min-width: $screenWidthMobileBig) {
+        display: block;
+        text-align: center;
         margin: 0;
         width: auto;
         text-align: right;
@@ -43,7 +56,7 @@
     font-size: $fontsizeSheep;
     margin-left: 6px;
     padding: 1px 5px;
-    border-radius: 4px;
+    border-radius: 30px;
     @media (min-width: $screenWidthMobileBig) {
         margin-left: 20px;
         padding: 2px 15px;
@@ -60,76 +73,79 @@
 }
 
 //=====================================
-.menu {
-    --front: #0067FF;
-    --back: #D93757;
-    --icon: white;
-    perspective: 600px;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    input {
+.mobileNavBar {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    padding: 6px 5px 6px 5px;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid $colorDarker;
+    border-radius: 30px;
+    font-size: $fontsizeSheep;
+    background: $colorSuspense;
+    width: 100%;
+    @media (min-width: $screenWidthMobileBig) {
         display: none;
-        &+div {
-            span {
-                --rotateY: 0deg;
-                --background: var(--front);
-                transform: rotateY(var(--rotateY));
-                transform-style: preserve-3d;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                background: var(--background);
-                backface-visibility: hidden;
-                transition: transform .6s cubic-bezier(.2, .64, .48, 1.24);
-                &:before,
-                &:after {
-                    --rotate: 0deg;
-                    content: '';
-                    position: absolute;
-                    width: 16px;
-                    height: 2px;
-                    border-radius: 1px;
-                    top: 50%;
-                    left: 50%;
-                    background: var(--icon);
-                    backface-visibility: hidden;
-                    transform: translate(-50%, -50%) rotate(var(--rotate)) translateZ(6px);
-                }
-                &:first-child {
-                    --background: var(--back);
-                    &:before {
-                        --rotate: -45deg;
-                    }
-                    &:after {
-                        --rotate: 45deg;
-                    }
-                }
-                &:last-child {
-                    --rotateY: 180deg;
-                    &:before {
-                        box-shadow: 0 -5px 0 var(--icon), 0 5px 0 var(--icon);
-                    }
-                    &:after {
-                        display: none;
-                    }
-                }
-            }
-        }
-        &:checked+div {
-            span {
-                &:first-child {
-                    --rotateY: -180deg;
-                }
-                &:last-child {
-                    --rotateY: 0deg;
-                }
-            }
-        }
     }
+}
+
+.pageLinkMobile {
+    font-size: $fontsizeSheep;
+    padding: 2px 5px;
+    border-radius: 13px;
+    @media (min-width: $screenWidthMobileBig) {
+        display: none;
+    }
+}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+label {
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    cursor: pointer;
+    @media (min-width: $screenWidthMobileBig) {
+        display: none;
+    }
+}
+
+label span {
+    background: $colorDarker;
+    border-radius: 10px;
+    height: 3.5px;
+    margin: 3.5px 0;
+    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+span:nth-of-type(1) {
+    width: 50%;
+}
+
+span:nth-of-type(2) {
+    width: 100%;
+}
+
+span:nth-of-type(3) {
+    width: 75%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(4px, 0px)
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg)
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 50%;
+    transform: translate(15px, -5.5px) rotatez(45deg);
 }
