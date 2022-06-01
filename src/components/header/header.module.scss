@@ -118,15 +118,15 @@ label span {
     transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-span:nth-of-type(1) {
+.checkChild1 {
     width: 50%;
 }
 
-span:nth-of-type(2) {
+.checkChild2 {
     width: 100%;
 }
 
-span:nth-of-type(3) {
+.checkChild3 {
     width: 75%;
 }
 
@@ -134,17 +134,17 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked~span:nth-of-type(1) {
+input[type="checkbox"]:checked~.checkChild1 {
     transform-origin: bottom;
     transform: rotatez(45deg) translate(4px, 0px)
 }
 
-input[type="checkbox"]:checked~span:nth-of-type(2) {
+input[type="checkbox"]:checked~.checkChild2 {
     transform-origin: top;
     transform: rotatez(-45deg)
 }
 
-input[type="checkbox"]:checked~span:nth-of-type(3) {
+input[type="checkbox"]:checked~.checkChild3 {
     transform-origin: bottom;
     width: 50%;
     transform: translate(15px, -5.5px) rotatez(45deg);

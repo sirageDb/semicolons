@@ -87,9 +87,9 @@ export default function Header(): JSX.Element {
         </div>
         <label htmlFor="check">
           <input onClick={() => setIsChecked(!isChecked)} checked={isChecked} type="checkbox" id="check" />
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className={styles.checkChild1}></span>
+          <span className={styles.checkChild2}></span>
+          <span className={styles.checkChild3}></span>
         </label>
       </div>
     </header>
