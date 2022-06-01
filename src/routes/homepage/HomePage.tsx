@@ -14,7 +14,7 @@ import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
 import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
 import CompetenceBlock from "../../components/competenceBlock/CompetenceBlock";
-import { CONTACT_PAGE } from "../../lib/appRouting";
+import { CONTACT_PAGE, PROJECTS_PAGE } from "../../lib/appRouting";
 import ScrollDown from "../../components/scrollDown/ScrollDown";
 
 //TODO an astroid from the sky when scrolling ...
@@ -40,16 +40,16 @@ export default function HomePage(): JSX.Element {
 
   //====================================================
 
-  const scrollToElement = ()=> {
+  const scrollToElement = () => {
     const competences = competencesRef.current;
-    competences.scrollIntoView({behavior: "smooth"});
-  }
+    competences.scrollIntoView({ behavior: "smooth" });
+  };
 
   //====================================================
 
   return (
     <PageLayout>
-      <section   className={styles.introWrapper}>
+      <section className={styles.introWrapper}>
         <div className={styles.introContainer}>
           <div className={styles.introTextContainer}>
             <h1>Developing high quality softwares.</h1>
@@ -58,15 +58,16 @@ export default function HomePage(): JSX.Element {
               requirements.
             </h2>
             <div className={styles.contactButtonContainer}>
-            <NavLink to={CONTACT_PAGE} className={styles.contactButton}>Contact us</NavLink>
+              <NavLink to={CONTACT_PAGE} className={styles.contactButton}>
+                Contact us
+              </NavLink>
             </div>
           </div>
-          <div
-            className={styles.introBackground}
-            style={{ backgroundImage: `url(${homepageIntroIllustration})` }}
-          />
+          <div className={styles.introBackground} style={{ backgroundImage: `url(${homepageIntroIllustration})` }} />
         </div>
-        <div ref={competencesRef}  onClick={() => scrollToElement()} className={styles.scrollDownButton}><ScrollDown /></div>
+        <div ref={competencesRef} onClick={() => scrollToElement()} className={styles.scrollDownButton}>
+          <ScrollDown />
+        </div>
       </section>
 
       {/* ============================================================================= */}
@@ -137,12 +138,22 @@ export default function HomePage(): JSX.Element {
       </section>
 
       {/* ============================================================================= */}
+      <section className={styles.sectionExp}>
+        <div className={styles.expContainer}>
+          <h2>Worked on 5 Websites from scratch, 3 Fullstack web applications and several opensource projects.</h2>
+          <div className={styles.projectsButtonContainer}>
+            <NavLink to={PROJECTS_PAGE} className={styles.expButton}>
+              Projects
+            </NavLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================================= */}
+
       <section className={styles.sectionPost}>
         <div className={styles.sectionPostData}>
           <div>
-            <div className={styles.sectionPostTitleContainer}>
-              <h2 className={styles.sectionPostTitle}>LATEST POST</h2>
-            </div>
             {postData && (
               <PostCell
                 _id={postData._id}

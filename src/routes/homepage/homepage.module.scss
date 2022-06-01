@@ -36,7 +36,7 @@
     }
     
     .contactButton {
-        font-size: 25px;
+        font-size: $fontsizeCow;
         border: 3px solid $colorDarker;
         padding: 8px 20px;
         border-radius: 3px;
@@ -61,7 +61,6 @@
     }
     
     .scrollDownButton {
-        margin: auto;
         margin-top: 40px;
     }
     
@@ -104,9 +103,49 @@
     }
     
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    .sectionExp {
+        // position: relative;
+        margin: auto;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        width: 95%;
+        @media (min-width: $screenWidthMobileBig) {
+            width: 90%;
+        }
+    }
+    
+    .expContainer {
+        margin: auto;
+        max-width: 900px;
+        z-index: 2;
+        text-align: center;
+    }
+    
+    .projectsButtonContainer {
+        margin-top: 50px;
+    }
+    
+    .expButton {
+        background-color: transparent;
+        color: $colorDarker;
+        padding: 2px 40px;
+        border-radius: 4px;
+        font-size: $fontsizeCow;
+        box-shadow: rgba($colorGreenBright, 0.60)0px 0px 20px;
+        border: 2px solid $colorGreenBright;
+        transition: 200ms;
+        background-color: $colorGreenBright;
+        &:hover {
+            background-color: $colorWhiteExtra;
+            transition: 200ms;
+        }
+    }
+    
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     .sectionPost {
         margin: auto;
         margin-top: 60px;
+        margin-bottom: 150px;
         width: 95%;
         @media (min-width: $screenWidthMobileBig) {
             width: 90%;
