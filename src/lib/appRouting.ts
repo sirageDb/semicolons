@@ -10,3 +10,5 @@ export const AUTH_PAGE = "/auth";
 
 export const PROJECTS_BO = "/backoffice/projects";
 export const POSTS = "/posts";
+
+export const CONTACT_PAGE = "/contact"

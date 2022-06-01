@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import styles from "./homepage.module.scss";
+import homepageIntroIllustration from "../../assets/pablita-stepping-up.svg";
 import PageLayout from "../../components/pageLayout/PageLayout";
 import githubIcon from "../../assets/githubIcon.svg";
 import twitterIcon from "../../assets/twitterIcon.svg";
 import linkedinIcon from "../../assets/linkedinIcon.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PostCell from "../../components/postCell/PostCell";
 
 //images
 //======================================
 import blob from "../../assets/blob.svg";
-import wavyHomePageBackground from "../../assets/wavyHomePageBackground.svg";
 //======================================
 
 import headIllustration from "../../assets/headIllustration.svg";
 import { IPost } from "../../lib/types";
 import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
 import CompetenceBlock from "../../components/competenceBlock/CompetenceBlock";
+import { CONTACT_PAGE } from "../../lib/appRouting";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
@@ -25,86 +26,49 @@ export default function HomePage(): JSX.Element {
   useEffect(() => {
     getLastPost();
   }, []);
+  //====================================================
 
   const getLastPost = async () => {
     const apiResponse = await fetch(GET_POST_PUBLISHED_LATEST);
     const extractedData = await apiResponse.json();
     setPostData(extractedData[0]);
   };
+  //====================================================
 
   const Tag = ({ text }: any) => {
     return <div className={styles.singleTag}>#&nbsp;{text}</div>;
   };
 
+  //====================================================
+
   return (
     <PageLayout>
-      <div className={styles.pageHeadingContainer}>
-        <div className={styles.secondaryBackground} style={{ backgroundImage: `url(${wavyHomePageBackground})` }}>
-          <div className={styles.pageHeading}>
-            <div className={styles.pageSloganContainer + " " + styles.rainbow}>
-              <h1 className={styles.pageSlogan}>Hey !, welcome to Semicolons zone where I share my Tech knowledge.</h1>
-              <div className={styles.pageExpanation}>
-                As a full stack web developer, I work on the entire development lifecycle of web and mobile apps with
-                the goal of having complete control over my projects.
-              </div>
-            </div>
-            <div className={styles.contactWidgetsContainer}>
-              <div className={styles.contactWidgetContainer + " " + styles.githubButton}>
-                <a
-                  className={styles.contactWidget}
-                  href={"https://github.com/sirageDb"}
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <img
-                    className={styles.contatWidgetIcon}
-                    src={githubIcon}
-                    alt={"sirage al dbiyat semicolons github opensource account"}
-                  />
-                  <div className={styles.widgetText}>SirageDb</div>
-                </a>
-              </div>
-              <div className={styles.contactWidgetContainer + " " + styles.twitterButton}>
-                <a
-                  className={styles.contactWidget}
-                  href={"https://twitter.com/ilovesemicolon/"}
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <img
-                    className={styles.contatWidgetIcon}
-                    src={twitterIcon}
-                    alt={"sirage al dbiyat semicolons twitter account"}
-                  />
-                  <div className={styles.widgetText}>iLoveSemicolon</div>
-                </a>
-              </div>
-              <div className={styles.contactWidgetContainer + " " + styles.linkedinButton}>
-                <a
-                  className={styles.contactWidget}
-                  href={"https://www.linkedin.com/in/sirage-al-dbiyat/"}
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <img
-                    className={styles.contatWidgetIcon}
-                    src={linkedinIcon}
-                    alt={"sirage al dbiyat semicolons linkedin account"}
-                  />
-                  <div className={styles.widgetText}>Sirage Al Dbiyat</div>
-                </a>
-              </div>
+      <section className={styles.introWrapper}>
+        <div className={styles.introContainer}>
+          <div className={styles.introTextContainer}>
+            <h1>Developing high quality softwares.</h1>
+            <h2>
+              Identifying issues and developing innovative solutions based on testing and analysis to meet user
+              requirements.
+            </h2>
+            <div className={styles.contactButtonContainer}>
+            <NavLink to={CONTACT_PAGE} className={styles.contactButton}>Contact us</NavLink>
             </div>
           </div>
+          <div
+            className={styles.introBackground}
+            style={{ backgroundImage: `url(${homepageIntroIllustration})` }}
+          />
         </div>
-      </div>
+        <div className={styles.scrollDownButton}>Scroll down</div>
+      </section>
 
       {/* ============================================================================= */}
 
       <section className={styles.sectionCompetences}>
-        <div className={styles.sectionCompetenceTitleContainer}>
+{/*         <div className={styles.sectionCompetenceTitleContainer}>
           <h2 className={styles.sectionCompetenceTitle}>SKILLS</h2>
-        </div>
+        </div> */}
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
