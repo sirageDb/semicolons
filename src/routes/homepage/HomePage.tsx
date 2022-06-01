@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./homepage.module.scss";
 import homepageIntroIllustration from "../../assets/pablita-stepping-up.svg";
 import PageLayout from "../../components/pageLayout/PageLayout";
-import githubIcon from "../../assets/githubIcon.svg";
-import twitterIcon from "../../assets/twitterIcon.svg";
-import linkedinIcon from "../../assets/linkedinIcon.svg";
 import { Link, NavLink } from "react-router-dom";
 import PostCell from "../../components/postCell/PostCell";
 
@@ -18,10 +15,12 @@ import { IPost } from "../../lib/types";
 import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
 import CompetenceBlock from "../../components/competenceBlock/CompetenceBlock";
 import { CONTACT_PAGE } from "../../lib/appRouting";
+import ScrollDown from "../../components/scrollDown/ScrollDown";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
   const [postData, setPostData] = useState<IPost>();
+  const competencesRef = useRef<any>();
 
   useEffect(() => {
     getLastPost();
@@ -41,9 +40,16 @@ export default function HomePage(): JSX.Element {
 
   //====================================================
 
+  const scrollToElement = ()=> {
+    const competences = competencesRef.current;
+    competences.scrollIntoView({behavior: "smooth"});
+  }
+
+  //====================================================
+
   return (
     <PageLayout>
-      <section className={styles.introWrapper}>
+      <section   className={styles.introWrapper}>
         <div className={styles.introContainer}>
           <div className={styles.introTextContainer}>
             <h1>Developing high quality softwares.</h1>
@@ -60,15 +66,12 @@ export default function HomePage(): JSX.Element {
             style={{ backgroundImage: `url(${homepageIntroIllustration})` }}
           />
         </div>
-        <div className={styles.scrollDownButton}>Scroll down</div>
+        <div ref={competencesRef}  onClick={() => scrollToElement()} className={styles.scrollDownButton}><ScrollDown /></div>
       </section>
 
       {/* ============================================================================= */}
 
       <section className={styles.sectionCompetences}>
-{/*         <div className={styles.sectionCompetenceTitleContainer}>
-          <h2 className={styles.sectionCompetenceTitle}>SKILLS</h2>
-        </div> */}
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
