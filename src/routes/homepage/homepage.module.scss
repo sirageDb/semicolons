@@ -3,7 +3,6 @@
         width: 100%;
         height: 70vh;
         @media (min-width: $screenWidthMobileBig) {
-            margin-top: 50px;
             height: 100vh;
         }
     }
@@ -30,6 +29,7 @@
     }
     
     .introTextContainer {
+        font-weight: 600;
         >h1 {
             font-size: $fontsizeCow;
         }
@@ -46,7 +46,6 @@
             }
             text-align: left;
             line-height: 1.6;
-            font-weight: 600;
             margin-right: 30px;
             flex: 1
         }
@@ -75,6 +74,7 @@
     
     .contactButton {
         font-size: $fontsizeSheep;
+        // font-size: $fontsizeCow;
         border: 3px solid $colorDarker;
         padding: 8px 20px;
         border-radius: 3px;
