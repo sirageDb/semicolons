@@ -13,7 +13,7 @@
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-    background-color: $colorWhite;
+    background-color: $colorWhiteExtra;
     @media (min-width: $screenWidthMobileBig) {
         flex-wrap: nowrap;
         width: 100%;
@@ -41,7 +41,6 @@
 
 .description {
     margin-top: 10px;
-    font-size: $fontsizeHuman;
     flex: 1;
 }
 

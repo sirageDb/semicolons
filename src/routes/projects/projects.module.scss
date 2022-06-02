@@ -1,49 +1,48 @@
 @import "../../globalStyles.scss";
 .pageHeadingContainer {
-    display: block;
-    margin: auto;
-    margin-top: 30px;
     width: 95%;
-    @media (min-width: $screenWidthMobileBig) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        width: 100%;
-        margin-top: 60px;
+    margin: auto;
+    margin-top: 20px;
+    h1 {
+        font-size: $fontsizeCow;
     }
-}
-
-.illustrationContainer {
-    display: none;
+    h2 {
+        font-size: $fontsizeSheep;
+    }
     @media (min-width: $screenWidthMobileBig) {
-        display: block;
+        margin-top: 60px;
+        text-align: left;
+        width: 100%;
+        margin-top: 40px;
+        h1 {
+            font-size: 30px;
+        }
+        h2 {
+            font-size: 25px;
+        }
     }
 }
 
 .pageTitleContainer {
-    border: 5px solid $colorVioletDark;
-    background-color: $colorWhite;
-    max-width: 450px;
-    padding: 0 20px 20px 20px;
-}
-
-.pageTitle {
-    display: inline-block;
-    border-bottom: 5px solid $colorGreenBright;
+    display: flex;
+    align-items: center;
+    >img {
+        max-width: 50px;
+        margin-right: 10px;
+    }
+    h1 {
+        font-weight: bold;
+    }
 }
 
 .pageExplanation {
-    margin: 0;
-    font-size: $fontsizeSheep;
-    font-weight: inherit;
-    // width: 500px;
-    background-color: $colorWhite;
-}
-
-.projectsImage {
-    filter: drop-shadow(0 0 0.6rem $colorGray);
-    -webkit-filter: drop-shadow(0 0 0.6rem $colorGray);
+    text-align: center;
+    border: 3px solid $colorDarker;
+    padding: 5px;
+    background-color: $colorGreenBright;
+    @media (min-width: $screenWidthMobileBig) {
+        text-align: left;
+    }
 }
 
 //======================================================

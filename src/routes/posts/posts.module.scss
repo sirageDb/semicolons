@@ -1,50 +1,47 @@
 @import "../../globalStyles.scss";
 .pageHeadingContainer {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    flex-direction: column;
     width: 95%;
-    justify-content: center;
-    @media (min-width: $screenWidthMobileBig) {
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-        margin-top: 60px;
+    margin: auto;
+    margin-top: 20px;
+    h1 {
+        font-size: $fontsizeCow;
     }
-    @media (min-width: $screenWidthMobileLandScape) {
-        justify-content: space-between;
+    h2 {
+        font-size: $fontsizeSheep;
+    }
+    @media (min-width: $screenWidthMobileBig) {
+        margin-top: 60px;
+        text-align: left;
+        width: 100%;
+        margin-top: 40px;
+        h1 {
+            font-size: 30px;
+        }
+        h2 {
+            font-size: 25px;
+        }
     }
 }
 
 .pageTitleContainer {
-    background-color: $colorWhite;
-    border: 5px solid $colorVioletDark;
-    max-width: 450px;
-    padding: 0 20px 20px 20px;
-}
-
-.pageTitle {
-    display: inline-block;
-    border-bottom: 5px solid $colorGreenBright;
+    display: flex;
+    align-items: center;
+    >img {
+        max-width: 50px;
+        margin-right: 10px;
+    }
+    h1 {
+        font-weight: bold;
+    }
 }
 
 .pageExplanation {
-    margin: 0;
-    font-size: $fontsizeSheep;
-    font-weight: inherit;
-    // width: 500px;
-    background-color: $colorWhite;
-}
-
-.postsImage {
-    display: none;
-    filter: drop-shadow(0 0 0.6rem $colorGray);
-    -webkit-filter: drop-shadow(0 0 0.6rem $colorGray);
+    text-align: center;
+    border: 3px solid $colorDarker;
+    padding: 5px;
+    background-color: $colorGreenBright;
     @media (min-width: $screenWidthMobileBig) {
-        display: block;
+        text-align: left;
     }
 }
 
