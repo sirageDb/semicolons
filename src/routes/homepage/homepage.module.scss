@@ -1,7 +1,11 @@
     @import "../../globalStyles.scss";
     .introWrapper {
-        height: 100vh;
         width: 100%;
+        height: 70vh;
+        @media (min-width: $screenWidthMobileBig) {
+            margin-top: 50px;
+            height: 100vh;
+        }
     }
     
     .introContainer {
@@ -63,7 +67,7 @@
     }
     
     .contactButtonContainer {
-        margin-top: 30px;
+        margin-top: 50px;
         @media (min-width: $screenWidthMobileBig) {
             margin-top: 50px;
         }
@@ -88,8 +92,9 @@
     }
     
     .scrollDownButton {
-        margin-top: 30px;
+        display: none;
         @media (min-width: $screenWidthMobileBig) {
+            display: block;
             margin-top: 50px;
         }
     }

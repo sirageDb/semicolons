@@ -8,6 +8,10 @@
     padding: 10px;
     border-radius: 15px;
     background-color: $colorWhiteExtra;
+    text-align: center;
+    @media (min-width: $screenWidthMobileBig) {
+        text-align: left;
+    }
 }
 
 .content {
