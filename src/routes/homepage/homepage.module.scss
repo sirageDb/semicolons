@@ -6,6 +6,7 @@
     
     .introContainer {
         @media (min-width: $screenWidthMobileBig) {
+            flex-direction: row;
             position: relative;
             top: 20%;
             transform: translateY(-20%);
@@ -23,11 +24,23 @@
     }
     
     .introTextContainer {
-        line-height: 1.6;
-        font-weight: 600;
+        text-align: center;
         @media (min-width: $screenWidthMobileBig) {
+            text-align: left;
+            line-height: 1.6;
+            font-weight: 600;
             margin-right: 30px;
             flex: 1
+        }
+    }
+    
+    .introBackground {
+        @media (min-width: $screenWidthMobileBig) {
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex: 1;
+            height: 70vh;
         }
     }
     
@@ -47,16 +60,6 @@
             color: $colorDarker;
             background-color: $colorWhiteExtra;
             transition: 200ms;
-        }
-    }
-    
-    .introBackground {
-        @media (min-width: $screenWidthMobileBig) {
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            flex: 1;
-            height: 70vh;
         }
     }
     

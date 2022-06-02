@@ -1,9 +1,9 @@
 import React from "react";
 import "./scrollDown.scss";
 
-export default function ScrollDown(): JSX.Element {
+export default function ScrollDown({callback} : {callback : CallableFunction}): JSX.Element {
   return (
-    <div className="ico animated">
+    <div onClick={() => callback()} className="ico animated">
       <div className="circle circle-top"></div>
       <div className="circle circle-main"></div>
       <div className="circle circle-bottom"></div>

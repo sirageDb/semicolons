@@ -65,8 +65,8 @@ export default function HomePage(): JSX.Element {
           </div>
           <div className={styles.introBackground} style={{ backgroundImage: `url(${homepageIntroIllustration})` }} />
         </div>
-        <div ref={competencesRef} onClick={() => scrollToElement()} className={styles.scrollDownButton}>
-          <ScrollDown />
+        <div ref={competencesRef} className={styles.scrollDownButton}>
+          <ScrollDown  callback={() => scrollToElement()}/>
         </div>
       </section>
 

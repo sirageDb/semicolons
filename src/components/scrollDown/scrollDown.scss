@@ -12,8 +12,8 @@ $anim-timing: 3s;
     width: $circle-w;
     height: $circle-w;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    // top: 50%;
+    // transform: translateY(-50%);
     filter: url("#goo");
     .circle {
         background: $circle-bg;
