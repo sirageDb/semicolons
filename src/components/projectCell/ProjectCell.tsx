@@ -13,6 +13,8 @@ interface IProjectCellProps {
   description: string;
   image: any;
   imageAlt: string;
+  projectType : "opensource";
+  isInDevelopment : boolean;
 }
 
 interface ITagProps {
@@ -27,6 +29,8 @@ export default function ProjectCell({
   description,
   image,
   imageAlt,
+  projectType,
+  isInDevelopment,
 }: IProjectCellProps): JSX.Element {
   const Tag = ({ text }: ITagProps) => {
     return <div className={styles.tag}>#{text}</div>;
