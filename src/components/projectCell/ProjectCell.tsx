@@ -13,7 +13,7 @@ interface IProjectCellProps {
   description: string;
   image: any;
   imageAlt: string;
-  projectType : "opensource";
+  projectType : "opensource" | null;
   isInDevelopment : boolean;
 }
 
@@ -38,6 +38,14 @@ export default function ProjectCell({
 
   return (
     <div className={styles.container}>
+      { projectType &&
+        <div className={styles.projectTypebanner}> {projectType === "opensource" && "Opensource"}</div>
+      }
+
+      {
+        isInDevelopment &&
+        <div className={styles.inDevelopmentBanner}>PROJECT IN DEVELOPMENT</div>
+      }
       <img className={styles.image} src={apiEndPoint + "/" + image} alt={imageAlt} />
       <div className={styles.projectDataContainer}>
         <div className={styles.name}>{name}</div>
