@@ -2,5 +2,5 @@ const endpoitns = {
     api_dev: "http://localhost:5000",
     api_prod : "https://api.semicolons.dev"
 }
-const apiEndPoint = endpoitns.api_prod; 
+const apiEndPoint = endpoitns.api_dev; 
 export default apiEndPoint;

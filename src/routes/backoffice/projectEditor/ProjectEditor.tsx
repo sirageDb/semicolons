@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, FormEvent } from "react";
 import styles from "./projectEditor.module.scss";
 import MainLayout from "../../../components/mainLayoutBackoffice/MainLayoutBackoffice";
 import TagsOrganizer from "../../../components/backoffice/tagsOrganizer/TagsOrganizer";
@@ -20,6 +20,12 @@ export default function ProjectEditor(): JSX.Element {
   const [imagePreviewSrc, setImagePreviewSrc] = useState<any>();
   const [imagePath, setImagePath] = useState<string>("");
   const [publish, setPublish] = useState<boolean>(false);
+
+  const [inDevelopmentChecked, setInDevelopmentChecked] = useState<boolean>(false);
+  const [phase, setPhase] = useState<string>("");
+
+  const [opensourceChecked, setOpensourceChecked] = useState<boolean>(false);
+  const [projectType, setPorjectType] = useState<string>("");
 
   interface IParams {
     project_id: string | any;
@@ -54,6 +60,22 @@ export default function ProjectEditor(): JSX.Element {
     setImageALT(data.image.alt);
     setImagePath(data.image.path);
     setPublish(data.publish);
+
+    if (data.projectType === "opensource") {
+      setOpensourceChecked(true);
+      setPorjectType("opensource");
+    } else if (data.projectType !== "opensource") {
+      setOpensourceChecked(false);
+      setPorjectType("");
+    }
+
+    if (data.phase === "inDevelopment") {
+      setInDevelopmentChecked(true);
+      setPhase("inDevelopment");
+    } else if(data.phase !== "inDevelopment"){
+      setInDevelopmentChecked(false);
+      setPhase("");
+    }
   };
 
   // Create projecct
@@ -64,6 +86,8 @@ export default function ProjectEditor(): JSX.Element {
     formData.append("alt", imageALT);
     formData.append("image", imageFile);
     formData.append("description", description);
+    formData.append("projectType", projectType);
+    formData.append("phase", phase);
     for (let i = 0; i < tags.length; i++) {
       formData.append("tags", tags[i]);
     }
@@ -94,6 +118,8 @@ export default function ProjectEditor(): JSX.Element {
       formData.append("alt", imageALT);
       formData.append("image", imageFile);
       formData.append("description", description);
+      formData.append("projectType", projectType);
+      formData.append("phase", phase);
       for (let i = 0; i < tags.length; i++) {
         formData.append("tags", tags[i]);
       }
@@ -161,6 +187,28 @@ export default function ProjectEditor(): JSX.Element {
     }
   };
 
+  // handle project type change
+  //===================================================
+  const handleProjectType = () => {
+    setOpensourceChecked(!opensourceChecked);
+    if (opensourceChecked === false) {
+      setPorjectType("opensource");
+    } else {
+      setPorjectType("");
+    }
+  };
+
+  // handle in development checkbox
+  //===================================================
+  const handleInDevelopmentCheckbox = () => {
+    setInDevelopmentChecked(!inDevelopmentChecked);
+    if (inDevelopmentChecked === false) {
+      setPhase("inDevelopment");
+    } else {
+      setPhase("");
+    }
+  };
+
   return (
     <MainLayout pageTitle={"Project editor"}>
       <div>
@@ -177,6 +225,16 @@ export default function ProjectEditor(): JSX.Element {
               className={styles.input}
             />
           </div>
+          {/* =================== */}
+          <div className={styles.inputContainer}>
+            Open source
+            <input type={"checkbox"} onChange={() => handleProjectType()} checked={opensourceChecked} />
+          </div>
+          <div className={styles.inputContainer}>
+            In Development
+            <input type={"checkbox"} onChange={() => handleInDevelopmentCheckbox()} checked={inDevelopmentChecked} />
+          </div>
+          {/* ========================= */}
           <div className={styles.inputContainer}>
             <div>
               <label>Project link</label>

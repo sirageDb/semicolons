@@ -43,8 +43,8 @@ export default function Projects(): JSX.Element {
               projectLink={project.projectLink}
               sourceCodeLink={project.sourceCodeLink}
               description={project.description}
-              projectType = {"opensource"}
-              isInDevelopment = {true}
+              projectType = {project.projectType}
+              isInDevelopment = {project.phase}
             />
           );
         })}

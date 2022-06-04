@@ -10,6 +10,8 @@ export interface IProject {
     image: IImage,
     publish : boolean,
     tags: string[], 
+    projectType : "opensource" | null,
+    phase : "inDevelopment" | null
 } 
 
 //========================================

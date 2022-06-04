@@ -14,7 +14,7 @@ interface IProjectCellProps {
   image: any;
   imageAlt: string;
   projectType : "opensource" | null;
-  isInDevelopment : boolean;
+  isInDevelopment : "inDevelopment" | null;
 }
 
 interface ITagProps {

@@ -100,7 +100,7 @@
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-label {
+.label {
     display: flex;
     flex-direction: column;
     width: 35px;
@@ -110,7 +110,7 @@ label {
     }
 }
 
-label span {
+.label span {
     background: $colorDarker;
     border-radius: 10px;
     height: 3.5px;
@@ -130,21 +130,21 @@ label span {
     width: 75%;
 }
 
-input[type="checkbox"] {
+.burgerIconCheckbox {
     display: none;
 }
 
-input[type="checkbox"]:checked~.checkChild1 {
+.burgerIconCheckbox:checked~.checkChild1 {
     transform-origin: bottom;
     transform: rotatez(45deg) translate(4px, 0px)
 }
 
-input[type="checkbox"]:checked~.checkChild2 {
+.burgerIconCheckbox:checked~.checkChild2 {
     transform-origin: top;
     transform: rotatez(-45deg)
 }
 
-input[type="checkbox"]:checked~.checkChild3 {
+.burgerIconCheckbox:checked~.checkChild3 {
     transform-origin: bottom;
     width: 50%;
     transform: translate(15px, -5.5px) rotatez(45deg);
