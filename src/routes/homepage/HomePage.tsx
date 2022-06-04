@@ -56,8 +56,6 @@ export default function HomePage(): JSX.Element {
             <h2>
               Identifying issues and developing innovative solutions based on testing and analysis to meet user
               requirements.
-
-              REPARE BLOG PAGE INTRO QUILL BOT
             </h2>
             <div className={styles.contactButtonContainer}>
               <NavLink to={CONTACT_PAGE} className={styles.contactButton}>
