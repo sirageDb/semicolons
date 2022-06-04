@@ -16,10 +16,14 @@ import { GET_POST_PUBLISHED_LATEST } from "../../lib/endpoints";
 import CompetenceBlock from "../../components/competenceBlock/CompetenceBlock";
 import { CONTACT_PAGE, PROJECTS_PAGE } from "../../lib/appRouting";
 import ScrollDown from "../../components/scrollDown/ScrollDown";
+import apiEndPoint from "../../config/apiEndPoint";
 
 //TODO an astroid from the sky when scrolling ...
 export default function HomePage(): JSX.Element {
   const [postData, setPostData] = useState<IPost>();
+  const [emailInput, setEmailInput] = useState<string>();
+  const [isErroredSubmit, setIsErroredSubmit] = useState<boolean>(false);
+  const [isSuccessfullSubmit, setIsSuccessfullSubmit] = useState<boolean>(false);
   const competencesRef = useRef<any>();
 
   useEffect(() => {
@@ -46,6 +50,32 @@ export default function HomePage(): JSX.Element {
   };
 
   //====================================================
+  const sendEmail = async (event: any) => {
+    event.preventDefault();
+    const apiResponse = await fetch(apiEndPoint + "/contact/newcontact", {
+      method: "Post",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: "unknown",
+        email: emailInput,
+        subject: "Contact me later",
+        message: "Email from homepage, contact me later",
+      }),
+    });
+
+    if (apiResponse.status === 200) {
+      setIsErroredSubmit(false);
+      setIsSuccessfullSubmit(true);
+    } else {
+      setIsErroredSubmit(true);
+      setIsSuccessfullSubmit(false);
+    }
+  };
+
+  //====================================================
 
   return (
     <PageLayout>
@@ -57,23 +87,40 @@ export default function HomePage(): JSX.Element {
               Identifying issues and developing innovative solutions based on testing and analysis to meet user
               requirements.
             </h2>
-            <div className={styles.contactButtonContainer}>
-              <NavLink to={CONTACT_PAGE} className={styles.contactButton}>
-                Contact us
-              </NavLink>
-            </div>
+            {isErroredSubmit === false && isSuccessfullSubmit === false && (
+              <>
+                <div className={styles.contactFormExplanation}>Let us contact you later !</div>
+                <form onSubmit={sendEmail} className={styles.contactForm}>
+                  <input
+                    placeholder="Email"
+                    type={"email"}
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    className={styles.emailInput}
+                    required={true}
+                  />
+                  <button className={styles.contactButton} type={"submit"}>
+                    Send
+                  </button>
+                </form>
+              </>
+            )}
+            {isErroredSubmit === true && (
+              <div className={styles.contactErrorMessage}>Sorry an error has occured, your message was not sent, please try again.</div>
+            )}
+            {isSuccessfullSubmit === true && <div className={styles.contactConfirmationMessage}>Thank you for getting in touch !, will get back to you soon.</div>}
           </div>
           <div className={styles.introBackground} style={{ backgroundImage: `url(${homepageIntroIllustration})` }} />
         </div>
         <div ref={competencesRef} className={styles.scrollDownButton}>
-          <ScrollDown  callback={() => scrollToElement()}/>
+          <ScrollDown callback={() => scrollToElement()} />
         </div>
       </section>
 
       {/* ============================================================================= */}
 
       <section className={styles.sectionCompetences}>
-        <div className = {styles.sectionCompetencesIllustration} />
+        <div className={styles.sectionCompetencesIllustration} />
         <div className={styles.competencesContainer}>
           <CompetenceBlock
             title="Development"
@@ -87,7 +134,7 @@ export default function HomePage(): JSX.Element {
           />
           <CompetenceBlock
             title="Project management"
-            contentText="Using the scrum framework or the Agile methodology on small and large-scale IT projects"
+            contentText="Using an agile methodology on small and large-scale projects to improve threir quality on each release"
             titleColor={"#FF886F"}
             svgImage={
               <svg fill="#FFC356" fillOpacity={"0.4"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

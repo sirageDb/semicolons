@@ -1,7 +1,7 @@
     @import "../../globalStyles.scss";
     .introWrapper {
         width: 100%;
-        height: 70vh;
+        height: 80vh;
         @media (min-width: $screenWidthMobileBig) {
             height: 100vh;
         }
@@ -65,19 +65,39 @@
         }
     }
     
-    .contactButtonContainer {
-        margin-top: 50px;
+    .contactFormExplanation {
+        margin-top: 20px;
+        font-size: $fontsizeSheep;
+        color: $colorGrayDark;
+    }
+    
+    .contactForm {
+        display: inline-block;
+        max-width: 500px;
+        margin-top: 10px;
+        border: 2px solid $colorDarker;
+        border-radius: 3px;
+    }
+    
+    .emailInput {
+        padding: 10px;
+        font-style: normal;
+        font-weight: normal;
+        &::placeholder {
+            font-weight: normal;
+        }
+        outline-style: none;
+        font-family: inherit;
+        width: 170px;
         @media (min-width: $screenWidthMobileBig) {
-            margin-top: 50px;
+            width: 250px;
         }
     }
     
     .contactButton {
         font-size: $fontsizeSheep;
-        // font-size: $fontsizeCow;
-        border: 3px solid $colorDarker;
+        border-left: 2px solid $colorDarker;
         padding: 8px 20px;
-        border-radius: 3px;
         color: $colorWhiteExtra;
         background: $colorDarker;
         transition: 200ms;
@@ -86,9 +106,19 @@
             background-color: $colorWhiteExtra;
             transition: 200ms;
         }
-        @media (min-width: $screenWidthMobileBig) {
-            font-size: $fontsizeCow;
-        }
+        height: 43px;
+    }
+    
+    .contactErrorMessage {
+        margin-top: 20px;
+        font-size: $fontsizeSheep;
+        color: $colorDanger;
+    }
+    
+    .contactConfirmationMessage {
+        margin-top: 20px;
+        font-size: $fontsizeSheep;
+        color: $colorBlue;
     }
     
     .scrollDownButton {
