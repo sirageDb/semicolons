@@ -1,6 +1,2 @@
-const endpoitns = {
-    api_dev: "http://localhost:5000",
-    api_prod : "https://api.semicolons.dev"
-}
-const apiEndPoint = endpoitns.api_prod; 
+const apiEndPoint = process.env.REACT_APP_SEMICOLONS_API_ENDPOINT;
 export default apiEndPoint;
